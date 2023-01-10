@@ -11,6 +11,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\PermissionsController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
+use App\Http\Controllers\Siode\Surat\KematianController;
+use App\Http\Controllers\Siode\Surat\TidakMampuController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Dropdown\DependentDropdownController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
@@ -103,7 +105,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
-
+        
         Route::post('kartu-keluarga/anggota-keluarga/autocomplete-search', [KartuKeluargaAnggotaController::class, 'autocompleteSearch'])->name('kartu-keluarga.anggota-keluarga.autocomplete');
         Route::get('kartu-keluarga/anggota-keluarga/view-delete', [KartuKeluargaController::class, 'viewDelete'])->name('kartu-keluarga.view-delete');
         Route::get('kartu-keluarga/restore/{kartu_keluarga}', [KartuKeluargaController::class, 'restore'])->name('kartu-keluarga.restore');
@@ -111,6 +113,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::resource('kartu-keluarga/anggota-keluarga', KartuKeluargaAnggotaController::class);
         Route::resource('kartu-keluarga', KartuKeluargaController::class);
         
+    });
+    Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
+        Route::get('kematian', [KematianController::class, 'index'])->name('kematian.index');
+        Route::get('tidak-mampu', [TidakMampuController::class, 'index'])->name('tidak-mampu.index');
     });
 });
 //// ROUTE UNTUK DROPDOWN WILAYAH ////

@@ -61,7 +61,42 @@
                                             @foreach ($kamp->rukuntetangga->where('no', $key) as $rt => $tetangga)
                                                 <button class="btn btn-xs bg-gradient-info" style="text-transform:uppercase"
                                                     type="button" id="button-addon2" data-toggle="modal"
-                                                    data-target="#edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                    data-target="#modal-edit-{{ $tetangga->id }}" data-id="cek"><i
+                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                <div class="modal fade" id="modal-edit-{{ $tetangga->id }}" tabindex="-1"
+                                                    role="dialog">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content rounded-0 text-sm">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Tambah data rt</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="row-col-12">
+                                                                    <form method="post"
+                                                                        action="{{ route('siode.infodesa.rt.update', $tetangga->id) }}"
+                                                                        autocomplete="off">
+                                                                        @csrf
+                                                                        <input type="text"
+                                                                            class="form-control form-control-sm"
+                                                                            value="{{ $tetangga->ketua }}">
+                                                                        <a style="margin-top:0px;"
+                                                                            class="btn bg-gradient-secondary btn-sm"
+                                                                            data-dismiss="modal" aria-label="Close"
+                                                                            style="text-transform:uppercase">
+                                                                            {{ trans('Cancel') }}
+                                                                        </a>
+                                                                        <input type="submit" value="Submit"
+                                                                            class="btn bg-gradient-primary btn-sm">
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             @endforeach
                                         </td>
                                     @endforeach
