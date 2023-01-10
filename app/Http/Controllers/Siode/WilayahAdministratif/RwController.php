@@ -25,8 +25,8 @@ class RwController extends Controller
         $rw->user_id = \Auth::user()->id;
         $rw->save();
         return redirect()
-                ->route('siode.infodesa.rw.index')
-                ->with('success', 'Data berhasil disimpan !');
+            ->route('siode.infodesa.rw.index')
+            ->with('success', 'Data berhasil disimpan !');
     }
 
     public function autocomplete(Request $request)
@@ -36,13 +36,13 @@ class RwController extends Controller
 
         if ($search == '') {
             $kartukeluargaanggota = KartuKeluargaAnggota::orderby('nama', 'asc')
-                ->select('id', 'nama','no_nik')
+                ->select('id', 'nama', 'no_nik')
                 ->orWhere('nama', 'like', '%' . $search . '%')
                 ->limit(15)
                 ->get();
         } else {
             $kartukeluargaanggota = KartuKeluargaAnggota::orderby('nama', 'asc')
-                ->select('id', 'nama','no_nik')
+                ->select('id', 'nama', 'no_nik')
                 ->where('nama', 'like', '%' . $search . '%')
                 ->limit(15)
                 ->get();
@@ -57,5 +57,25 @@ class RwController extends Controller
         }
 
         return response()->json($response);
+    }
+
+    public function update(Request $request, Rw $rw)
+    {
+        $rw->no = $request->no;
+        $rw->ketua = $request->ketua;
+        $rw->no_nik = $request->no_nik;
+        $rw->user_id = \Auth::user()->id;
+        $rw->save();
+        return redirect()
+            ->route('siode.infodesa.rw.index')
+            ->with('success', 'Data berhasil diupdate !');
+    }
+
+    public function destroy(Request $request, Rw $rw)
+    {
+        $rw->delete();
+        return redirect()
+            ->route('siode.infodesa.rw.index')
+            ->with('success', 'Data berhasil dihapus !');
     }
 }
