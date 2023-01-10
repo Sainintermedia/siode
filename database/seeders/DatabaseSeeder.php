@@ -15,6 +15,8 @@ use Database\Seeders\SakitKronisSeed;
 use Database\Seeders\JenisKelaminSeed;
 use Database\Seeders\KewarganegaraanSeed;
 use Database\Seeders\HubunganKeluargaSeed;
+use Database\Seeders\CreateAdminUserSeeder;
+use Database\Seeders\PendidikanKeluargaSeed;
 
 class DatabaseSeeder extends Seeder
 {
@@ -39,6 +41,7 @@ class DatabaseSeeder extends Seeder
             JenisKelaminSeed::class,
             KewarganegaraanSeed::class,
             PendidikanKeluargaSeed::class,
+            CreateAdminUserSeeder::class,
         ]);
     }
 }

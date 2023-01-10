@@ -15,7 +15,7 @@ class CreateRtsTable extends Migration
     {
         Schema::create('m_rt', function (Blueprint $table) {
             $table->id();
-            $table->string('kampung_id', 50)->nullable();
+            $table->string('kp_id', 50)->nullable();
             $table->string('no', 50)->nullable();
             $table->string('ketua', 50)->nullable();
             $table->string('no_nik', 50)->nullable();
