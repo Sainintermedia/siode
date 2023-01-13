@@ -27,7 +27,8 @@
             },
             //appendTo: "#ketuarw",
         });
-        $("#ketuaedit").autocomplete({
+
+        $("#editketua").autocomplete({
             source: function(request, response) {
                 // Fetch data
                 $.ajax({
@@ -45,11 +46,11 @@
             },
             select: function(event, ui) {
                 // Set selection
-                $('#ketuaedit').val(ui.item.label);
+                $('#editketua').val(ui.item.label);
                 $('#nonikedit').val(ui.item.nonik);
                 return false;
             },
-            //appendTo: "#edit",
+            //appendTo: "#edit-/*",
         });
 
     });

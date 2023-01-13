@@ -99,9 +99,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
 
         Route::post('wilayah-administratif/rw-autocomplete', [RwController::class, 'autocomplete'])->name('rw.autocomplete');
+        // Route::get('wilayah-administratif/rw', [RwController::class, 'index'])->name('rw.index');
+        // Route::post('wilayah-administratif/rw', [RwController::class, 'store'])->name('rw.store');
+        // Route::put('wilayah-administratif/rw/{rw}', [RwController::class, 'store'])->name('rw.update');
+        // Route::delete('wilayah-administratif/rw/{rw}', [RwController::class, 'destroy'])->name('rw.destroy');
         Route::resource('wilayah-administratif/rw', RwController::class);
         Route::resource('wilayah-administratif/rt', RtController::class);
-        Route::resource('wilayah-administratif/kampung', KpController::class);
+        // Route::resource('wilayah-administratif/kampung', KpController::class);
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
