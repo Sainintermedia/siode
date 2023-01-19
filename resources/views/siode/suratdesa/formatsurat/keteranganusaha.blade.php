@@ -1,5 +1,5 @@
 @extends('layouts.surat.legalsurat')
-@section('title', 'Surat Kematian')
+@section('title', 'Surat Keterangan Usaha')
 @section('content')
     {{-- <table> --}}
         <table border="0" align="center"> 
@@ -15,13 +15,13 @@
             <td colspan="2"><hr></td>
         </tr>
         <tr>
-            <td colspan="3" align="center" ><font size="5" class="thick"><u>SURAT KEMATIAN</u></font></td>
+            <td colspan="3" align="center" ><font size="5" class="thick"><u><b>SURAT KETERANGAN USAHA</b></u></font></td>
         </tr>
         <br>
         <br>     
-        <tr>
-            <td colspan="2"><font size="3">Yang bertanda tangan di bawah ini, Kepala Desa Sumurbandung Kecamatan Jayanti Kabupaten Tangerang,<br> menerangkan bahwa </font></td>
-        </tr>
+        </table>
+        <table width="700" align="center" border="0">
+            <td colspan="2"><font size="3"><p style="text-indent: 45px;">Yang bertanda tangan di bawah ini, Kepala Desa Sumurbandung Kecamatan Jayanti Kabupaten Tangerang, menerangkan bahwa</p></font></td>
         </table>
  
         <table width="500" align="center" border="0">
@@ -39,49 +39,52 @@
                 <td width="100"><font size="3"> : </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Warganegara</font></td>
+                <td width="100"><font size="3">Warganegara / Agama</font></td>
                 <td width="100"><font size="3"> :  </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Agama</font></td>
+                <td width="100"><font size="3">No KTP</font></td>
                 <td width="100"><font size="3"> :  </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Pekerjaan Terakhir</font></td>
+                <td width="100"><font size="3">Pekerjaan</font></td>
                 <td width="100"><font size="3"> : </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Tempat Tinggal Terakhir</font></td>
+                <td width="100"><font size="3">Alamat</font></td>
                 <td width="100"><font size="3"> : </font></td>
             </tr>
-            <br>
-            <tr>
         </table>
-        <table width="600" align="center" border="0">
-                <td colspan="2"><font size="3">Telah meninggal dunia pada :</font></td>
+        <table width="700" align="center" border="0">
+                <td colspan="2"><font size="3"><p style="text-indent: 45px;">Benar yang bersangkutan pada saat ini membuka/mempunyai usaha di Desa Bojongloa Kecamatan Cisoka Kabupaten Tangerang sebagaimana data tersebut di bawah ini:</p></font></td>
         </table>
-        <table width="500" align="center" border="0">   
-                <td width="100"><font size="3">Hari</font></td>
-                <td width="200"><font size="3"> :</font></td>
+        <table width="500" align="center" border="0">
             <tr>
-                <td width="100"><font size="3">Tanggal</font></td>
-                <td width="200"><font size="3"> :</font></td>
+                <td width="100"><font size="3">Nama Usaha</font></td>
+                <td width="400"><font size="3"> : </font></td> 
+                {{-- {{ $familycards->nama }} --}}
             </tr>
             <tr>
-                <td width="100"><font size="3">Disebabkan karena</font></td>
+                <td  width="200"><font size="3">Jenis Usaha</font></td>
                 <td width="200"><font size="3"> :</font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Di</font></td>
-                <td width="200"><font size="3"> : </font></td>
+                <td width="100"><font size="3">Penanggung Jawab</font></td>
+                <td width="100"><font size="3"> : </font></td>
             </tr>
-            <br>
+            <tr>
+                <td width="100"><font size="3">Alamat Usaha</font></td>
+                <td width="100"><font size="3"> :  </font></td>
+            </tr>
         </table>
-        <br>
         <table  width="700" border="0" align="center"> 
             <tr>
-                <td colspan="2"><font size="3">Demikian surat keterangan ini dibuat dengan sebenar-benarnya untuk dapat
-                   <br>dipergunakan sebagaimana mestinya</font></td>
+                <td colspan="2"><font size="3">Surat keterangan usaha ini bukan merupakan izin tetap, melainkan dari proses perizinan selanjutnya.</font></td>
+            </tr>
+        </table>
+        <table  width="700" border="0" align="center"> 
+            <tr>
+                <td colspan="2"><font size="3"><p style="text-indent: 45px;">Demikian surat keterangan ini dibuat dengan sebenar-benarnya untuk dapat dipergunakan sebagaimana mestinya</p></font></td>
             </tr>
         </table>
        <br>

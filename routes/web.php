@@ -12,6 +12,13 @@ use App\Http\Controllers\Admin\PermissionsController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
 use App\Http\Controllers\Siode\Surat\KematianController;
+use App\Http\Controllers\Siode\Surat\KeteranganlahirController;
+use App\Http\Controllers\Siode\Surat\KeterangantidakmampuController;
+use App\Http\Controllers\Siode\Surat\KeteranganskckController;
+use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
+use App\Http\Controllers\Siode\Surat\KeteranganizinrameController;
+use App\Http\Controllers\Siode\Surat\KeteranganahliwarisController;
+
 use App\Http\Controllers\Siode\Surat\TidakMampuController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Dropdown\DependentDropdownController;
@@ -99,9 +106,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
 
         Route::post('wilayah-administratif/rw-autocomplete', [RwController::class, 'autocomplete'])->name('rw.autocomplete');
+        // Route::get('wilayah-administratif/rw', [RwController::class, 'index'])->name('rw.index');
+        // Route::post('wilayah-administratif/rw', [RwController::class, 'store'])->name('rw.store');
+        // Route::put('wilayah-administratif/rw/{rw}', [RwController::class, 'store'])->name('rw.update');
+        // Route::delete('wilayah-administratif/rw/{rw}', [RwController::class, 'destroy'])->name('rw.destroy');
         Route::resource('wilayah-administratif/rw', RwController::class);
         Route::resource('wilayah-administratif/rt', RtController::class);
-        Route::resource('wilayah-administratif/kampung', KpController::class);
+        // Route::resource('wilayah-administratif/kampung', KpController::class);
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
@@ -116,7 +127,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
         Route::get('kematian', [KematianController::class, 'index'])->name('kematian.index');
-        Route::get('tidak-mampu', [TidakMampuController::class, 'index'])->name('tidak-mampu.index');
+        Route::get('keteranganlahir', [KeteranganlahirController::class, 'index'])->name('keteranganlahir.index');
+        Route::get('tidak-mampu', [KeterangantidakMampuController::class, 'index'])->name('tidak-mampu.index');
+        Route::get('skck', [KeteranganskckController::class, 'index'])->name('skck.index');
+        Route::get('keteranganusaha', [KeteranganusahaController::class, 'index'])->name('keteranganusaha.index');
+        Route::get('keteranganizinrame', [KeteranganizinrameController::class, 'index'])->name('keteranganizinrame.index');
+        Route::get('keteranganahliwaris', [KeteranganahliwarisController::class, 'index'])->name('keteranganahliwaris.index');
     });
 });
 //// ROUTE UNTUK DROPDOWN WILAYAH ////

@@ -1,5 +1,5 @@
 @extends('layouts.surat.legalsurat')
-@section('title', 'Surat Kematian')
+@section('title', 'Surat Keteranganlahir')
 @section('content')
     {{-- <table> --}}
         <table border="0" align="center"> 
@@ -15,7 +15,7 @@
             <td colspan="2"><hr></td>
         </tr>
         <tr>
-            <td colspan="3" align="center" ><font size="5" class="thick"><u>SURAT KEMATIAN</u></font></td>
+            <td colspan="3" align="center" ><font size="5" class="thick"><u>SURAT KETERANGAN LAHIR</u></font></td>
         </tr>
         <br>
         <br>     
@@ -39,43 +39,76 @@
                 <td width="100"><font size="3"> : </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Warganegara</font></td>
+                <td width="100"><font size="3">Hari/ Jam</font></td>
                 <td width="100"><font size="3"> :  </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Agama</font></td>
+                <td width="100"><font size="3">Warganegara / Agama</font></td>
                 <td width="100"><font size="3"> :  </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Pekerjaan Terakhir</font></td>
+                <td width="100"><font size="3">Alamat</font></td>
                 <td width="100"><font size="3"> : </font></td>
             </tr>
-            <tr>
-                <td width="100"><font size="3">Tempat Tinggal Terakhir</font></td>
-                <td width="100"><font size="3"> : </font></td>
-            </tr>
-            <br>
-            <tr>
         </table>
         <table width="600" align="center" border="0">
-                <td colspan="2"><font size="3">Telah meninggal dunia pada :</font></td>
+                <td colspan="2"><font size="3">Berdasarkan surat keterangan dari ketua RT dan RW nama tersebut benar penduduk Desa Bojongloa Kecamatan Cisoka Kabupaten Tangerang, dan nama tersebut diatas adalah anak kandung dari suami/istri yang ke- :  6 (Keenam) :</font></td>
         </table>
-        <table width="500" align="center" border="0">   
-                <td width="100"><font size="3">Hari</font></td>
-                <td width="200"><font size="3"> :</font></td>
+        <table width="550" align="center" border="1">   
+            <td width="200"><font size="3">Suami</font></td>
             <tr>
-                <td width="100"><font size="3">Tanggal</font></td>
+            </tr>
+        </table>
+        <table width="500" align="center" border="0">
+            <tr>
+                <td width="100"><font size="3">Nama</font></td>
+                <td width="400"><font size="3"> : </font></td> 
+                {{-- {{ $familycards->nama }} --}}
+            </tr>
+            <tr>
+                <td  width="200"><font size="3">Tempat, Tgl Lahir</font></td>
                 <td width="200"><font size="3"> :</font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Disebabkan karena</font></td>
+                <td width="100"><font size="3">Jenis Kelamin</font></td>
+                <td width="100"><font size="3"> : </font></td>
+            </tr>
+            <tr>
+                <td width="100"><font size="3">Warganegara / Agama</font></td>
+                <td width="100"><font size="3"> :  </font></td>
+            </tr>
+            <tr>
+                <td width="100"><font size="3">Alamat</font></td>
+                <td width="100"><font size="3"> : </font></td>
+            </tr>
+        </table>
+        <table width="550" align="center" border="1">   
+            <td width="200"><font size="3">Istri</font></td>
+            <tr>
+            </tr>
+        </table>
+        <table width="500" align="center" border="0">
+            <tr>
+                <td width="100"><font size="3">Nama</font></td>
+                <td width="400"><font size="3"> : </font></td> 
+                {{-- {{ $familycards->nama }} --}}
+            </tr>
+            <tr>
+                <td  width="200"><font size="3">Tempat, Tgl Lahir</font></td>
                 <td width="200"><font size="3"> :</font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Di</font></td>
-                <td width="200"><font size="3"> : </font></td>
+                <td width="100"><font size="3">Jenis Kelamin</font></td>
+                <td width="100"><font size="3"> : </font></td>
             </tr>
-            <br>
+            <tr>
+                <td width="100"><font size="3">Warganegara / Agama</font></td>
+                <td width="100"><font size="3"> :  </font></td>
+            </tr>
+            <tr>
+                <td width="100"><font size="3">Alamat</font></td>
+                <td width="100"><font size="3"> : </font></td>
+            </tr>
         </table>
         <br>
         <table  width="700" border="0" align="center"> 
