@@ -1,5 +1,5 @@
 @extends('layouts.surat.legalsurat')
-@section('title', 'Surat Kematian')
+@section('title', 'Surat Keterangan Tidak Mampu')
 @section('content')
     {{-- <table> --}}
         <table border="0" align="center"> 
@@ -15,7 +15,7 @@
             <td colspan="2"><hr></td>
         </tr>
         <tr>
-            <td colspan="3" align="center" ><font size="5" class="thick"><u>SURAT KEMATIAN</u></font></td>
+            <td colspan="3" align="center" ><font size="5" class="thick"><u>SURAT KETERANGAN TIDAK MAMPU</u></font></td>
         </tr>
         <br>
         <br>     
@@ -47,41 +47,27 @@
                 <td width="100"><font size="3"> :  </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Pekerjaan Terakhir</font></td>
+                <td width="100"><font size="3">Pekerjaan</font></td>
                 <td width="100"><font size="3"> : </font></td>
             </tr>
             <tr>
-                <td width="100"><font size="3">Tempat Tinggal Terakhir</font></td>
+                <td width="100"><font size="3">Alamat</font></td>
                 <td width="100"><font size="3"> : </font></td>
             </tr>
             <br>
             <tr>
         </table>
-        <table width="600" align="center" border="0">
-                <td colspan="2"><font size="3">Telah meninggal dunia pada :</font></td>
-        </table>
-        <table width="500" align="center" border="0">   
-                <td width="100"><font size="3">Hari</font></td>
-                <td width="200"><font size="3"> :</font></td>
+        <br>
+        <table  width="700" border="0" align="center"> 
             <tr>
-                <td width="100"><font size="3">Tanggal</font></td>
-                <td width="200"><font size="3"> :</font></td>
+                <td colspan="2"><font size="3">Bahwa benar nama tersebut diatas adalah penduduk Desa Bojongloa Kecamatan Cisoka Kabupaten Tangerang, dan menurut keterangan RT dan RW setempat dimana yang bersangkutan benar  <b>Keluarga Miskin/Berekonomi Lemah/Keluarga Tidak Mampu</b>.</font></td>
             </tr>
-            <tr>
-                <td width="100"><font size="3">Disebabkan karena</font></td>
-                <td width="200"><font size="3"> :</font></td>
-            </tr>
-            <tr>
-                <td width="100"><font size="3">Di</font></td>
-                <td width="200"><font size="3"> : </font></td>
-            </tr>
-            <br>
         </table>
         <br>
         <table  width="700" border="0" align="center"> 
             <tr>
                 <td colspan="2"><font size="3">Demikian surat keterangan ini dibuat dengan sebenar-benarnya untuk dapat
-                   <br>dipergunakan sebagaimana mestinya</font></td>
+                    dipergunakan <br>sebagaimana mestinya</font></td>
             </tr>
         </table>
        <br>
