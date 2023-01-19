@@ -42,7 +42,7 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>{{ $kkanggotalaki }}</h3>
-                            <p>Jumlah Penduduk Laki-laki</p>
+                            <p>Penduduk Laki-laki</p>
                         </div>
                         <div class="icon">
                             {{--  <i class="ion ion-bag"></i>  --}}
@@ -55,7 +55,7 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>{{ $kkanggotaperempuan }}</h3>
-                            <p>Jumlah Penduduk Perempuan</p>
+                            <p>Penduduk Perempuan</p>
                         </div>
                         <div class="icon">
                             {{--  <i class="ion ion-bag"></i>  --}}

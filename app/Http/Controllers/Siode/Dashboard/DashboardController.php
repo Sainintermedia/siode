@@ -12,18 +12,25 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // $rtrt = RtRw::with(['keluargart' => function ($q){
-        //     $q->withCount('kartukeluargaanggota');
-        // }])->get();
-
-        
-        $kk = KartuKeluarga::select('id')->count();
+        $kk = KartuKeluargaAnggota::select('id', 'sts_hub_kel')
+            ->whereSts_hub_kel(1)
+            ->count();
         $pen = KartuKeluargaAnggota::select('id')->count();
-        $rt = KartuKeluarga::select('rt')->get()->groupBy('rt');
-        $rw = KartuKeluarga::select('rw')->get()->groupBy('rw');
-        $kp = KartuKeluarga::select('kp')->get()->groupBy('kp');
-        $kkanggotalaki = KartuKeluargaAnggota::select('jenkel')->whereJenkel('1')->count();
-        $kkanggotaperempuan = KartuKeluargaAnggota::select('jenkel')->whereJenkel('2')->count();
-        return view('siode.dashboard.dashboard', compact('rt', 'rw', 'kk', 'pen','kkanggotalaki','kkanggotaperempuan'));
+        $rt = KartuKeluarga::select('id', 'rt')
+            ->get()
+            ->groupBy('rt');
+        $rw = KartuKeluarga::select('id', 'rw')
+            ->get()
+            ->groupBy('rw');
+        $kp = KartuKeluarga::select('id', 'kp')
+            ->get()
+            ->groupBy('kp');
+        $kkanggotalaki = KartuKeluargaAnggota::select('jenkel')
+            ->whereJenkel('1')
+            ->count();
+        $kkanggotaperempuan = KartuKeluargaAnggota::select('jenkel')
+            ->whereJenkel('2')
+            ->count();
+        return view('siode.dashboard.dashboard', compact('rt', 'rw', 'kk', 'pen', 'kkanggotalaki', 'kkanggotaperempuan'));
     }
 }
