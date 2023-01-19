@@ -4,19 +4,10 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
-                <P>JUMLAH PENDUDUK</P>
-                <button class="btn btn-xs bg-gradient-primary"><i class="fa-solid fa-square-plus"></i> Tambah</button>
-                <button class="btn btn-xs bg-gradient-danger"><i class="fa-solid fa-trash"></i> Trash</button>
+                <P>Grafik Desa</P>
             </h3>
             <div class="card-tools">
-                <div class="input-group input-group-sm" style="width: 250px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="card-body">
@@ -47,6 +38,32 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ $kkanggotalaki }}</h3>
+                            <p>Jumlah Penduduk Laki-laki</p>
+                        </div>
+                        <div class="icon">
+                            {{--  <i class="ion ion-bag"></i>  --}}
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ $kkanggotaperempuan }}</h3>
+                            <p>Jumlah Penduduk Perempuan</p>
+                        </div>
+                        <div class="icon">
+                            {{--  <i class="ion ion-bag"></i>  --}}
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -64,7 +81,7 @@
                             <div class="inner">
                                 <h3>RW {{ $key }}</h3>
                                 <p>{{ $rwr->count() }}<sup style="font-size: 20px"></sup></p>
-                                
+
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
@@ -133,7 +150,7 @@
                 @endforelse
             </div>
         </div>
-        
+
         <div class="card-footer">
 
         </div>

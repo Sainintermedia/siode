@@ -12,20 +12,18 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $input = array("bg-danger", "bg-primary", "bg-info", "bg-success", "bg-warning");
-        $rand_keys = array_rand($input, 2);
-        $ran = $input[$rand_keys[0]];  
-        
-        $rtrt = RtRw::with(['keluargart' => function ($q){
-            $q->withCount('kartukeluargaanggota');
-        }])->get();
+        // $rtrt = RtRw::with(['keluargart' => function ($q){
+        //     $q->withCount('kartukeluargaanggota');
+        // }])->get();
 
         
-        $kk = KartuKeluarga::select('id')->get()->count();
-        $pen = KartuKeluargaAnggota::select('id')->get()->count();
-        $rt = KartuKeluarga::get()->groupBy('rt');
-        $rw = KartuKeluarga::get()->groupBy('rw');
-        $kp = KartuKeluarga::get()->groupBy('kp');
-        return view('siode.dashboard.dashboard', compact('rt', 'ran', 'rw', 'kk', 'pen'));
+        $kk = KartuKeluarga::select('id')->count();
+        $pen = KartuKeluargaAnggota::select('id')->count();
+        $rt = KartuKeluarga::select('rt')->get()->groupBy('rt');
+        $rw = KartuKeluarga::select('rw')->get()->groupBy('rw');
+        $kp = KartuKeluarga::select('kp')->get()->groupBy('kp');
+        $kkanggotalaki = KartuKeluargaAnggota::select('jenkel')->whereJenkel('1')->count();
+        $kkanggotaperempuan = KartuKeluargaAnggota::select('jenkel')->whereJenkel('2')->count();
+        return view('siode.dashboard.dashboard', compact('rt', 'rw', 'kk', 'pen','kkanggotalaki','kkanggotaperempuan'));
     }
 }
