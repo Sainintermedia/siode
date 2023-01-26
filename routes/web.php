@@ -19,6 +19,11 @@ use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
 use App\Http\Controllers\Siode\Surat\KeteranganizinrameController;
 use App\Http\Controllers\Siode\Surat\KeteranganahliwarisController;
 
+use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\BukukearsipanController;
+
+
 use App\Http\Controllers\Siode\Surat\TidakMampuController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Dropdown\DependentDropdownController;
@@ -134,6 +139,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('keteranganizinrame', [KeteranganizinrameController::class, 'index'])->name('keteranganizinrame.index');
         Route::get('keteranganahliwaris', [KeteranganahliwarisController::class, 'index'])->name('keteranganahliwaris.index');
     });
+    Route::group(['middleware' => ['auth'], 'prefix' => 'bukuadministrasidesa', 'as' => 'buku.'], function () {
+        Route::get('umum', [UmumController::class, 'index'])->name('umum.index');
+        Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
+        Route::get('kearsipan', [BukukearsipanController::class, 'index'])->name('kearsipan.index');
+     });
 });
 //// ROUTE UNTUK DROPDOWN WILAYAH ////
 Route::get('dependent-dropdown', [DependentDropdownController::class, 'index'])->name('dependent-dropdown.index');

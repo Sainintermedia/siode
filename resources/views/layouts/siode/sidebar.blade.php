@@ -148,13 +148,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.buku.umum.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-blue"></i>
                                 <p>Umum</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.buku.bukupenduduk.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-white"></i>
                                 <p>Penduduk</p>
                             </a>
@@ -166,7 +166,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.buku.kearsipan.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Arsip Desa</p>
                             </a>

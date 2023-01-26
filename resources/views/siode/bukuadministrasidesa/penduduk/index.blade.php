@@ -1,10 +1,10 @@
 @extends('layouts.siode.app')
-@section('title', 'Umum')
+@section('title', 'Penduduk')
 @section('content')
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
-                <P>Buku Administrasi Desa Umum</P>
+                <P>Buku Administrasi Desa Penduduk</P>
                 </h3>
             <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 250px;">
@@ -22,7 +22,7 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>BUKU PERATURAN DI DESA
+                            <h4>BUKU INDUK PENDUDUK
                             </h4>
                         </div>
                         <div class="icon">
@@ -35,7 +35,7 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>BUKU KEPUTUSAN KEPALA DESA
+                            <h4>BUKU MUTASI PENDUDUK DESA
                             </h4>
                         </div>
                         <div class="icon">
@@ -48,7 +48,7 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>BUKU APARAT PEMERINTAH DESA
+                            <h4>BUKU REKAPITULASI JUMLAH PENDUDUK
                             </h4>
                         </div>
                         <div class="icon">
@@ -61,7 +61,7 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>BUKU TANAH KAS DESA
+                            <h4>BUKU PENDUDUK SEMENTARA
                             </h4>
                         </div>
                         <div class="icon">
@@ -74,46 +74,8 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>BUKU TANAH DI DESA
-                            </h4>
-                        </div>
-                        <div class="icon">
-                            {{--  <i class="ion ion-bag"></i>  --}}
-                            <i class="fa-solid fa-chart-simple"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h4>BUKU AGENDA
-                            </h4>
-                        </div>
-                        <div class="icon">
-                            {{--  <i class="ion ion-bag"></i>  --}}
-                            <i class="fa-solid fa-chart-simple"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h4>BUKU EKSPEDISI
-                            </h4>
-                        </div>
-                        <div class="icon">
-                            {{--  <i class="ion ion-bag"></i>  --}}
-                            <i class="fa-solid fa-chart-simple"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h4>BUKU LEMBARAN DESA DAN BERITA DESA
+                            <h4>BUKU KARTU TANDA PENDUDUK DAN BUKU KARTU KELUARGA 
+
                             </h4>
                         </div>
                         <div class="icon">
