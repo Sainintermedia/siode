@@ -9,11 +9,11 @@ use App\Http\Requests\Auth\LoginRequest;
 
 class LoginController extends Controller
 {
-    protected $redirectTo = '/login';
+    protected $redirectTo = '/login-admin-siode';
     
     public function __construct()
     {
-        $this->redirectTo = redirect('login');
+        $this->redirectTo = redirect('login-admin-siode');
     }
     /**
      * Display login page.
@@ -38,7 +38,7 @@ class LoginController extends Controller
 
         if (!Auth::validate($credentials)):
             return redirect()
-                ->to('login')
+                ->to('login-admin-siode')
                 ->with('error', 'username atau password yang anda masukan salah');
         endif;
 
