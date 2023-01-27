@@ -3,6 +3,9 @@
 
 <head>
     @include('layouts.siode.styles')
+    <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.css') }}">
+    {{--  <link rel="stylesheet"
+        href="{{ URL::asset('assets/dist/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">  --}}
     @stack('styles')
 </head>
 
@@ -22,7 +25,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                @if (Session::has('success'))
+                                {{--  @if (Session::has('success'))
                                     <div class="alert alert-success alert-dismissible">
                                         <button type="button" class="close btn-sm btn" data-dismiss="alert"
                                             aria-hidden="true">×</button>
@@ -37,7 +40,7 @@
                                         <h5><i class="icon fas fa-ban"></i> Alert!</h5>
                                         Error, {{ session('error') }}
                                     </div>
-                                @endif
+                                @endif  --}}
 
                                 {{--  message validate  --}}
                                 @if (session('message'))
@@ -68,6 +71,9 @@
 
             <div class="content">
                 <div class="container-fluid">
+                    {{--  <button type="button" class="btn btn-success toastsDefaultSuccess">
+                        Launch Success Toast
+                    </button>  --}}
                     @yield('content')
                 </div>
             </div>
@@ -95,6 +101,19 @@
 
     @include('layouts.siode.scripts')
     @stack('scripts')
+
+    <script src="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            toastr.options.timeOut = 10000;
+            @if (Session::has('error'))
+                toastr.error('{{ Session::get('error') }}');
+            @elseif (Session::has('success'))
+                toastr.success('{{ Session::get('success') }}');
+            @endif
+        });
+    </script>
 </body>
 
 </html>

@@ -46,7 +46,7 @@
                                     <td class="text-center">
                                         <div class="btn-group text-center">
                                             <button type="button"
-                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-sm"
+                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-xs"
                                                 data-toggle="dropdown">
                                                 <span class="bg-gradient-success sr-only">Toggle Dropdown</span>
                                             </button>

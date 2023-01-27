@@ -14,7 +14,7 @@
         </div>
     @endif
 @endif  --}}
-@if (Session::has('success'))
+{{--  @if (Session::has('success'))
     <div class="alert alert-success" role="alert">
         <i class="fa fa-check"></i>{{ session('success') }}
     </div>
@@ -24,4 +24,4 @@
         <button type="button" class="close btn-sm btn" data-dismiss="alert" aria-hidden="true">×</button>
         <i class="icon fas fa-ban"></i>{{ session('error') }}
     </div>
-@endif
+@endif  --}}

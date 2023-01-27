@@ -46,7 +46,7 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return $this->authenticated($request, $user)->redirectTo = redirect('siode/dashboard');;
+        return $this->authenticated($request, $user)->redirectTo = redirect('siode/dashboard')->with('success', 'Anda berhasil login !');
     }
 
     /**
