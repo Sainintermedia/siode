@@ -6,7 +6,7 @@
             <div class="card card-dark card-outline table-responsive">
                 <div class="card-header">
                     <div class="card-title">
-                        <a href="{{ route('siode.kependudukan.kartu-keluarga.create') }}"
+                        <a href="{{ route('siode.kependudukan.kepala-keluarga.create') }}"
                             class="btn btn-xs bg-gradient-primary"><i class="fa-solid fa-plus"></i>
                             Tambah</a>
                         <a href="{{ route('siode.kependudukan.kartu-keluarga.view-delete') }}"
@@ -46,20 +46,20 @@
                                     <td class="text-center">
                                         <div class="btn-group text-center">
                                             <button type="button"
-                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-sm"
+                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-xs"
                                                 data-toggle="dropdown">
                                                 <span class="bg-gradient-success sr-only">Toggle Dropdown</span>
                                             </button>
                                             <div class="dropdown-menu" role="menu">
-                                                <form method="POST" action="{!! route('siode.kependudukan.kartu-keluarga.destroy', $fm->id) !!}" class="text-center">
+                                                <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.destroy', $fm->id) !!}" class="text-center">
                                                     @csrf
                                                     @method('delete')
                                                     <a class="dropdown-item bg-gradient-info"
-                                                        href="{{ route('siode.kependudukan.kartu-keluarga.show', $fm->no_kk) }}"><i
+                                                        href="{{ route('siode.kependudukan.kepala-keluarga.show', $fm->no_kk) }}"><i
                                                             class="fa-solid fa-eye"></i>
                                                         View</a>
                                                     <a class="dropdown-item bg-gradient-warning"
-                                                        href="{{ route('siode.kependudukan.kartu-keluarga.edit', $fm->id) }}"><i
+                                                        href="{{ route('siode.kependudukan.kepala-keluarga.edit', $fm->id) }}"><i
                                                             class="fa-solid fa-pen"></i>
                                                         Edit</a>
                                                     <a class="dropdown-item bg-gradient-danger show_confirm"

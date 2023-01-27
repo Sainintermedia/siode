@@ -6,8 +6,8 @@
             <div class="card card-warning card-outline table-responsive">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <a href="{{ route('siode.kependudukan.kartu-keluarga.index') }}"
-                            class="btn btn-xs bg-gradient-navy"><i class="fa-sharp fa-solid fa-backward-step"></i> Kembali</a>
+                        <a href="{{ url()->previous() }}" class="btn btn-xs bg-gradient-navy"><i
+                                class="fa-sharp fa-solid fa-backward-step"></i> Kembali</a>
                     </h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -52,7 +52,6 @@
                                     </td>
                                     <td class="text-center">
                                         <div class="btn-group text-center">
-                                            {{--  <button type="button" class="btn bg-gradient-success btn-sm"></button>  --}}
                                             <button type="button"
                                                 class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-sm"
                                                 data-toggle="dropdown">
@@ -63,7 +62,7 @@
                                                     @csrf
                                                     @method('delete')
                                                     <a class="dropdown-item bg-gradient-info"
-                                                        href="{{ route('siode.kependudukan.kartu-keluarga.show', $fm->id) }}"><i
+                                                        href="{{ route('siode.kependudukan.kepala-keluarga.show', $fm->id) }}"><i
                                                             class="fa-solid fa-eye"></i>
                                                         View</a>
                                                     <a class="dropdown-item bg-gradient-warning show_restore"
@@ -80,20 +79,6 @@
                                         </div>
                                     </td>
                                 </tr>
-
-                                {{--  <td style="width: 175px">
-                                        <form method="POST" action="{!! route('siode.kependudukan.keluarga.destroy', $population->id) !!}" class="text-center">
-                                            @csrf
-                                            @method('delete')
-                                            <a href="{!! route('siode.kependudukan.kk') !!}" class="btn bg-gradient-info btn-xs text-xs">
-                                                <i class="fa-solid fa-eye"></i> Show</a>
-                                            <a href="{!! route('siode.kependudukan.keluarga.edit', $population->id) !!}"
-                                                class="btn bg-gradient-warning btn-xs text-xs">
-                                                <i class="fa-solid fa-pen"></i> Edit</a>
-                                            <button type="submit" class="btn bg-gradient-danger btn-xs text-xs"
-                                                name="button"><i class="fa-solid fa-trash"></i> Delete</button>
-                                        </form>
-                                    </td>  --}}
                             @empty
                                 <h4>tidak ada data</h4>
                             @endforelse
@@ -153,32 +138,6 @@
                         swal(
                             'Terhapus!',
                             'Data berhasil di Hapus!',
-                            'success'
-                        )
-                    }
-                });
-        });
-        $('.show_restore').click(function(event) {
-            var form = $(this).closest("form");
-            var name = $(this).data("name");
-            var nama_data = $(this).attr('data-nama');
-            event.preventDefault();
-            swal({
-                    title: `Apakah anda yakin ?`,
-                    text: "Data " + nama_data + " akan dipulihkan !",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        form.submit();
-                        swal(
-                            'Dipulihkan !',
-                            'Data berhasil di dipulihkan !',
                             'success'
                         )
                     }

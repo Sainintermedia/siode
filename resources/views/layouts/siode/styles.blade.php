@@ -14,3 +14,4 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/fontawesome-free/css/all.min.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('assets/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.css') }}">

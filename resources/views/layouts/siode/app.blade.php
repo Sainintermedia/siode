@@ -22,7 +22,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                @if (Session::has('success'))
+                                {{--  @if (Session::has('success'))
                                     <div class="alert alert-success alert-dismissible">
                                         <button type="button" class="close btn-sm btn" data-dismiss="alert"
                                             aria-hidden="true">×</button>
@@ -37,7 +37,7 @@
                                         <h5><i class="icon fas fa-ban"></i> Alert!</h5>
                                         Error, {{ session('error') }}
                                     </div>
-                                @endif
+                                @endif  --}}
 
                                 {{--  message validate  --}}
                                 @if (session('message'))
@@ -95,6 +95,7 @@
 
     @include('layouts.siode.scripts')
     @stack('scripts')
+
 </body>
 
 </html>

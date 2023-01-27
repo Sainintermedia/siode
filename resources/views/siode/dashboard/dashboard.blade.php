@@ -158,12 +158,13 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="{!! URL::asset('assets/dist/plugins/ionicons/css/ionicons.min.css') !!}">
+    {{--  <link rel="stylesheet" href="{!! URL::asset('assets/dist/plugins/ionicons/css/ionicons.min.css') !!}">  --}}
+    {{--  <link rel="stylesheet" href="{!! URL::asset('assets/dist/plugins/ionicons/ionicicon.js') !!}">  --}}
 @endpush
 
 @push('scripts')
     <script>
         // Your custom JavaScript...
     </script>
-    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    {{--  <script src="{!! URL::asset('assets/dist/plugins/ionicons/ionicicon.js') !!}"></script>  --}}
 @endpush

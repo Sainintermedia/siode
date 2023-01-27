@@ -47,16 +47,16 @@
                                         <div class="btn-group text-center">
                                             {{--  <button type="button" class="btn bg-gradient-success btn-sm">Action</button>  --}}
                                             <button type="button"
-                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-sm"
+                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-xs"
                                                 data-toggle="dropdown">
                                                 <span class="bg-gradient-success sr-only">Toggle Dropdown</span>
                                             </button>
                                             <div class="dropdown-menu" role="menu">
-                                                <form method="POST" action="{!! route('siode.kependudukan.kartu-keluarga.destroy', $fm->id) !!}" class="text-center">
+                                                <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.destroy', $fm->id) !!}" class="text-center">
                                                     @csrf
                                                     @method('delete')
                                                     <a class="dropdown-item bg-gradient-info"
-                                                        href="{{ route('siode.kependudukan.kartu-keluarga.show', $fm->no_kk) }}"><i
+                                                        href="{{ route('siode.kependudukan.kepala-keluarga.show', $fm->no_kk) }}"><i
                                                             class="fa-solid fa-eye"></i>
                                                         View</a>
                                                     <a class="dropdown-item bg-gradient-warning"

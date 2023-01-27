@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="card card-dark card-outline">
-        <form method="POST" action="{!! route('siode.kependudukan.kartu-keluarga.store') !!}" enctype="multipart/form-data" autocomplete="off">
+        <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.store') !!}" enctype="multipart/form-data" autocomplete="off">
             @csrf
             <div class="card-header">
                 <div class="card-title">
