@@ -4,8 +4,6 @@
 <head>
     @include('layouts.siode.styles')
     <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.css') }}">
-    {{--  <link rel="stylesheet"
-        href="{{ URL::asset('assets/dist/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">  --}}
     @stack('styles')
 </head>
 
@@ -71,9 +69,6 @@
 
             <div class="content">
                 <div class="container-fluid">
-                    {{--  <button type="button" class="btn btn-success toastsDefaultSuccess">
-                        Launch Success Toast
-                    </button>  --}}
                     @yield('content')
                 </div>
             </div>
@@ -101,7 +96,6 @@
 
     @include('layouts.siode.scripts')
     @stack('scripts')
-
     <script src="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.js') }}"></script>
 
     <script>
