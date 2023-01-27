@@ -3,7 +3,6 @@
 
 <head>
     @include('layouts.siode.styles')
-    <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.css') }}">
     @stack('styles')
 </head>
 
@@ -96,18 +95,7 @@
 
     @include('layouts.siode.scripts')
     @stack('scripts')
-    <script src="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.js') }}"></script>
 
-    <script>
-        $(document).ready(function() {
-            toastr.options.timeOut = 10000;
-            @if (Session::has('error'))
-                toastr.error('{{ Session::get('error') }}');
-            @elseif (Session::has('success'))
-                toastr.success('{{ Session::get('success') }}');
-            @endif
-        });
-    </script>
 </body>
 
 </html>
