@@ -248,6 +248,16 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('siode.buku.kearsipan.peta.petalokasi') }}" class="nav-link">
+                        <i class="nav-icon fas fa-university text-info"></i>
+                        <p>
+                            Peta Desa
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
+
 
 
                 {{--  user  --}}

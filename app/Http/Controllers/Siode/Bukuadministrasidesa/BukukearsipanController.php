@@ -11,4 +11,8 @@ class BukukearsipanController extends Controller
     {   
         return view('siode.bukuadministrasidesa.kearsipan.index');
     }
+    public function petalokasi()
+    {   
+        return view('siode.bukuadministrasidesa.kearsipan.petalokasi');
+    }
 }

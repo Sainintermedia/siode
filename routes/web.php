@@ -143,6 +143,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('umum', [UmumController::class, 'index'])->name('umum.index');
         Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
         Route::get('kearsipan', [BukukearsipanController::class, 'index'])->name('kearsipan.index');
+        Route::get('kearsipan/peta', [BukukearsipanController::class, 'petalokasi'])->name('kearsipan.peta.petalokasi');
      });
 });
 //// ROUTE UNTUK DROPDOWN WILAYAH ////
