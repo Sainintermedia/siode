@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="card card-dark card-outline rounded-0">
-        <form method="POST" action="{!! route('siode.kependudukan.kartu-keluarga.update', $kartukeluargaanggota->id) !!}" enctype="multipart/form-data" autocomplete="off">
+        <form method="POST" action="{!! route('siode.kependudukan.kepala-keluarga.update', $kartukeluargaanggota->id) !!}" enctype="multipart/form-data" autocomplete="off">
             @csrf
             @method('PUT')
             {{--  <input type="text" name="memberid" value="{{ $kartukeluargaanggota->id }}">  --}}

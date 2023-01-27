@@ -6,8 +6,8 @@
             <div class="card card-warning card-outline table-responsive">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <a href="{{ route('siode.kependudukan.kartu-keluarga.index') }}"
-                            class="btn btn-xs bg-gradient-navy"><i class="fa-sharp fa-solid fa-backward-step"></i> Kembali</a>
+                        <a href="{{ url()->previous() }}" class="btn btn-xs bg-gradient-navy"><i
+                                class="fa-sharp fa-solid fa-backward-step"></i> Kembali</a>
                     </h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
