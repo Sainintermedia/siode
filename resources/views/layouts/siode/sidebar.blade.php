@@ -63,7 +63,10 @@
                     </a>
                     <ul class="nav nav-treeview {!! request()->is(['siode/info-desa']) || request()->is(['siode/info-desa/*']) ? 'menu-open' : '' !!}" style="display: none;">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.infodesa.identitas-desa.index') }}"
+                                class="nav-link {!! request()->is(['siode/info-desa/identitas-desa']) || request()->is(['siode/info-desa/identitas-desa/*'])
+                                    ? 'active'
+                                    : '' !!}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Identitas Desa</p>
                             </a>

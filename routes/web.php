@@ -14,28 +14,29 @@ use App\Http\Controllers\Admin\PermissionsController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
 use App\Http\Controllers\Siode\Surat\KematianController;
-use App\Http\Controllers\Siode\Surat\KeteranganlahirController;
-use App\Http\Controllers\Siode\Surat\KeterangantidakmampuController;
-use App\Http\Controllers\Siode\Surat\KeteranganskckController;
-use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
-use App\Http\Controllers\Siode\Surat\KeteranganizinrameController;
-use App\Http\Controllers\Siode\Surat\KeteranganahliwarisController;
-
-use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\BukukearsipanController;
-
-
 use App\Http\Controllers\Siode\Surat\TidakMampuController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Dropdown\DependentDropdownController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
+use App\Http\Controllers\Siode\Surat\KeteranganskckController;
 use App\Http\Controllers\Siode\WilayahAdministratifController;
+
+use App\Http\Controllers\Siode\Surat\KeteranganlahirController;
+use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
 use App\Http\Controllers\Siode\WilayahAdministratif\KpController;
+
+
 use App\Http\Controllers\Siode\WilayahAdministratif\RtController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RwController;
+use App\Http\Controllers\Siode\Surat\KeteranganizinrameController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
+use App\Http\Controllers\Siode\Surat\KeteranganahliwarisController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RtRwController;
+use App\Http\Controllers\Siode\Surat\KeterangantidakmampuController;
+use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
 use App\Http\Controllers\Siode\WilayahAdministratif\DusunKpController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\BukukearsipanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,6 +120,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         // Route::delete('wilayah-administratif/rw/{rw}', [RwController::class, 'destroy'])->name('rw.destroy');
         Route::resource('wilayah-administratif/rw', RwController::class);
         Route::resource('wilayah-administratif/rt', RtController::class);
+        Route::resource('identitas-desa', IdentitasDesaController::class);
         // Route::resource('wilayah-administratif/kampung', KpController::class);
 
     });
