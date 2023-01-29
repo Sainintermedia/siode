@@ -43,6 +43,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('siode.beranda.beranda.index') }}" class="nav-link {!! request()->is(['siode/beranda']) || request()->is(['siode/beranda/*']) ? 'active' : '' !!}">
+                        <i class="nav-icon fas fa-house-user"></i>
+                        <p>
+                            Beranda
+                        </p>
+                    </a>
+                </li>
 
                 {{--  Info Desa  --}}
                 <li class="nav-item {!! request()->is(['siode/info-desa']) || request()->is(['siode/info-desa/*']) ? 'menu-open' : '' !!}">

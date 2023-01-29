@@ -22,42 +22,15 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>Buku Arsip Desa
+                            <h4>Sarana dan Prasarana
                             </h4>
                         </div>
                         <div class="icon">
                              {{-- <i class="ion ion-bag"></i>  --}}
                             {{-- <i class="fa-solid fa-chart-simple"></i> --}}
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
+                        <a href="{{ route('siode.buku.kearsipan.sarpras.sarpras') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h4>Buku Arsip Desa
-                            </h4>
-                        </div>
-                        <div class="icon">
-                             {{-- <i class="ion ion-bag"></i>  --}}
-                            {{-- <i class="fa-solid fa-chart-simple"></i> --}}
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                    
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h4>Buku Arsip Desa
-                            </h4>
-                        </div>
-                        <div class="icon">
-                             {{-- <i class="ion ion-bag"></i>  --}}
-                            {{-- <i class="fa-solid fa-chart-simple"></i> --}}
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     
                 </div>
