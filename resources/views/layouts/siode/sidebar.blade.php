@@ -223,13 +223,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.surat.surat.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-green"></i>
                                 <p>Pengaturan Surat</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('siode.surat.kematian.index') }}" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Cetak Surat</p>
                             </a>

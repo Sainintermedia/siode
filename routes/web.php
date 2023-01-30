@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Siode\Beranda\BerandaController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\Auth\LoginController;
@@ -13,26 +12,26 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\PermissionsController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
-use App\Http\Controllers\Siode\Surat\KematianController;
-use App\Http\Controllers\Siode\Surat\TidakMampuController;
+// use App\Http\Controllers\Siode\Surat\KematianController;
+use App\Http\Controllers\Siode\Surat\SuratController;
+use App\Http\Controllers\Siode\Beranda\BerandaController;
+// use App\Http\Controllers\Siode\Surat\TidakMampuController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Dropdown\DependentDropdownController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
-use App\Http\Controllers\Siode\Surat\KeteranganskckController;
+// use App\Http\Controllers\Siode\Surat\KeteranganskckController;
+
 use App\Http\Controllers\Siode\WilayahAdministratifController;
-
-use App\Http\Controllers\Siode\Surat\KeteranganlahirController;
-use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
+// use App\Http\Controllers\Siode\Surat\KeteranganlahirController;
+// use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
 use App\Http\Controllers\Siode\WilayahAdministratif\KpController;
-
-
 use App\Http\Controllers\Siode\WilayahAdministratif\RtController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RwController;
-use App\Http\Controllers\Siode\Surat\KeteranganizinrameController;
+// use App\Http\Controllers\Siode\Surat\KeteranganizinrameController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
-use App\Http\Controllers\Siode\Surat\KeteranganahliwarisController;
+// use App\Http\Controllers\Siode\Surat\KeteranganahliwarisController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RtRwController;
-use App\Http\Controllers\Siode\Surat\KeterangantidakmampuController;
+// use App\Http\Controllers\Siode\Surat\KeterangantidakmampuController;
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
 use App\Http\Controllers\Siode\WilayahAdministratif\DusunKpController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
@@ -135,13 +134,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
-        Route::get('kematian', [KematianController::class, 'index'])->name('kematian.index');
-        Route::get('keteranganlahir', [KeteranganlahirController::class, 'index'])->name('keteranganlahir.index');
-        Route::get('tidak-mampu', [KeterangantidakMampuController::class, 'index'])->name('tidak-mampu.index');
-        Route::get('skck', [KeteranganskckController::class, 'index'])->name('skck.index');
-        Route::get('keteranganusaha', [KeteranganusahaController::class, 'index'])->name('keteranganusaha.index');
-        Route::get('keteranganizinrame', [KeteranganizinrameController::class, 'index'])->name('keteranganizinrame.index');
-        Route::get('keteranganahliwaris', [KeteranganahliwarisController::class, 'index'])->name('keteranganahliwaris.index');
+        // Route::get('kematian', [KematianController::class, 'index'])->name('kematian.index');
+        // Route::get('keteranganlahir', [KeteranganlahirController::class, 'index'])->name('keteranganlahir.index');
+        // Route::get('tidak-mampu', [KeterangantidakMampuController::class, 'index'])->name('tidak-mampu.index');
+        // Route::get('skck', [KeteranganskckController::class, 'index'])->name('skck.index');
+        // Route::get('keteranganusaha', [KeteranganusahaController::class, 'index'])->name('keteranganusaha.index');
+        // Route::get('keteranganizinrame', [KeteranganizinrameController::class, 'index'])->name('keteranganizinrame.index');
+        // Route::get('keteranganahliwaris', [KeteranganahliwarisController::class, 'index'])->name('keteranganahliwaris.index');
+        Route::resource('/surat', SuratController::class);
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'bukuadministrasidesa', 'as' => 'buku.'], function () {
         Route::get('umum', [UmumController::class, 'index'])->name('umum.index');
