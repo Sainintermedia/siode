@@ -132,14 +132,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
-        Route::get('/buat-surat/{id}/{slug}', [CetakSuratController::class, 'create'])->name('buat-surat');
+        Route::get('/cetak-surat/{id}/{slug}/buat', [CetakSuratController::class, 'create'])->name('buat-surat');
         Route::get('/cetak-surat', [CetakSuratController::class, 'index'])->name('cetak-surat.index');
         Route::get('/cetak-surat/{cetak_surat}/edit', [CetakSuratController::class, 'edit'])->name('cetak-surat.edit');
         Route::get('/cetak-surat/{cetak_surat}', [CetakSuratController::class, 'show'])->name('cetak-surat.show');
         Route::patch('/cetak-surat/{cetak_surat}/arsip', [CetakSuratController::class, 'arsip'])->name('cetak-surat.arsip');
         Route::delete('/cetak-surat/{cetak_surat}', [CetakSuratController::class, 'destroy'])->name('cetak-surat.destroy');
         Route::post('/cetak-surat/{id}/{slug}', [CetakSuratController::class, 'store'])->name('cetak-surat.store');
-        Route::get('surat/{id}/{slug}', [CetakSuratController::class, 'indexView'])->name('surat.indexView');
+        Route::get('cetak-surat/{id}/{slug}', [CetakSuratController::class, 'indexView'])->name('surat.indexView');
         Route::get('/pilih-surat', [SuratController::class, 'layanan_surat'])->name('surat.layanan_surat');
         Route::resource('/surat', SuratController::class);
     });

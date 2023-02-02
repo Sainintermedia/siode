@@ -213,8 +213,8 @@
                 </li>
 
                 {{--  layanan Surat  --}}
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {!! request()->is(['siode/layanan-surat']) || request()->is(['siode/layanan-surat/*']) ? 'menu-open' : '' !!}">
+                    <a href="#" class="nav-link {!! request()->is(['siode/layanan-surat']) || request()->is(['siode/layanan-surat/*']) ? 'active' : '' !!}">
                         <i class="nav-icon fas fa-edit text-primary"></i>
                         <p>
                             Layanan Surat
@@ -223,13 +223,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('siode.surat.surat.index') }}" class="nav-link">
+                            <a href="{{ route('siode.surat.surat.index') }}"
+                                class="nav-link {!! request()->is(['siode/layanan-surat/surat']) || request()->is(['siode/layanan-surat/surat/*'])
+                                    ? 'active'
+                                    : '' !!}">
                                 <i class="far fa-circle nav-icon text-green"></i>
                                 <p>Pengaturan Surat</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('siode.surat.cetak-surat.index') }}" class="nav-link">
+                            <a href="{{ route('siode.surat.cetak-surat.index') }}"
+                                class="nav-link {!! request()->is(['siode/layanan-surat/cetak-surat']) || request()->is(['siode/layanan-surat/cetak-surat/*'])
+                                    ? 'active'
+                                    : '' !!}">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Cetak Surat</p>
                             </a>
