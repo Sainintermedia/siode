@@ -15,26 +15,12 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="col-lg-3 col-6">
-
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>150</h3>
-                                <p>New Orders</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            <a href="#" class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            <a href="#" class="small-box-footer">More info <i
-                                    class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
                     <div id="card" class="row justify-content-center mt-4">
                         @forelse ($surat as $item)
                             <div class="col-lg-4 col-md-6 small-box bg-info">
                                 <div class="single-service rounded bg-white shadow">
-                                    <a href="{{ route('siode.surat.surat.show', $item) }}">
+                                    <a
+                                        href="{{ route('siode.surat.buat-surat', ['id' => $item->id, 'slug' => Str::slug($item->nama)]) }}">
                                         <i class="fa-solid fa-file fa-5x mb-3"></i>
                                         <h4>{{ $item->nama }}</h4>
                                     </a>
@@ -49,11 +35,15 @@
                                             class="btn btn-sm btn-success" title="Cetak"><i class="fas fa-print"></i> Coba
                                             cetak</a>
                                     @endif
-                                    <a href="{{ route('siode.surat.surat.edit', $item) }}" class="btn btn-sm btn-primary"
-                                        title="Edit"><i class="fas fa-edit"></i> Edit</a>
-                                    <a class="btn btn-sm btn-danger hapus-data" data-nama="{{ $item->nama }}"
-                                        data-action="{{ route('siode.surat.surat.destroy', $item) }}" data-toggle="modal"
-                                        href="#modal-hapus" title="Hapus"><i class="fas fa-trash"></i> Hapus</a>
+                                    <form method="POST" action="{!! route('siode.surat.surat.destroy', $item->id) !!}" class="text-center">
+                                        @csrf
+                                        @method('delete')
+                                        <a href="{{ route('siode.surat.surat.edit', $item) }}"
+                                            class="btn btn-sm btn-primary" title="Edit"><i class="fas fa-edit"></i>
+                                            Edit</a>
+                                        <a class="btn btn-sm btn-danger show_confirm" data-nama="{{ $item->nama }}"
+                                            type="submit"><i class="fas fa-trash"></i> Hapus</a>
+                                    </form>
                                 </div>
                             </div>
                         @empty
@@ -73,7 +63,7 @@
     </div>
 
 
-    <div class="modal fade" id="modal-hapus" tabindex="-1" role="dialog" aria-labelledby="modal-hapus" aria-hidden="true">
+    {{--  <div class="modal fade" id="modal-hapus" tabindex="-1" role="dialog" aria-labelledby="modal-hapus" aria-hidden="true">
         <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
             <div class="modal-content bg-gradient-danger">
 
@@ -97,7 +87,7 @@
 
                 <div class="modal-footer">
                     <form id="form-hapus" action="" method="POST">
-                        @csrf @method('delete')
+                        @csrf @method('DELETE')
                         <button type="submit" class="btn btn-white">Yakin</button>
                     </form>
                     <button type="button" class="btn btn-link ml-auto text-white" data-dismiss="modal">Tidak</button>
@@ -105,7 +95,7 @@
 
             </div>
         </div>
-    </div>
+    </div>  --}}
 @endsection
 
 @push('styles')

@@ -50,7 +50,8 @@
         }
     });
 
-    $('form').on('submit', function(event) {
+
+    {{--  $('form').on('submit', function(event) {
         event.preventDefault();
         const url = $(this).attr('action');
         const redirect = $(this).data('redirect');
@@ -64,9 +65,9 @@
             processData: false,
             beforeSend: function(data) {
                 $("#simpan").attr('disabled', 'disabled');
-                $("#simpan").html(
-                    `<img height="20px" src="${baseURL}/storage/loading.gif" alt=""> Loading ...`
-                );
+                //$("#simpan").html(
+                //   `<img height="20px" src="{{ asset('storage/app/public/loading.gif') }}" alt=""> Loading ...`
+                //);
             },
             success: function(result) {
                 $("#simpan").html('SIMPAN');
@@ -82,7 +83,7 @@
                 } else {
                     alertError();
                     $.each(result.message, function(i, e) {
-                        $('#pesanError').append(`<li>` + e + `</li>`);
+                        $('#error').append(`<li>` + e + `</li>`);
                     });
                     setTimeout(() => {
                         $(".notifikasi").html('');
@@ -90,7 +91,7 @@
                 }
             }
         });
-    });
+    });  --}}
 
     $("#tampilkan_perihal").change(function() {
         if ($(this).prop('checked') == true) {
