@@ -115,7 +115,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         // Route::delete('wilayah-administratif/rw/{rw}', [RwController::class, 'destroy'])->name('rw.destroy');
         Route::resource('wilayah-administratif/rw', RwController::class);
         Route::resource('wilayah-administratif/rt', RtController::class);
-        Route::resource('identitas-desa', IdentitasDesaController::class);
+        Route::get('/identitas-desa', [IdentitasDesaController::class, 'index'])->name('identitas-desa.index');
+        Route::patch('/update-desa/{desa}', [IdentitasDesaController::class, 'update'])->name('identitas-desa.update');
+        // Route::resource('identitas-desa', IdentitasDesaController::class);
         // Route::resource('wilayah-administratif/kampung', KpController::class);
 
     });

@@ -6,22 +6,18 @@
             <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                     <div class="text-center">
-                        <img class="profile-user-img img-fluid img-circle" src="{{ URL::asset('images/desa.png') }}"
-                            alt="User profile picture">
+                        {{--  <img class="profile-user-img img-fluid img-circle" src="{{ URL::asset('images/desa.png') }}"
+                            alt="User profile picture">  --}}
+                        <a href="{{ asset(Storage::url($desa->logo)) }}" data-fancybox>
+                            <img id="logo" src="{{ asset(Storage::url($desa->logo)) }}"
+                                alt="{{ asset(Storage::url($desa->logo)) }}" class="rounded-circle"
+                                style="height: 150px; width: 150px; object-fit: cover">
                     </div>
-                    <h3 class="profile-username text-center">Nina Mcintire</h3>
-                    <p class="text-muted text-center">Software Engineer</p>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Pilih Logo</label>
-                            </div>
-                            <div class="input-group-append">
-                                <a class="input-group-text btn" href="#input-logo">Ganti</a>
-                            </div>
-                        </div>
+                    <div class="card-header pt-md-1 pb-md-1 border-0 pb-0 text-center">
+                        <a id="btn-ganti-logo" href="#input-logo" class="btn btn-sm btn-default mt-1"><span
+                                class="fas fa-camera"></span> Ganti</a>
                     </div>
+                    <h3 class="profile-username text-center">Desa {{ $desa->nama_desa }}</h3>
                 </div>
             </div>
             <div class="card card-primary card-outline">
@@ -43,7 +39,7 @@
                                 <label class="custom-file-label" for="exampleInputFile">Pilih Foto Desa</label>
                             </div>
                             <div class="input-group-append">
-                                <a class="input-group-text btn" href="#input-logo">Ganti</a>
+                                <a class="input-group-text btn" href="#">Ganti</a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +151,7 @@
                                             </div>
                                         </div>
                                         {{--  <div class="col-md">
-                                            
+
                                         </div>  --}}
                                     </div>
                                     <div class="row">
@@ -304,6 +300,7 @@
 
     <div class="row">
 
+        <input type="file" name="logo" id="input-logo" style="display: none">
     </div>
 @endsection
 
@@ -321,6 +318,42 @@
     <script src="{!! URL::asset('assets/dist/plugins/axios/axios.min.js') !!}"></script>
     {{--  <script src="{{ URL::asset('assets/dist/plugins/jquery/jquery.min.js') }}" type="text/javascript"></script>  --}}
     {{--  <script src="{{ URL::asset('assets/dist/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>  --}}
+    <script>
+        $(document).ready(function() {
+            $('#btn-ganti-logo').on('click', function() {
+                $('#input-logo').click();
+            });
+            $('#input-logo').on('change', function() {
+                if (this.files && this.files[0]) {
+                    let formData = new FormData();
+                    let oFReader = new FileReader();
+                    formData.append("logo", this.files[0]);
+                    formData.append("_method", "patch");
+                    formData.append("_token", "{{ csrf_token() }}");
+                    oFReader.readAsDataURL(this.files[0]);
+
+                    $.ajax({
+                        url: "{{ route('siode.infodesa.identitas-desa.update', $desa) }}",
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        beforeSend: function() {
+                            $('#img-logo').attr('src', "{{ url('/storage/loading.gif') }}");
+                        },
+                        success: function(data) {
+                            if (data.error) {
+                                $('#img-logo').attr('src', $("#img-logo").attr('alt'));
+                            } else {
+                                location.reload();
+                            }
+                        }
+                    });
+                }
+            });
+        })
+    </script>
     <script>
         $(function() {
             //Initialize Select2 Elements
