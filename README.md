@@ -43,6 +43,10 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 -   php artisan laravolt:indonesia:seed
     test data
 -   php artisan db:seed --class=KartuKeluargaSeed
+-   php artisan vendor:publish --provider "OwenIt\Auditing\AuditingServiceProvider" --tag="config"
+-   php artisan vendor:publish --provider "OwenIt\Auditing\AuditingServiceProvider" --tag="migrations"
+-   php artisan vendor:publish --provider="Laravolt\Indonesia\ServiceProvider"
+-   php artisan migrate - php artisan laravolt:indonesia:seed
 
 ### Premium Partners
 
