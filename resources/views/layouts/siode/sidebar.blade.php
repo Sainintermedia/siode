@@ -229,7 +229,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.surat.cetak-surat.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Cetak Surat</p>
                             </a>

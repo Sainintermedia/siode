@@ -16,6 +16,30 @@ use Intervention\Image\Facades\Image;
 
 class CetakSuratController extends Controller
 {
+    public function index()
+    {
+        $surat = Surat::with('isiSurat')->paginate(25);
+
+        return view('siode.suratdesa.cetak-surat.index', compact('surat'));
+    }
+
+    public function indexView(Request $request, $id)
+    {
+        $surat = Surat::with('isiSurat')->find($id);
+        $cetakSurat = CetakSurat::where('surat_id', $id)
+            ->orderBy('id', 'desc')
+            ->paginate(25);
+        if ($request->cari) {
+            $cetakSurat = CetakSurat::where('surat_id', $surat->id)
+                ->whereHas('detailCetak', function ($detailCetak) use ($request) {
+                    $detailCetak->where('isian', 'like', "%{$request->cari}%");
+                })
+                ->orderBy('id', 'desc')
+                ->paginate(25);
+        }
+        $cetakSurat->appends($request->only('cari'));
+        return view('siode.suratdesa.cetak-surat.index-view', compact('surat', 'cetakSurat'));
+    }
     public function create(Request $request, $id, $slug)
     {
         $surat = Surat::find($id);
@@ -39,7 +63,7 @@ class CetakSuratController extends Controller
         $logo = (string) Image::make($image)->encode('data-url');
         // $tanggal = tgl(date('Y-m-d'));
         $tanggal = Carbon::now()->isoFormat('dddd, D MMMM Y');
-        $pdf = PDF::loadView('siode.suratdesa.cetak-surat.show', compact('surat', 'desa', 'request', 'logo', 'tanggal'))->setPaper(array(0, 0, 609.449, 935.433));
+        $pdf = PDF::loadView('siode.suratdesa.cetak-surat.show', compact('surat', 'desa', 'request', 'logo', 'tanggal'))->setPaper([0, 0, 609.449, 935.433]);
         if ($surat->tampilkan == 1) {
             $cetakSurat = CetakSurat::create([
                 'surat_id' => $id,
