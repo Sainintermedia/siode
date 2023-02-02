@@ -131,9 +131,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
         Route::get('/buat-surat/{id}/{slug}', [CetakSuratController::class, 'create'])->name('buat-surat');
+        Route::post('/cetak-surat/{id}/{slug}', [CetakSuratController::class, 'store'])->name('cetak-surat.store');
 
         Route::get('/pilih-surat', [SuratController::class, 'layanan_surat'])->name('surat.layanan_surat');
-        Route::resource('/cetak-surat', CetakSuratController::class)->except('create');
         Route::resource('/surat', SuratController::class);
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'bukuadministrasidesa', 'as' => 'buku.'], function () {

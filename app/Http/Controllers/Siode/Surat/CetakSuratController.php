@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Siode\Surat;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tabel\Desa;
+use App\Models\Tabel\Surat\CetakSurat;
+use App\Models\Tabel\Surat\DetailCetak;
 use App\Models\Tabel\Surat\Surat;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;

@@ -81,12 +81,12 @@
 @endsection
 
 @push('styles')
-    {{--  <meta name="description"
-        content="Buat {{ $surat->nama }} di Website Desa {{ $desa->nama_desa }}, Kecamatan {{ $desa->nama_kecamatan }}, Kabupaten {{ $desa->nama_kabupaten }}">  --}}
+    <meta name="description"
+        content="Buat {{ $surat->nama }} di Website Desa {{ $desa->nama_desa }}, Kecamatan {{ $desa->nama_kecamatan }}, Kabupaten {{ $desa->nama_kabupaten }}">
 @endpush
 
 @push('scripts')
-    {{--  <script>
+    <script>
         $(document).ready(function() {
             $("form").submit(function() {
                 $(this).children('.text-center').children('button').attr('disabled', 'disabled');
@@ -95,5 +95,5 @@
                 );
             });
         });
-    </script>  --}}
+    </script>
 @endpush
