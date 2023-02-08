@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    {{--  <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/stackpatch/bootstrap.min.css') }}">  --}}
-
     <style>
         body {
             font-family: 'Times New Roman', Times, serif;
@@ -54,9 +52,27 @@
                     <tbody>
                         <tr>
                             <td>Nomor</td>
-                            <td>: {{ $surat->kode_surat }} / {!! str_repeat('&nbsp;', 10) !!} / 20.2003 /
-                                {{ Terbilang::roman(date('m')) }} /
-                                {{ date('Y') }}</td>
+                            <td>:{!! $cetakSurat->nomor
+                                ? ' ' .
+                                    $surat->kode_surat .
+                                    ' / ' .
+                                    $cetakSurat->nomor .
+                                    ' / ' .
+                                    $desa->singkat_desa .
+                                    ' /' .
+                                    Terbilang::roman(date('m', strtotime($cetakSurat->created_at))) .
+                                    ' / ' .
+                                    date('Y', strtotime($cetakSurat->created_at))
+                                : ' ' .
+                                    $surat->kode_surat .
+                                    ' / ' .
+                                    str_repeat('&nbsp;', 10) .
+                                    ' / ' .
+                                    $desa->singkat_desa .
+                                    ' / ' .
+                                    Terbilang::roman(date('m', strtotime($cetakSurat->created_at))) .
+                                    ' / ' .
+                                    date('Y', strtotime($cetakSurat->created_at)) !!}</td>
                         </tr>
                         <tr>
                             <td>Sifat</td>
@@ -81,16 +97,28 @@
         @else
             <div class="mt-5 mb-3 text-center">
                 <b style="text-decoration: underline;">{{ Str::upper($surat->nama) }}</b><br>
-                Nomor : {{ $surat->kode_surat }} / {!! $nosurat !!} / {{ $desa->singkat_desa }} /
-                {{ Terbilang::roman(date('m')) }} /
-                {{ date('Y') }}
+                Nomor : {!! $cetakSurat->nomor
+                    ? ' ' .
+                        $surat->kode_surat .
+                        ' / ' .
+                        $cetakSurat->nomor .
+                        ' / ' .
+                        $desa->singkat_desa .
+                        ' /' .
+                        Terbilang::roman(date('m', strtotime($cetakSurat->created_at))) .
+                        ' / ' .
+                        date('Y', strtotime($cetakSurat->created_at))
+                    : ' ' .
+                        $surat->kode_surat .
+                        ' / ' .
+                        str_repeat('&nbsp;', 10) .
+                        ' / ' .
+                        $desa->singkat_desa .
+                        ' / ' .
+                        Terbilang::roman(date('m', strtotime($cetakSurat->created_at))) .
+                        ' / ' .
+                        date('Y', strtotime($cetakSurat->created_at)) !!}
             </div>
-            {{--  <div class="mt-5 mb-3 text-center">
-                <b style="text-decoration: underline;">{{ Str::upper($surat->nama) }}</b><br>
-                Nomor : {{ $surat->kode_surat }} / {!! str_repeat('&nbsp;', 10) !!} / 20.2003 /
-                {{ Terbilang::roman(date('m')) }} /
-                {{ date('Y') }}
-            </div>  --}}
         @endif
 
         @php
@@ -107,7 +135,7 @@
                 $hasil = $string;
 
                 foreach ($matches[0] as $k => $value) {
-                    $hasil = str_replace($value, $request->isian[$i], $hasil);
+                    $hasil = str_replace($value, $cetakSurat->detailCetak[$i]->isian, $hasil);
                     $i++;
                 }
 
@@ -178,7 +206,8 @@
                 <tr>
                     <td width="160px" valign="top">{{ $isiSurat->isi }}</td>
                     <td width="10px" valign="top">:</td>
-                    <td class="text-justify" width="10cm" valign="top">{{ $request->isian[$i] }}</td>
+                    <td class="text-justify" width="10cm" valign="top">{{ $cetakSurat->detailCetak[$i]->isian }}
+                    </td>
                 </tr>
 
                 @php
@@ -203,7 +232,7 @@
                         Yang Bersangkutan
                     </p>
                     <p style="" class="bold underline">
-                        {{ $request->isian[count($request->isian) - 1] }}
+                        {{ $cetakSurat->detailCetak[count($cetakSurat->detailCetak) - 1]->isian }}
                     </p>
                 </div>
             @endif

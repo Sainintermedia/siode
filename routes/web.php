@@ -136,6 +136,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('/cetak-surat', [CetakSuratController::class, 'index'])->name('cetak-surat.index');
         Route::get('/cetak-surat/{cetak_surat}/edit', [CetakSuratController::class, 'edit'])->name('cetak-surat.edit');
         Route::get('/cetak-surat/{cetak_surat}', [CetakSuratController::class, 'show'])->name('cetak-surat.show');
+        Route::patch('/cetak-surat/{cetak_surat}', [CetakSuratController::class, 'update'])->name('cetak-surat.update');
         Route::patch('/cetak-surat/{cetak_surat}/arsip', [CetakSuratController::class, 'arsip'])->name('cetak-surat.arsip');
         Route::delete('/cetak-surat/{cetak_surat}', [CetakSuratController::class, 'destroy'])->name('cetak-surat.destroy');
         Route::post('/cetak-surat/{id}/{slug}', [CetakSuratController::class, 'store'])->name('cetak-surat.store');

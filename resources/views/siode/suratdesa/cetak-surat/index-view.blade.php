@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Kartu Keluarga')
+@section('title', 'Cetak Surat')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -9,8 +9,8 @@
                         <a href="{{ route('siode.surat.buat-surat', ['id' => $surat->id, 'slug' => Str::slug($surat->nama)]) }}"
                             class="btn btn-xs bg-gradient-primary"><i class="fa-solid fa-plus"></i>
                             Tambah</a>
-                        <a href="{{ route('siode.kependudukan.kartu-keluarga.view-delete') }}"
-                            class="btn btn-xs bg-gradient-danger"><i class="fa-solid fa-trash"></i> Trash</a>
+                        {{--  <a href="{{ route('siode.kependudukan.kartu-keluarga.view-delete') }}"
+                            class="btn btn-xs bg-gradient-danger"><i class="fa-solid fa-trash"></i> Trash</a>  --}}
                     </div>
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 250px;">
@@ -67,27 +67,38 @@
                                 <tr>
                                     <th>{{ $cetakSurat->firstItem() + $value }}</th>
                                     <td>
-                                        <a target="_blank" href="{{ route('siode.surat.cetak-surat.show', $item->id) }}"
-                                            class="btn btn-sm btn-success" title="Detail Cetak" data-toggle="tooltip"><i
-                                                class="fas fa-print"></i></a>
-                                        @if ($item->arsip == 1)
-                                            <a class="btn btn-sm btn-dark arsip" data-id=""
-                                                data-action="{{ route('siode.surat.cetak-surat.arsip', $item->id) }}"
-                                                data-toggle="tooltip" href="#arsip" title="Buka Arsip"><i
-                                                    class="fas fa-lock"></i></a>
-                                        @else
-                                            <a href="{{ route('siode.surat.cetak-surat.edit', $item->id) }}"
-                                                class="btn btn-sm btn-primary" title="Edit" data-toggle="tooltip"><i
-                                                    class="fas fa-edit"></i></a>
-                                            <a class="btn btn-sm btn-danger hapus-data" data-nama="Detail cetak surat ini"
-                                                data-action="{{ route('siode.surat.cetak-surat.destroy', $item->id) }}"
-                                                data-toggle="tooltip" href="#modal-hapus" title="Hapus"><i
-                                                    class="fas fa-trash"></i></a>
-                                            <a class="btn btn-sm btn-dark arsip" data-id="1"
-                                                data-action="{{ route('siode.surat.cetak-surat.arsip', $item->id) }}"
-                                                data-toggle="tooltip" href="#arsip" title="Arsipkan"><i
-                                                    class="fas fa-unlock"></i></a>
-                                        @endif
+                                        <form method="POST" action="{!! route('siode.surat.cetak-surat.destroy', $item->id) !!}" class="text-center">
+                                            @csrf
+                                            @method('delete')
+                                            <div class="btn-group">
+                                                <a target="_blank"
+                                                    href="{{ route('siode.surat.cetak-surat.show', $item->id) }}"
+                                                    class="btn btn-sm bg-gradient-success" title="Detail Cetak"
+                                                    data-toggle="tooltip"><i class="fas fa-print"></i></a>
+                                                @if ($item->arsip == 1)
+                                                    <a class="btn btn-sm bg-gradient-dark arsip" data-id=""
+                                                        data-action="{{ route('siode.surat.cetak-surat.arsip', $item->id) }}"
+                                                        data-toggle="tooltip" href="#arsip" title="Buka Arsip"><i
+                                                            class="fas fa-lock"></i></a>
+                                                @else
+                                                    <a href="{{ route('siode.surat.cetak-surat.edit', $item->id) }}"
+                                                        class="btn btn-sm bg-gradient-primary" title="Edit"
+                                                        data-toggle="tooltip"><i class="fas fa-edit"></i></a>
+                                                    {{--  <a class="btn btn-sm btn-danger hapus-data"
+                                                            data-nama="Detail cetak surat ini"
+                                                            data-action="{{ route('siode.surat.cetak-surat.destroy', $item->id) }}"
+                                                            data-toggle="tooltip" href="#modal-hapus" title="Hapus"><i
+                                                                class="fas fa-trash"></i></a>  --}}
+                                                    <button class="btn btn-sm bg-gradient-danger show_confirm"
+                                                        data-nama="{{ $item->nama }}" type="submit"><i
+                                                            class="fas fa-trash"></i></button>
+                                                    <a class="btn btn-sm bg-gradient-dark arsip" data-id="1"
+                                                        data-action="{{ route('siode.surat.cetak-surat.arsip', $item->id) }}"
+                                                        data-toggle="tooltip" href="#arsip" title="Arsipkan"><i
+                                                            class="fas fa-unlock"></i></a>
+                                                @endif
+                                            </div>
+                                        </form>
                                     </td>
                                     <td>{{ $item->nomor ? $item->nomor : '-' }}</td>
                                     @foreach ($item->DetailCetak as $DetailCetak)
@@ -115,6 +126,10 @@
             </div>
         </div>
     </div>
+    <form id="form-arsip" method="POST">
+        @csrf @method('patch')
+        <input type="hidden" name="arsip" id="arsip">
+    </form>
 @endsection
 
 @push('styles')
@@ -151,6 +166,16 @@
                         )
                     }
                 });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".arsip").click(function(event) {
+                event.preventDefault();
+                $("#arsip").val($(this).data('id'));
+                $("#form-arsip").attr('action', $(this).data('action'));
+                $("#form-arsip").submit();
+            });
         });
     </script>
 @endpush

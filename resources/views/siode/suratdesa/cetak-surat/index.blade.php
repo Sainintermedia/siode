@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Kartu Keluarga')
+@section('title', 'Cetak Surat')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -49,15 +49,16 @@
                                     <td>
                                         @if ($item->tampilkan == 0)
                                             <p class="font-weight-bold">(Belum ditampilkan)</p>
-                                            {{--  <a href="{{ route('siode.surat.surat.create', ['id' => $item->id, 'slug' => Str::slug($item->nama)]) }}"
+                                            {{--  <a href="{{ route('siode.surat.surat.edit', $item) }}"
                                                 class="btn btn-sm btn-success" title="Cetak"><i class="fas fa-print"></i>
                                                 Coba cetak</a>  --}}
                                         @endif
                                     </td>
                                     <td>
                                         <a href="{{ route('siode.surat.surat.indexView', ['id' => $item->id, 'slug' => Str::slug($item->nama)]) }}"
-                                            class="btn btn-sm btn-success" title="Cetak"><i class="fas fa-print"></i>
-                                            Coba cetak</a>
+                                            class="btn btn-xs bg-gradient-success" title="Cetak"><i
+                                                class="fas fa-print"></i>
+                                            Cek Surat</a>
                                     </td>
                                 </tr>
                             @empty

@@ -89,4 +89,58 @@ class CetakSuratController extends Controller
 
         return $pdf->stream($surat->nama . '.pdf');
     }
+
+    public function edit(CetakSurat $cetakSurat)
+    {
+        // return $cetakSurat;
+        return view('siode.suratdesa.cetak-surat.edit', compact('cetakSurat'));
+    }
+
+    public function update(Request $request, CetakSurat $cetakSurat)
+    {
+        $request->validate([
+            'nomor' => ['nullable', 'numeric', 'min:1'],
+            'isian.*' => ['required'],
+        ]);
+
+        $cetakSurat->update(['nomor' => $request->nomor]);
+
+        DetailCetak::where('cetak_surat_id', $cetakSurat->id)->delete();
+
+        foreach ($request->isian as $isian) {
+            DetailCetak::create([
+                'cetak_surat_id' => $cetakSurat->id,
+                'isian' => $isian,
+            ]);
+        }
+
+        return back()->with('success', 'Detail cetak surat berhasil diperbarui');
+    }
+
+    public function show(CetakSurat $cetakSurat)
+    {
+        // return $cetakSurat;
+        $desa = Desa::find(1);
+        $surat = Surat::find($cetakSurat->surat_id);
+        $image = (string) Image::make(public_path(Storage::url($desa->logo)))->encode('jpg');
+        $logo = (string) Image::make($image)->encode('data-url');
+        // $tanggal = tgl(date('Y-m-d', strtotime($cetakSurat->created_at)));
+        $tanggal = Carbon::now()->isoFormat('dddd, D MMMM Y');
+
+        $pdf = PDF::loadView('siode.suratdesa.cetak-surat.detail', compact('surat', 'desa', 'cetakSurat', 'logo', 'tanggal'))->setPaper(array(0, 0, 609.449, 935.433));
+        return $pdf->stream($surat->nama . '.pdf');
+    }
+
+    public function arsip(Request $request, CetakSurat $cetakSurat)
+    {
+        $cetakSurat->arsip = $request->arsip;
+        $cetakSurat->save();
+        return back()->with('success', 'Detail cetak surat berhasil ' . ($request->arsip == 1 ? 'diarsipkan' : 'dinonarsipkan'));
+    }
+
+    public function destroy(CetakSurat $cetakSurat)
+    {
+        $cetakSurat->delete();
+        return back()->with('success', 'Detail cetak surat berhasil dihapus');
+    }
 }
