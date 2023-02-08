@@ -15,13 +15,53 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div id="card" class="row justify-content-center mt-4">
+                    <div class="row">
+                        @forelse ($surat as $item)
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-{{ $item->colour }}">
+                                    <div class="inner">
+                                        <h3>Surat</h3>
+                                        <p>{{ $item->nama }}</p>
+                                        @if ($item->cetakSurat->count() > 0)
+                                            <p>Telah dicetak sebanyak
+                                                {{ $item->cetakSurat->count() }}x</p>
+                                        @endif
+                                    </div>
+                                    <a
+                                        href="{{ route('siode.surat.buat-surat', ['id' => $item->id, 'slug' => Str::slug($item->nama)]) }}">
+                                        <div class="icon">
+                                            <i class="fas {{ $item->icon }}"></i>
+                                        </div>
+                                    </a>
+                                    <span class="small-box-footer">
+                                        <form method="POST" action="{!! route('siode.surat.surat.destroy', $item->id) !!}" class="text-center">
+                                            @csrf
+                                            @method('delete')
+                                            <a href="{{ route('siode.surat.surat.edit', $item) }}"
+                                                class="btn btn-xs bg-gradient-primary"><i class="fas fa-edit"></i>
+                                                Edit</a>
+                                            <button class="btn btn-xs bg-gradient-danger show_confirm"
+                                                data-nama="{{ $item->nama }}" type="submit"><i class="fas fa-trash"></i>
+                                                Hapus</button>
+                                        </form>
+                                    </span>
+                                </div>
+                            </div>
+                        @empty
+                            <div class="col">
+                                <div class="single-service rounded bg-white shadow">
+                                    <h4>Data belum tersedia</h4>
+                                </div>
+                            </div>
+                        @endforelse
+                    </div>
+                    {{--  <div id="card" class="row justify-content-center mt-4">
                         @forelse ($surat as $item)
                             <div class="col-lg-4 col-md-6 small-box bg-info">
                                 <div class="single-service rounded bg-white shadow">
                                     <a
                                         href="{{ route('siode.surat.buat-surat', ['id' => $item->id, 'slug' => Str::slug($item->nama)]) }}">
-                                        <i class="fa-solid fa-file fa-5x mb-3"></i>
+                                        <i class="fa-solid {{ $item->icon }}"></i>
                                         <h4>{{ $item->nama }}</h4>
                                     </a>
                                     <p>{{ $item->deskripsi }}</p>
@@ -32,7 +72,8 @@
                                     @if ($item->tampilkan == 0)
                                         <p class="font-weight-bold">(Belum ditampilkan)</p>
                                         <a href="{{ route('buat-surat', ['id' => $item->id, 'slug' => Str::slug($item->nama)]) }}"
-                                            class="btn btn-sm btn-success" title="Cetak"><i class="fas fa-print"></i> Coba
+                                            class="btn btn-sm btn-success" title="Cetak"><i class="fas fa-print"></i>
+                                            Coba
                                             cetak</a>
                                     @endif
                                     <form method="POST" action="{!! route('siode.surat.surat.destroy', $item->id) !!}" class="text-center">
@@ -53,7 +94,7 @@
                                 </div>
                             </div>
                         @endforelse
-                    </div>
+                    </div>  --}}
                 </div>
                 <div class="card-footer">
 
@@ -99,9 +140,6 @@
 @endsection
 
 @push('styles')
-    <script>
-        // Your custom JavaScript...
-    </script>
 @endpush
 
 @push('scripts')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Siode\Surat;
 
+// use Barryvdh\DomPDF\PDF;
 use App\Http\Controllers\Controller;
 use App\Models\Tabel\Desa;
 use App\Models\Tabel\Surat\CetakSurat;
@@ -62,11 +63,18 @@ class CetakSuratController extends Controller
         $image = (string) Image::make(public_path(Storage::url($desa->logo)))->encode('jpg');
         $logo = (string) Image::make($image)->encode('data-url');
         // $tanggal = tgl(date('Y-m-d'));
+        $cetaksurat = CetakSurat::whereSurat_id($id)->count('nomor');
+        $no = $cetaksurat;
+        $auto = substr(4, $no);
+        $auto = abs($cetaksurat + 1);
+        $nosurat = substr($no, 3, 0) . str_repeat(0, 3 - strlen($auto)) . $auto;
+
         $tanggal = Carbon::now()->isoFormat('dddd, D MMMM Y');
-        $pdf = PDF::loadView('siode.suratdesa.cetak-surat.show', compact('surat', 'desa', 'request', 'logo', 'tanggal'))->setPaper([0, 0, 609.449, 935.433]);
+        $pdf = PDF::loadView('siode.suratdesa.cetak-surat.show', compact('surat', 'desa', 'request', 'logo', 'tanggal', 'nosurat'))->setPaper([0, 0, 609.449, 935.433]);
         if ($surat->tampilkan == 1) {
             $cetakSurat = CetakSurat::create([
                 'surat_id' => $id,
+                'nomor' => $nosurat,
             ]);
 
             foreach ($request->isian as $isian) {

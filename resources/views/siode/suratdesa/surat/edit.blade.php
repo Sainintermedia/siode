@@ -16,13 +16,12 @@
                         <input type="hidden" class="form-control form-control-alternative" name="isian[]" value="isian">
                         <input type="hidden" name="jenis_isi[]" value="2">
                         <input type="hidden" name="tampilkan[]" value="0">
-                        {{--  <h6 class="heading-small text-muted">Detail Surat</h6>  --}}
                         <div class="bg-gray mt-2 mb-2 py-2 px-2">
                             <h6 class="mb-0">
                                 <strong>Detail Surat :</strong>
                             </h6>
                         </div>
-                        <div class="pl-lg-4">
+                        <div class="">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -33,8 +32,40 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label class="form-control-label">Kode Surat</label>
+                                        <input class="form-control form-control-alternative" name="kode_surat"
+                                            value="{{ $surat->kode_surat }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label class="form-control-label">Icon</label>
                                         @include('layouts.siode.icon')
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Background</label>
+                                        <select name="colour" id="" class="form-control form-control-sm">
+                                            <option value="primary" {{ $surat->colour == 'primary' ? 'selected' : '' }}>Biru
+                                            </option>
+                                            <option value="danger" {{ $surat->colour == 'danger' ? 'selected' : '' }}>Merah
+                                            </option>
+                                            <option value="success" {{ $surat->colour == 'success' ? 'selected' : '' }}>
+                                                Hijau
+                                            </option>
+                                            <option value="warning" {{ $surat->colour == 'warning' ? 'selected' : '' }}>
+                                                Kuning
+                                            </option>
+                                            <option value="navy" {{ $surat->colour == 'navy' ? 'selected' : '' }}>
+                                                Navy
+                                            </option>
+                                            <option value="dark" {{ $surat->colour == 'dark' ? 'selected' : '' }}>
+                                                Dark
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -48,13 +79,12 @@
                                     placeholder="Masukkan persyaratan untuk membuat surat yang ditujukan untuk warga">{{ $surat->persyaratan }}</textarea>
                             </div>
                         </div>
-                        {{--  <h6 class="heading-small text-muted">Isian</h6>  --}}
                         <div class="bg-gray mt-2 mb-2 py-2 px-2">
                             <h6 class="mb-0">
                                 <strong>Isian :</strong>
                             </h6>
                         </div>
-                        <div class="pl-lg-4" id="isian">
+                        <div class="" id="isian">
                             @if ($surat->perihal == 1)
                                 @php
                                     $perihal = [];
@@ -211,13 +241,12 @@
                                 @endif
                             @endforeach
                         </div>
-                        {{--  <h6 class="heading-small text-muted">Alat</h6>  --}}
                         <div class="bg-gray mt-2 mb-2 py-2 px-2">
                             <h6 class="mb-0">
                                 <strong>Alat :</strong>
                             </h6>
                         </div>
-                        <div class="pl-lg-4">
+                        <div class="">
                             @include('siode.suratdesa.surat.partials.button-alat')
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="tampilkan_surat_ini"
@@ -265,7 +294,7 @@
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="btn btn-primary btn-block" id="simpan">SIMPAN</button>
+                            <button type="submit" class="btn btn-block bg-gradient-blue" id="simpan">SIMPAN</button>
                         </div>
                     </form>
                 </div>
@@ -282,9 +311,24 @@
             font-family: fontAwesome;
         }
     </style>
+
+    {{--  <link rel="stylesheet" href="{!! URL::asset('assets/dist/plugins/select2/css/select2.min.css') !!}">
+    <link rel="stylesheet" href="{!! URL::asset('assets/dist/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') !!}">  --}}
 @endpush
 
 @push('scripts')
+    {{--  <script src="{!! URL::asset('assets/dist/plugins/select2/js/select2.full.min.js') !!}"></script>  --}}
+    <script>
+        $(function() {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+        })
+    </script>
     <script src="{{ URL::asset('assets/dist/plugins/fancybox/jquery.fancybox.js') }}"></script>
     <script>
         $(document).ready(function() {

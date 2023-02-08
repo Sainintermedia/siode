@@ -9,7 +9,8 @@
     <link rel="icon" href="{{ url(Storage::url($desa->logo)) }}" type="image/png">
 
     <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <style>
         body {
@@ -24,12 +25,15 @@
             <div style="height:90px;width:90px;float:left" class="">
                 <img class="mw-100" src="{{ $logo }}" alt="">
             </div>
-            <div class="text-center lh-20px">
-                <span style="font-size: 14pt" class="font-weight-bold">PEMERINTAHAN KABUPATEN {{ Str::upper($desa->nama_kabupaten) }}</span><br>
-                <span style="font-size: 14pt" class="font-weight-bold">KECAMATAN {{ Str::upper($desa->nama_kecamatan) }}</span><br>
-                <span style="font-size: 14pt" class="font-weight-bold">DESA {{ Str::upper($desa->nama_desa) }}</span><br>
+            <div class="lh-20px text-center">
+                <span style="font-size: 14pt" class="font-weight-bold">PEMERINTAHAN KABUPATEN
+                    {{ Str::upper($desa->nama_kabupaten) }}</span><br>
+                <span style="font-size: 14pt" class="font-weight-bold">KECAMATAN
+                    {{ Str::upper($desa->nama_kecamatan) }}</span><br>
+                <span style="font-size: 14pt" class="font-weight-bold">DESA
+                    {{ Str::upper($desa->nama_desa) }}</span><br>
                 <div style="font-size: 11pt; font-style: italic">
-                    {{ $desa->alamat }}
+                    {{ $desa->alamat_desa }}
                 </div>
             </div>
             <hr style="border-top: 5px double #000000;">
@@ -37,7 +41,7 @@
 
         @if ($surat->perihal == 1)
             @php
-                $perihal = array();
+                $perihal = [];
                 foreach ($surat->isiSurat->where('jenis_isi', 4) as $isiSurat) {
                     array_push($perihal, $isiSurat->isi);
                 }
@@ -48,7 +52,9 @@
                     <tbody>
                         <tr>
                             <td>Nomor</td>
-                            <td>: 140 / {!! str_repeat('&nbsp;', 10) !!} / 20.2003 / {{ Terbilang::roman(date('m')) }} / {{ date('Y') }}</td>
+                            <td>: {{ $surat->kode_surat }} / {!! str_repeat('&nbsp;', 10) !!} / 20.2003 /
+                                {{ Terbilang::roman(date('m')) }} /
+                                {{ date('Y') }}</td>
                         </tr>
                         <tr>
                             <td>Sifat</td>
@@ -65,15 +71,24 @@
                     </tbody>
                 </table>
             </div>
-            <div style="margin-left: 50%; width: 50%" class="text-center float-right">
-                <p style="margin-bottom: 55px">{{ $desa->nama_desa }}, {{ $tanggal }}<br>Kepada {{ $perihal[3] }}</p>
+            <div style="margin-left: 50%; width: 50%" class="float-right text-center">
+                <p style="margin-bottom: 55px">{{ $desa->nama_desa }}, {{ $tanggal }}<br>Kepada
+                    {{ $perihal[3] }}</p>
                 <p>Di - {{ $perihal[4] }}</p>
             </div>
         @else
-            <div class="text-center mt-5 mb-3">
+            <div class="mt-5 mb-3 text-center">
                 <b style="text-decoration: underline;">{{ Str::upper($surat->nama) }}</b><br>
-                Nomor : 140 / {!! str_repeat('&nbsp;', 10) !!} / 20.2003 / {{ Terbilang::roman(date('m')) }} / {{ date('Y') }}
+                Nomor : {{ $surat->kode_surat }} / {!! $nosurat !!} / {{ $desa->singkat_desa }} /
+                {{ Terbilang::roman(date('m')) }} /
+                {{ date('Y') }}
             </div>
+            {{--  <div class="mt-5 mb-3 text-center">
+                <b style="text-decoration: underline;">{{ Str::upper($surat->nama) }}</b><br>
+                Nomor : {{ $surat->kode_surat }} / {!! str_repeat('&nbsp;', 10) !!} / 20.2003 /
+                {{ Terbilang::roman(date('m')) }} /
+                {{ date('Y') }}
+            </div>  --}}
         @endif
 
         @php
@@ -85,7 +100,7 @@
         @foreach ($surat->isiSurat->where('jenis_isi', '!=', 4) as $key => $isiSurat)
             @php
                 $string = $isiSurat->isi;
-                $pattern = "/\{[0-9A-Za-z\s\(\)]+\}/";
+                $pattern = '/\{[0-9A-Za-z\s\(\)]+\}/';
                 preg_match_all($pattern, $string, $matches);
                 $hasil = $string;
 
@@ -95,30 +110,30 @@
                 }
 
                 try {
-                    if ($surat->isiSurat[$key + 1]->jenis_isi == 3 || $data_kades == true && $surat->data_kades == 1) {
+                    if ($surat->isiSurat[$key + 1]->jenis_isi == 3 || ($data_kades == true && $surat->data_kades == 1)) {
                         if ($isiSurat->jenis_isi == 1) {
-                            echo '<div class="text-justify">'. str_repeat('&nbsp;', 12) . $hasil .'</div>';
+                            echo '<div class="text-justify">' . str_repeat('&nbsp;', 12) . $hasil . '</div>';
                         } elseif ($isiSurat->jenis_isi == 2) {
-                            echo '<div class="text-justify">'. $hasil .'</div>';
+                            echo '<div class="text-justify">' . $hasil . '</div>';
                         } elseif ($isiSurat->jenis_isi == 5) {
-                            echo '<div class="font-weight-bold text-center" style="text-decoration: underline;">'. $hasil .'</div>';
+                            echo '<div class="font-weight-bold text-center" style="text-decoration: underline;">' . $hasil . '</div>';
                         }
                     } else {
                         if ($isiSurat->jenis_isi == 1) {
-                            echo '<p class="text-justify">'. str_repeat('&nbsp;', 12) . $hasil .'</p>';
+                            echo '<p class="text-justify">' . str_repeat('&nbsp;', 12) . $hasil . '</p>';
                         } elseif ($isiSurat->jenis_isi == 2) {
-                            echo '<p class="text-justify">'. $hasil .'</p>';
+                            echo '<p class="text-justify">' . $hasil . '</p>';
                         } elseif ($isiSurat->jenis_isi == 5) {
-                            echo '<p class="font-weight-bold text-center" style="text-decoration: underline;">'. $hasil .'</p>';
+                            echo '<p class="font-weight-bold text-center" style="text-decoration: underline;">' . $hasil . '</p>';
                         }
                     }
                 } catch (\Throwable $th) {
                     if ($isiSurat->jenis_isi == 1) {
-                        echo '<p class="text-justify">'. str_repeat('&nbsp;', 12) . $hasil .'</p>';
+                        echo '<p class="text-justify">' . str_repeat('&nbsp;', 12) . $hasil . '</p>';
                     } elseif ($isiSurat->jenis_isi == 2) {
-                        echo '<p class="text-justify">'. $hasil .'</p>';
+                        echo '<p class="text-justify">' . $hasil . '</p>';
                     } elseif ($isiSurat->jenis_isi == 5) {
-                        echo '<p class="font-weight-bold text-center" style="text-decoration: underline;">'. $hasil .'</p>';
+                        echo '<p class="font-weight-bold text-center" style="text-decoration: underline;">' . $hasil . '</p>';
                     }
                 }
             @endphp
@@ -153,9 +168,9 @@
                 @if ($tabel)
                     <table class="mb-3 ml-5">
                         <tbody>
-                    @php
-                        $tabel = false;
-                    @endphp
+                            @php
+                                $tabel = false;
+                            @endphp
                 @endif
 
                 <tr>
@@ -168,11 +183,12 @@
                     $i++;
                     try {
                         if ($surat->isiSurat[$key + 1]->jenis_isi != 3) {
-                            echo "</tbody>";
-                            echo "</table>";
+                            echo '</tbody>';
+                            echo '</table>';
                             $tabel = true;
                         }
-                    } catch (\Throwable $th) {}
+                    } catch (\Throwable $th) {
+                    }
                 @endphp
             @endif
         @endforeach
@@ -185,13 +201,13 @@
                         Yang Bersangkutan
                     </p>
                     <p style="" class="bold underline">
-                        {{ $request->isian[count($request->isian)-1] }}
+                        {{ $request->isian[count($request->isian) - 1] }}
                     </p>
                 </div>
             @endif
-            <div style="margin-left: 50%; width: 50%" class="text-center float-right">
+            <div style="margin-left: 50%; width: 50%" class="float-right text-center">
                 <p style="margin-bottom: 100px">
-                    {{ $desa->nama_desa }}, {{ $tanggal }}  <br>
+                    {{ $desa->nama_desa }}, {{ $tanggal }} <br>
                     Kepala Desa {{ $desa->nama_desa }}
                 </p>
                 <p style="" class="bold underline">

@@ -27,24 +27,43 @@
                                 <input type="hidden" id="urutan" value="1">
                                 <input type="hidden" name="jenis_isi[]" value="0">
                                 <input type="hidden" name="tampilkan[]" value="0">
-                                {{--  <h6 class="heading-small text-muted">Detail Surat</h6>  --}}
                                 <div class="bg-gray mt-2 mb-2 py-2 px-2">
                                     <h6 class="mb-0">
                                         <strong>Detail Surat :</strong>
                                     </h6>
                                 </div>
-                                {{--  <div class="pl-lg-4">  --}}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Nama Surat</label>
-                                            <input class="form-control form-control-sm" name="nama">
+                                            <label class="form-control-label">Nama Surat</label>
+                                            <input class="form-control form-control-alternative" name="nama">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Icon</label>
+                                            <label class="form-control-label">Kode Surat</label>
+                                            <input class="form-control form-control-alternative" name="kode_surat">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Icon</label>
                                             @include('layouts.siode.icon')
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Background</label>
+                                            <select name="colour" id="" class="form-control form-control-sm">
+                                                <option value="primary">Biru</option>
+                                                <option value="danger">Merah</option>
+                                                <option value="success">Hijau</option>
+                                                <option value="warning">Kuning</option>
+                                                <option value="navy">Navy</option>
+                                                <option value="dark">Dark</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -57,15 +76,12 @@
                                     <textarea class="form-control form-control-alternative" name="persyaratan"
                                         placeholder="Masukkan persyaratan untuk membuat surat yang ditujukan untuk warga"></textarea>
                                 </div>
-                                {{--  </div>  --}}
-                                {{--  <h6 class="heading-small text-muted mt-4">Isian</h6>  --}}
                                 <div class="bg-gray mt-2 mb-2 py-2 px-2">
                                     <h6 class="mb-0">
                                         <strong>Isian :</strong>
                                     </h6>
                                 </div>
                                 <div id="isian"></div>
-                                {{--  <h6 class="heading-small text-muted">Alat</h6>  --}}
                                 <div class="bg-gray mt-2 mb-2 py-2 px-2">
                                     <h6 class="mb-0">
                                         <strong>Alat :</strong>
@@ -116,7 +132,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group mt-3">
-                                    <button type="submit" class="btn btn-primary btn-block"
+                                    <button type="submit" class="btn btn-block bg-gradient-blue"
                                         id="simpan">SIMPAN</button>
                                 </div>
                             </form>

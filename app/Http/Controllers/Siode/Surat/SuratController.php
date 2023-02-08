@@ -67,7 +67,9 @@ class SuratController extends Controller
     {
         $dataSurat = [
             'nama' => $request->nama,
+            'kode_surat' => $request->kode_surat,
             'icon' => $request->icon,
+            'colour' => $request->colour,
             'deskripsi' => $request->deskripsi,
             'persyaratan' => $request->persyaratan,
             'perihal' => $request->perihal,
