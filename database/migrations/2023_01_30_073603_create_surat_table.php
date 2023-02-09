@@ -18,6 +18,7 @@ class CreateSuratTable extends Migration
             $table->string('nama', 64);
             $table->string('kode_surat', 64);
             $table->text('deskripsi')->nullable();
+            $table->string('kategori_surat', 64);
             $table->string('icon', 64);
             $table->string('colour', 64);
             $table->boolean('tanda_tangan_bersangkutan')->default(0);
