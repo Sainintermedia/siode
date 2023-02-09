@@ -22,6 +22,7 @@ use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
 use App\Http\Controllers\Siode\KelompokController;
+use App\Http\Controllers\Siode\DatasuplemenController;
 use App\Http\Controllers\Siode\Surat\CetakSuratController;
 use App\Http\Controllers\Siode\Surat\SuratController;
 // use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
@@ -121,6 +122,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::resource('kartu-keluarga/anggota-keluarga', KartuKeluargaAnggotaController::class);
         Route::resource('kartu-keluarga/kepala-keluarga', KartuKeluargaController::class);
         Route::get('kelompok', [KelompokController::class, 'index'])->name('kelompok.index');
+        Route::get('data-suplemen', [DatasuplemenController::class, 'index'])->name('data-suplemen.index');
+        
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
