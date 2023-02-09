@@ -16,6 +16,7 @@ class CreateDesasTable extends Migration
         Schema::create('desa', function (Blueprint $table) {
             $table->id();
             $table->string('nama_desa', 100)->nullable();
+            $table->string('singkat_desa', 100)->nullable();
             $table->string('nama_kecamatan', 100)->nullable();
             $table->string('nama_kabupaten', 100)->nullable();
             $table->string('nama_provinsi', 100)->nullable();
