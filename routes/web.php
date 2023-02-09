@@ -100,7 +100,7 @@ Route::group(['middleware' => ['auth', 'permission']], function () {
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
-    Route::resource('dashboard', DashboardController::class);
+    Route::resource('dashboard', DashboardController::class)->except('show', 'edit', 'update', 'create', 'destroy');;
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
         Route::post('wilayah-administratif/rw-autocomplete', [RwController::class, 'autocomplete'])->name('rw.autocomplete');
