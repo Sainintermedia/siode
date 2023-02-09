@@ -66,7 +66,7 @@
                             @forelse ($cetakSurat as $value => $item)
                                 <tr>
                                     <th>{{ $cetakSurat->firstItem() + $value }}</th>
-                                    <td>
+                                    <td class="text-center">
                                         <form method="POST" action="{!! route('siode.surat.cetak-surat.destroy', $item->id) !!}" class="text-center">
                                             @csrf
                                             @method('delete')
@@ -100,11 +100,11 @@
                                             </div>
                                         </form>
                                     </td>
-                                    <td>{{ $item->nomor ? $item->nomor : '-' }}</td>
+                                    <td class="text-center">{{ $item->nomor ? $item->nomor : '-' }}</td>
                                     @foreach ($item->DetailCetak as $DetailCetak)
-                                        <td>{{ $DetailCetak->isian }}</td>
+                                        <td class="text-center">{{ $DetailCetak->isian }}</td>
                                     @endforeach
-                                    <td>{{ date('d/m/Y H:i', strtotime($item->created_at)) }}</td>
+                                    <td class="text-center">{{ date('d/m/Y H:i', strtotime($item->created_at)) }}</td>
                                 </tr>
                             @empty
                                 <h4>tidak ada data</h4>
