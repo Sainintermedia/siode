@@ -45,7 +45,7 @@
                                     <th>{{ $surat->firstItem() + $value }}</th>
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->kode_surat }}</td>
-                                    <td>{{ $item->cetakSurat->count() }}</td>
+                                    <td>{{ $item->count }}</td>
                                     <td>
                                         @if ($item->tampilkan == 0)
                                             <p class="font-weight-bold">(Belum ditampilkan)</p>
@@ -75,12 +75,12 @@
                 </div>
                 <div class="card-footer clearfix">
 
-                    {{--  Halaman : {{ $kartukeluargaanggota->currentPage() }} <br />
-                    Jumlah Data : {{ $kartukeluargaanggota->total() }} <br />
-                    Data Per Halaman : {{ $kartukeluargaanggota->perPage() }}
+                    Halaman : {{ $surat->currentPage() }} <br />
+                    Jumlah Data : {{ $surat->total() }} <br />
+                    Data Per Halaman : {{ $surat->perPage() }}
                     <ul class="pagination pagination-sm float-right m-0">
-                        {{ $kartukeluargaanggota->links() }}
-                    </ul>  --}}
+                        {{ $surat->links() }}
+                    </ul>
                 </div>
             </div>
         </div>

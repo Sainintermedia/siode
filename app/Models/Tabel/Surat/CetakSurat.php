@@ -12,7 +12,7 @@ class CetakSurat extends Model
     use HasFactory;
     protected $table = 'cetak_surat';
     protected $fillable = [
-        'surat_id', 'nomor', 'arsip',
+        'surat_id', 'nomor', 'arsip', 'user_id',
     ];
     protected $guarded = [];
 

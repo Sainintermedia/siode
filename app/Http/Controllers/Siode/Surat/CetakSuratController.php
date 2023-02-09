@@ -19,7 +19,7 @@ class CetakSuratController extends Controller
 {
     public function index()
     {
-        $surat = Surat::with('isiSurat')->paginate(25);
+        $surat = Surat::with('isiSurat')->withCount('cetakSurat as count')->paginate(25);
 
         return view('siode.suratdesa.cetak-surat.index', compact('surat'));
     }
@@ -28,7 +28,8 @@ class CetakSuratController extends Controller
     {
         $surat = Surat::with('isiSurat')->find($id);
         $cetakSurat = CetakSurat::where('surat_id', $id)
-            ->orderBy('id', 'desc')
+            ->with('DetailCetak')
+            ->orderByDesc('id')
             ->paginate(25);
         if ($request->cari) {
             $cetakSurat = CetakSurat::where('surat_id', $surat->id)
@@ -43,13 +44,20 @@ class CetakSuratController extends Controller
     }
     public function create(Request $request, $id, $slug)
     {
+        $year = Carbon::now()->isoFormat('Y');
+        $cetaksurat = CetakSurat::whereSurat_id($id)->whereYear('created_at', $year)->count('nomor');
+        $no = $cetaksurat;
+        $auto = substr(4, $no);
+        $auto = abs($cetaksurat + 1);
+        $nosurat = substr($no, 3, 0) . str_repeat(0, 3 - strlen($auto)) . $auto;
+
         $surat = Surat::find($id);
         $desa = Desa::find(1);
         if ($slug != Str::slug($surat->nama)) {
             return abort(404, 'Halaman Tidak Ditemukan');
         }
         // return $surat;
-        return view('siode.suratdesa.cetak-surat.create', compact('surat', 'desa'));
+        return view('siode.suratdesa.cetak-surat.create', compact('surat', 'desa', 'nosurat'));
     }
 
     public function store(Request $request, $id)
@@ -75,6 +83,7 @@ class CetakSuratController extends Controller
             $cetakSurat = CetakSurat::create([
                 'surat_id' => $id,
                 'nomor' => $nosurat,
+                'user_id' => \Auth::user()->id,
             ]);
 
             foreach ($request->isian as $isian) {

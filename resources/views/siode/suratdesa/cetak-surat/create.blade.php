@@ -32,15 +32,19 @@
                 action="{{ route('siode.surat.cetak-surat.store', ['id' => $surat->id, 'slug' => Str::slug($surat->nama)]) }}"
                 method="POST">
                 @csrf
+                <div class="form-group">
+                    <label for="">No Surat</label>
+                    <input type="text" name="" id="" class="form-control form-control-sm"
+                        value="{{ $nosurat }}" disabled>
+                </div>
                 @foreach ($surat->isiSurat as $key => $isiSurat)
                     @if ($isiSurat->jenis_isi == 3)
                         <div class="form-group mb-3">
                             <label for="{{ $isiSurat->isi . '' . $key }}"
                                 class="form-control-label">{{ $isiSurat->isi }}</label>
 
-                            <input required id="{{ $isiSurat->isi . '' . $key }}"
-                                class="form-control form-control-alternative" name="isian[]" autofocus
-                                placeholder="Masukkan {{ $isiSurat->isi }}">
+                            <input required id="{{ $isiSurat->isi . '' . $key }}" class="form-control form-control-sm"
+                                name="isian[]" autofocus placeholder="Masukkan {{ $isiSurat->isi }}">
                         </div>
                     @endif
                     @if ($isiSurat->tampilkan == 1)
@@ -57,8 +61,8 @@
                         @endphp
                         <div class="form-group mb-3">
                             <label for="{{ $hasil . '' . $k }}" class="form-control-label">{{ $hasil }}</label>
-                            <input required id="{{ $hasil . '' . $k }}" class="form-control form-control-alternative"
-                                name="isian[]" autofocus placeholder="Masukkan {{ $hasil }}">
+                            <input required id="{{ $hasil . '' . $k }}" class="form-control form-control-sm" name="isian[]"
+                                autofocus placeholder="Masukkan {{ $hasil }}">
                         </div>
                     @endforeach
                 @endforeach
@@ -66,8 +70,8 @@
                 @if ($surat->tanda_tangan_bersangkutan == 1)
                     <div class="form-group mb-3">
                         <label for="tanda_tangan_bersangkutan" class="form-control-label">Nama yang bersangkutan</label>
-                        <input required id="tanda_tangan_bersangkutan" class="form-control form-control-alternative"
-                            name="isian[]" autofocus placeholder="Masukkan nama yang bersangkutan">
+                        <input required id="tanda_tangan_bersangkutan" class="form-control form-control-sm" name="isian[]"
+                            autofocus placeholder="Masukkan nama yang bersangkutan">
                     </div>
                 @endif
 
