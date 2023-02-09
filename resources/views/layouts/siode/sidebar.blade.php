@@ -131,14 +131,14 @@
                                 <p>Keluarga</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item">  
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Rumah Tangga</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.kependudukan.kelompok.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Kelompok</p>
                             </a>

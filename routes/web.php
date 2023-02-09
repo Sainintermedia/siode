@@ -20,6 +20,7 @@ use App\Http\Controllers\Dropdown\DependentDropdownController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\Surat\KeteranganskckController;
 use App\Http\Controllers\Siode\WilayahAdministratifController;
+use App\Http\Controllers\Siode\KelompokController;
 
 use App\Http\Controllers\Siode\Surat\KeteranganlahirController;
 use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
@@ -132,6 +133,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::delete('kartu-keluarga/kill/{kartu_keluarga}', [KartuKeluargaController::class, 'kill'])->name('kartu-keluarga.kill');
         Route::resource('kartu-keluarga/anggota-keluarga', KartuKeluargaAnggotaController::class);
         Route::resource('kartu-keluarga/kepala-keluarga', KartuKeluargaController::class);
+        Route::get('kelompok', [KelompokController::class, 'index'])->name('kelompok.index');
         
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
