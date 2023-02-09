@@ -19,13 +19,14 @@ use App\Http\Controllers\Siode\Dashboard\DashboardController;
 //
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
 // // use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
+use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
 use App\Http\Controllers\Siode\KelompokController;
 use App\Http\Controllers\Siode\Surat\CetakSuratController;
 use App\Http\Controllers\Siode\Surat\SuratController;
+// use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RtController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RwController;
-// use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,7 +100,7 @@ Route::group(['middleware' => ['auth', 'permission']], function () {
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
-    Route::resource('dashboard', DashboardController::class);
+    Route::resource('dashboard', DashboardController::class)->except('show', 'edit', 'update', 'create', 'destroy');;
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
         Route::post('wilayah-administratif/rw-autocomplete', [RwController::class, 'autocomplete'])->name('rw.autocomplete');

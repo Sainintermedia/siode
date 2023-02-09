@@ -2,24 +2,23 @@
 
 namespace App\Http\Controllers\Siode;
 
-use App\Models\Master\RtRw;
-use App\Models\Master\Agama;
-use Illuminate\Http\Request;
-use App\Models\Master\GolDarah;
-use App\Models\Master\Pekerjaan;
-use App\Models\Master\Pernikahan;
-use Illuminate\Support\Facades\DB;
-use App\Models\Master\JenisKelamin;
-use App\Models\Tabel\KartuKeluarga;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Master\Kewarganegaraan;
-use App\Models\Master\HubunganKeluarga;
-use Laravolt\Indonesia\Models\Province;
-use App\Models\Master\PendidikanKeluarga;
-use App\Models\Tabel\KartuKeluargaAnggota;
 use App\Http\Requests\KartuKeluargaAnggota\StoreKartuKeluargaAnggotaRequest;
 use App\Http\Requests\KartuKeluargaAnggota\UpdateKartuKeluargaAnggotaRequest;
+use App\Models\Master\Agama;
+use App\Models\Master\GolDarah;
+use App\Models\Master\HubunganKeluarga;
+use App\Models\Master\JenisKelamin;
+use App\Models\Master\Kewarganegaraan;
+use App\Models\Master\Pekerjaan;
+use App\Models\Master\PendidikanKeluarga;
+use App\Models\Master\Pernikahan;
+use App\Models\Master\RtRw;
+use App\Models\Tabel\KartuKeluarga;
+use App\Models\Tabel\KartuKeluargaAnggota;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class KartuKeluargaAnggotaController extends Controller
 {
