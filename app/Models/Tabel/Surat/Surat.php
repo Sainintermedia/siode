@@ -11,7 +11,7 @@ class Surat extends Model
 {
     use HasFactory;
     protected $table = 'surat';
-    protected $fillable = ['nama', 'kode_surat', 'deskripsi', 'icon', 'colour', 'tanda_tangan_bersangkutan', 'perihal', 'data_kades', 'tampilkan', 'persyaratan'];
+    protected $fillable = ['nama', 'kode_surat', 'kategori_surat', 'deskripsi', 'icon', 'colour', 'tanda_tangan_bersangkutan', 'perihal', 'data_kades', 'tampilkan', 'persyaratan'];
     protected $guarded = [];
 
     public function isiSurat()

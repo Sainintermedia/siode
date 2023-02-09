@@ -32,7 +32,7 @@
                     {{ Str::upper($desa->nama_kabupaten) }}</span><br>
                 <span style="font-size: 14pt" class="font-weight-bold">KECAMATAN
                     {{ Str::upper($desa->nama_kecamatan) }}</span><br>
-                <span style="font-size: 14pt" class="font-weight-bold">DESA
+                <span style="font-size: 14pt" class="font-weight-bold">{{ Str::upper($desa->kategori_surat) }} DESA
                     {{ Str::upper($desa->nama_desa) }}</span><br>
                 <div style="font-size: 11pt; font-style: italic">
                     {{ $desa->alamat_desa }}
@@ -105,12 +105,12 @@
                 $pattern = '/\{[0-9A-Za-z\s\(\)]+\}/';
                 preg_match_all($pattern, $string, $matches);
                 $hasil = $string;
-
+                
                 foreach ($matches[0] as $k => $value) {
                     $hasil = str_replace($value, $request->isian[$i], $hasil);
                     $i++;
                 }
-
+                
                 try {
                     if ($surat->isiSurat[$key + 1]->jenis_isi == 3 || ($data_kades == true && $surat->data_kades == 1)) {
                         if ($isiSurat->jenis_isi == 1) {

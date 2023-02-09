@@ -33,16 +33,26 @@
                                     </h6>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md">
                                         <div class="form-group">
                                             <label class="form-control-label">Nama Surat</label>
                                             <input class="form-control form-control-alternative" name="nama">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md">
                                         <div class="form-group">
                                             <label class="form-control-label">Kode Surat</label>
                                             <input class="form-control form-control-alternative" name="kode_surat">
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="">Kategori</label>
+                                            <select name="" id="" class="form-control form-control-sm">
+                                                <option value="">Boleh Kosong</option>
+                                                <option value="KEPALA">Kepala Desa</option>
+                                                <option value="SEKRETARIS">Sekretaris Desa</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
