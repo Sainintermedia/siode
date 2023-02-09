@@ -13,33 +13,16 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\Siode\Beranda\BerandaController;
 // use App\Http\Controllers\Siode\bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
-// use App\Http\Controllers\Siode\Surat\TidakMampuController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
-// use App\Http\Controllers\Siode\Surat\KeteranganskckController;
-
+//
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
-// // use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
-use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
-<<<<<<< HEAD
-use App\Http\Controllers\Siode\Surat\KeteranganskckController;
-use App\Http\Controllers\Siode\WilayahAdministratifController;
-use App\Http\Controllers\Siode\KelompokController;
-
-use App\Http\Controllers\Siode\Surat\KeteranganlahirController;
-use App\Http\Controllers\Siode\Surat\KeteranganusahaController;
-use App\Http\Controllers\Siode\WilayahAdministratif\KpController;
-
-
-=======
-// use App\Http\Controllers\Siode\Surat\KeteranganizinrameController;
-// use App\Http\Controllers\Siode\Surat\KeteranganahliwarisController;
-// use App\Http\Controllers\Siode\Surat\KeterangantidakmampuController;
+// // use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
+use App\Http\Controllers\Siode\KelompokController;
 use App\Http\Controllers\Siode\Surat\CetakSuratController;
 use App\Http\Controllers\Siode\Surat\SuratController;
->>>>>>> d7e0ddad3fbc39120ca3c18c9a8dd5c8fbafbf0a
 use App\Http\Controllers\Siode\WilayahAdministratif\RtController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RwController;
 // use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
@@ -119,12 +102,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     Route::resource('dashboard', DashboardController::class);
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
-
         Route::post('wilayah-administratif/rw-autocomplete', [RwController::class, 'autocomplete'])->name('rw.autocomplete');
-        // Route::get('wilayah-administratif/rw', [RwController::class, 'index'])->name('rw.index');
-        // Route::post('wilayah-administratif/rw', [RwController::class, 'store'])->name('rw.store');
-        // Route::put('wilayah-administratif/rw/{rw}', [RwController::class, 'store'])->name('rw.update');
-        // Route::delete('wilayah-administratif/rw/{rw}', [RwController::class, 'destroy'])->name('rw.destroy');
         Route::resource('wilayah-administratif/rw', RwController::class);
         Route::resource('wilayah-administratif/rt', RtController::class);
         Route::get('/identitas-desa', [IdentitasDesaController::class, 'index'])->name('identitas-desa.index');
@@ -134,19 +112,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
-
         Route::post('kartu-keluarga/anggota-keluarga/autocomplete-search', [KartuKeluargaAnggotaController::class, 'autocompleteSearch'])->name('kartu-keluarga.anggota-keluarga.autocomplete');
         Route::get('kartu-keluarga/kartu-keluarga/view-delete', [KartuKeluargaController::class, 'viewDelete'])->name('kartu-keluarga.view-delete');
         Route::get('kartu-keluarga/restore/{kartu_keluarga}', [KartuKeluargaController::class, 'restore'])->name('kartu-keluarga.restore');
         Route::delete('kartu-keluarga/kill/{kartu_keluarga}', [KartuKeluargaController::class, 'kill'])->name('kartu-keluarga.kill');
         Route::resource('kartu-keluarga/anggota-keluarga', KartuKeluargaAnggotaController::class);
         Route::resource('kartu-keluarga/kepala-keluarga', KartuKeluargaController::class);
-<<<<<<< HEAD
         Route::get('kelompok', [KelompokController::class, 'index'])->name('kelompok.index');
-        
-=======
 
->>>>>>> d7e0ddad3fbc39120ca3c18c9a8dd5c8fbafbf0a
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
         Route::get('/cetak-surat/{id}/{slug}/buat', [CetakSuratController::class, 'create'])->name('buat-surat');
@@ -172,7 +145,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'arsipdesa', 'as' => 'arsip-desa.'], function () {
         Route::get('kearsipan/peta', [BukukearsipanController::class, 'petalokasi'])->name('kearsipan.peta.petalokasi');
-
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'beranda', 'as' => 'beranda.'], function () {
