@@ -82,6 +82,11 @@
     
         <div class="card-body">
             <div class="row">
+                <div class="card-title">
+                    <a href="{{ route('siode.kependudukan.data-suplemen.create') }}"
+                        class="btn btn-xs bg-gradient-primary"><i class="fa-solid fa-plus"></i>
+                        Tambah</a>
+                </div>
                 <div class="col-lg-12 col-12">
                     <div class="small-box">
                         <div class="card-body table-responsive">

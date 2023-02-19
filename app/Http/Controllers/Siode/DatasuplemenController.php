@@ -12,4 +12,8 @@ class DatasuplemenController extends Controller
     {   
         return view('siode.kependudukan.data-suplemen.index');
     }
+    public function create()
+    {   
+        return view('siode.kependudukan.data-suplemen.create');
+    }
 }

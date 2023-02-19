@@ -123,6 +123,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::resource('kartu-keluarga/kepala-keluarga', KartuKeluargaController::class);
         Route::get('kelompok', [KelompokController::class, 'index'])->name('kelompok.index');
         Route::get('data-suplemen', [DatasuplemenController::class, 'index'])->name('data-suplemen.index');
+        Route::get('data-suplemen/create', [DatasuplemenController::class, 'create'])->name('data-suplemen.create');
         
 
     });
