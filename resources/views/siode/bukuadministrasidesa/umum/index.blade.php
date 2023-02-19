@@ -19,7 +19,7 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU PERATURAN DI DESA
@@ -29,10 +29,10 @@
                             {{--  <i class="ion ion-bag"></i>  --}}
                             <i class="fa-solid fa-chart-simple"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('siode.buku.umum.peraturandesa.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU KEPUTUSAN KEPALA DESA
@@ -42,10 +42,23 @@
                             {{--  <i class="ion ion-bag"></i>  --}}
                             <i class="fa-solid fa-chart-simple"></i>
                         </div>
+                        <a href="{{ route('siode.buku.umum.peraturandesa.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-12 col-12">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h4>BUKU INVENTARIS DAN KEKAYAAN DESA
+                            </h4>
+                        </div>
+                        <div class="icon">
+                            {{--  <i class="ion ion-bag"></i>  --}}
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU APARAT PEMERINTAH DESA
@@ -58,7 +71,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU TANAH KAS DESA
@@ -71,7 +84,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU TANAH DI DESA
@@ -84,7 +97,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU AGENDA
@@ -97,7 +110,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU EKSPEDISI
@@ -110,7 +123,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU LEMBARAN DESA DAN BERITA DESA

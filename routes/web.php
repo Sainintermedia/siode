@@ -15,6 +15,7 @@ use App\Http\Controllers\Siode\Beranda\BerandaController;
 use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 //
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
@@ -142,6 +143,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'bukuadministrasidesa', 'as' => 'buku.'], function () {
         Route::get('umum', [UmumController::class, 'index'])->name('umum.index');
+        Route::get('umum/peraturandesa', [PeraturandesaController::class, 'index'])->name('umum.peraturandesa.index');
+        Route::get('umum/peraturandesa/create', [PeraturandesaController::class, 'create'])->name('umum.peraturandesa.create');
         Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
         Route::get('kearsipan', [BukukearsipanController::class, 'index'])->name('kearsipan.index');
         Route::get('kearsipan/sarpras', [BukukearsipanController::class, 'sarpras'])->name('kearsipan.sarpras.sarpras');
