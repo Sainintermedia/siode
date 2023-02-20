@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Keputusan Kepala Desa')
+@section('title', 'Buku Aparat Pemerintah Desa')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -30,8 +30,12 @@
                             <tr class="text-center">
                                 <th style="width: 1%">No</th>
                                 <th style="width: 1%">Aksi</th>
-                                <th>Nomor Dan Tanggal Keputusan Kepala Desa</th>
-                                <th>Tentang</th>
+                                <th>Nama</th>
+                                <th>NIAP</th>
+                                <th>NIP</th>  
+                                <th>Jenis Kelamin</th> 
+                                <th>Tempat Dan Tanggal</th> 
+                                    <th>Jenis Kelamin</th> 
                                 <th>Uraian Singkat</th>
                                 <th>Nomor Dan Tanggal Di Laporkan</th>
                                 <th>Keterangan</th>

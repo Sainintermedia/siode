@@ -7,5 +7,12 @@ use Illuminate\Http\Request;
 
 class BukukeputusankepaladesaController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('siode.bukuadministrasidesa.umum.buku-keputusan-kepala-desa.index');
+    }
+    public function create()
+    {
+        return view('siode.bukuadministrasidesa.umum.buku-keputusan-kepala-desa.create');
+    }
 }
