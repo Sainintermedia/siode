@@ -21,6 +21,7 @@ use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuekspedisiController
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuinventariskekayaandesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukukeputusankepaladesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 //
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
