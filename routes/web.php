@@ -11,7 +11,6 @@ use App\Http\Controllers\Dropdown\DependentDropdownController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\Siode\Beranda\BerandaController;
-// use App\Http\Controllers\Siode\bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
@@ -23,14 +22,11 @@ use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\Bukukeputusankepaladesa
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
-//
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
-// // use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
 use App\Http\Controllers\Siode\KelompokController;
 use App\Http\Controllers\Siode\Lembaga\LembagaController;
-// use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\Surat\CetakSuratController;
 use App\Http\Controllers\Siode\Surat\SuratController;
 use App\Http\Controllers\Siode\WilayahAdministratif\WilayahAdministratifController;
@@ -124,16 +120,16 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::resource('/wilayah-administratif', WilayahAdministratifController::class);
         // END BAGIAN DUSUN //
 
+        // IDENTIS DESA //
         Route::get('/identitas-desa', [IdentitasDesaController::class, 'index'])->name('identitas-desa.index');
         Route::patch('/update-desa/{desa}', [IdentitasDesaController::class, 'update'])->name('identitas-desa.update');
+        // END ISENTITAS DESA //
 
         Route::get('lembaga/{id}/{slug}/', [LembagaController::class, 'createJabatan'])->name('lembaga.createJabatan');
         Route::patch('lembaga/jabatan/update/{jabatan}', [LembagaController::class, 'updateJabatan'])->name('lembaga.updateJabatan');
         Route::get('lembaga/jabatan/{id}/edit', [LembagaController::class, 'editJabatan'])->name('lembaga.editJabatan');
         Route::post('lembaga/jabatan', [LembagaController::class, 'storeJabatan'])->name('lembaga.storeJabatan');
         Route::resource('lembaga', LembagaController::class);
-        // Route::resource('identitas-desa', IdentitasDesaController::class);
-        // Route::resource('wilayah-administratif/kampung', KpController::class);
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'kependudukan', 'as' => 'kependudukan.'], function () {
