@@ -35,7 +35,6 @@
                                 <th>NIP</th>  
                                 <th>Jenis Kelamin</th> 
                                 <th>Tempat Dan Tanggal</th> 
-                                    <th>Jenis Kelamin</th> 
                                 <th>Uraian Singkat</th>
                                 <th>Nomor Dan Tanggal Di Laporkan</th>
                                 <th>Keterangan</th>
