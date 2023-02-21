@@ -17,6 +17,10 @@ use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukukeputusankepaladesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuinventariskekayaandesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuaparatpemerintahdesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuagendaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuekspedisiController;
 
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 //
@@ -111,13 +115,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('/identitas-desa', [IdentitasDesaController::class, 'index'])->name('identitas-desa.index');
         Route::patch('/update-desa/{desa}', [IdentitasDesaController::class, 'update'])->name('identitas-desa.update');
 
-        Route::get('lembaga/{id}/{slug}/', [LembagaController::class, 'createJabatan'])->name('lembaga.createJabatan');
-        Route::patch('lembaga/jabatan/update/{jabatan}', [LembagaController::class, 'updateJabatan'])->name('lembaga.updateJabatan');
-        Route::get('lembaga/jabatan/{id}/edit', [LembagaController::class, 'editJabatan'])->name('lembaga.editJabatan');
-        Route::post('lembaga/jabatan', [LembagaController::class, 'storeJabatan'])->name('lembaga.storeJabatan');
-        Route::resource('wilayah-administratif/rw', RwController::class);
-        Route::resource('wilayah-administratif/rt', RtController::class);
-        Route::resource('lembaga', LembagaController::class);
+        // Route::get('lembaga/{id}/{slug}/', [LembagaController::class, 'createJabatan'])->name('lembaga.createJabatan');
+        // Route::patch('lembaga/jabatan/update/{jabatan}', [LembagaController::class, 'updateJabatan'])->name('lembaga.updateJabatan');
+        // Route::get('lembaga/jabatan/{id}/edit', [LembagaController::class, 'editJabatan'])->name('lembaga.editJabatan');
+        // Route::post('lembaga/jabatan', [LembagaController::class, 'storeJabatan'])->name('lembaga.storeJabatan');
+        // Route::resource('wilayah-administratif/rw', RwController::class);
+        // Route::resource('wilayah-administratif/rt', RtController::class);
+        // Route::resource('lembaga', LembagaController::class);
         // Route::resource('identitas-desa', IdentitasDesaController::class);
         // Route::resource('wilayah-administratif/kampung', KpController::class);
 
@@ -155,6 +159,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('umum/keputusankepaladesa/create', [BukukeputusankepaladesaController::class, 'create'])->name('umum.keputusankepaladesa.create');
         Route::get('umum/bukuinventarisdesa', [BukuinventariskekayaandesaController::class, 'index'])->name('umum.bukuinventarisdesa.index');
         Route::get('umum/bukuinventarisdesa/create', [BukuinventariskekayaandesaController::class, 'create'])->name('umum.bukuinventarisdesa.create');
+        Route::get('umum/bukuaparatpemerintah', [BukuaparatpemerintahdesaController::class, 'index'])->name('umum.bukuaparatpemerintah.index');
+        Route::get('umum/bukuaparatpemerintah/create', [BukuaparatpemerintahdesaController::class, 'create'])->name('umum.bukuaparatpemerintah.create');
+        Route::get('umum/bukutanahkasdesa', [BukutanahkasdesaController::class, 'index'])->name('umum.bukutanahkasdesa.index');
+        Route::get('umum/bukuaparatpemerintah/create', [BukutanahkasdesaController::class, 'create'])->name('umum.bukutanahkasdesa.create');
+        Route::get('umum/bukuagenda', [BukuagendaController::class, 'index'])->name('umum.bukuagenda.index');
+        Route::get('umum/bukuagenda/create', [BukuagendaController::class, 'create'])->name('umum.bukuagenda.create');
+        Route::get('umum/bukuekspedisi', [BukuekspedisiController::class, 'index'])->name('umum.bukuekspedisi.index');
+        Route::get('umum/bukuekspedisi/create', [BukuekspedisiController::class, 'create'])->name('umum.bukuekspedisi.create');
        
         Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
         Route::get('kearsipan', [BukukearsipanController::class, 'index'])->name('kearsipan.index');

@@ -71,7 +71,7 @@
                                 <p>Identitas Desa</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('siode.infodesa.rw.index') }}" class="nav-link {!! request()->is(['siode/info-desa/wilayah-administratif/']) ||
                             request()->is(['siode/info-desa/wilayah-administratif/*'])
                                 ? 'active'
@@ -79,7 +79,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
@@ -92,12 +92,12 @@
                                 <p>Status Desa</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('siode.infodesa.lembaga.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-blue"></i>
                                 <p>Lembaga Desa</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 

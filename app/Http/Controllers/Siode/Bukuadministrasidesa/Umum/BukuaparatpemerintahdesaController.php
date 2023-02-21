@@ -9,10 +9,10 @@ class BukuaparatpemerintahdesaController extends Controller
 {
     public function index()
     {
-        return view('siode.bukuadministrasidesa.umum.buku-inventaris-kekayaan-desa.index');
+        return view('siode.bukuadministrasidesa.umum.buku-aparat-pemerintah-desa.index');
     }
     public function create()
     {
-        return view('siode.bukuadministrasidesa.umum.buku-inventaris-kekayaan-desa.create');
+        return view('siode.bukuadministrasidesa.umum.buku-aparat-pemerintah-desa.create');
     }
 }
