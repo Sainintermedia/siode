@@ -15,8 +15,12 @@ use App\Http\Controllers\Siode\Beranda\BerandaController;
 use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuagendaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuaparatpemerintahdesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuekspedisiController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuinventariskekayaandesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukukeputusankepaladesaController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 //
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
@@ -162,6 +166,17 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('umum/peraturandesa/create', [PeraturandesaController::class, 'create'])->name('umum.peraturandesa.create');
         Route::get('umum/keputusankepaladesa', [BukukeputusankepaladesaController::class, 'index'])->name('umum.keputusankepaladesa.index');
         Route::get('umum/keputusankepaladesa/create', [BukukeputusankepaladesaController::class, 'create'])->name('umum.keputusankepaladesa.create');
+        Route::get('umum/bukuinventarisdesa', [BukuinventariskekayaandesaController::class, 'index'])->name('umum.bukuinventarisdesa.index');
+        Route::get('umum/bukuinventarisdesa/create', [BukuinventariskekayaandesaController::class, 'create'])->name('umum.bukuinventarisdesa.create');
+        Route::get('umum/bukuaparatpemerintah', [BukuaparatpemerintahdesaController::class, 'index'])->name('umum.bukuaparatpemerintah.index');
+        Route::get('umum/bukuaparatpemerintah/create', [BukuaparatpemerintahdesaController::class, 'create'])->name('umum.bukuaparatpemerintah.create');
+        Route::get('umum/bukutanahkasdesa', [BukutanahkasdesaController::class, 'index'])->name('umum.bukutanahkasdesa.index');
+        Route::get('umum/bukuaparatpemerintah/create', [BukutanahkasdesaController::class, 'create'])->name('umum.bukutanahkasdesa.create');
+        Route::get('umum/bukuagenda', [BukuagendaController::class, 'index'])->name('umum.bukuagenda.index');
+        Route::get('umum/bukuagenda/create', [BukuagendaController::class, 'create'])->name('umum.bukuagenda.create');
+        Route::get('umum/bukuekspedisi', [BukuekspedisiController::class, 'index'])->name('umum.bukuekspedisi.index');
+        Route::get('umum/bukuekspedisi/create', [BukuekspedisiController::class, 'create'])->name('umum.bukuekspedisi.create');
+
         Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
         Route::get('kearsipan', [BukukearsipanController::class, 'index'])->name('kearsipan.index');
         Route::get('kearsipan/sarpras', [BukukearsipanController::class, 'sarpras'])->name('kearsipan.sarpras.sarpras');

@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Inventaris Kekayaan Desa')
+@section('title', 'Buku Tanah Kas Desa')
 @section('content')
 
     <div class="card card-dark card-outline">

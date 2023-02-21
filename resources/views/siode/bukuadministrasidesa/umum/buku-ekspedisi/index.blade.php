@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Aparat Pemerintah Desa')
+@section('title', 'Buku Ekspedisi')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -27,19 +27,16 @@
                     <table id="example1"
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
                         <thead>
-                            <tr class="text-center">
-                                <th style="width: 1%">No</th>
-                                <th style="width: 1%">Aksi</th>
-                                <th>Nama</th>
-                                <th>NIAP</th>
-                                <th>NIP</th>  
-                                <th>Jenis Kelamin</th> 
-                                <th>Tempat Dan Tanggal</th> 
-                                <th>Uraian Singkat</th>
-                                <th>Nomor Dan Tanggal Di Laporkan</th>
-                                <th>Keterangan</th>
+                            <tr>
+                                <td style="text-transform:uppercase" class="text-center" >NO</td>
+                                <td style="text-transform:uppercase" class="text-center" >Aksi</td>
+                                <td style="text-transform:uppercase" class="text-center">Tanggal Pengiriman</td>
+                                <td style="text-transform:uppercase" class="text-center">Tanggal Dan<br>Nomor Surat</td>
+                                <td style="text-transform:uppercase" class="text-center">Isi Singkat Surat Yang Dikirim</td>
+                                <td style="text-transform:uppercase" class="text-center">Ditujukan <br>Kepada</td>
+                                <td style="text-transform:uppercase" class="text-center">Keterangan</td>
                             </tr>
-                        </thead>
+                        </thead>                            
                         <tbody>
                             {{-- @forelse ($sarpras as $value => $fm) --}}
                                 <tr class="text-center">
@@ -71,8 +68,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>#</td>
-                                    <td>#</td>
+                                    <td style="text-transform:uppercase">#</td>
                                     <td style="text-transform:uppercase">#</td>
                                     <td style="text-transform:uppercase" class="text-center">#</td>
                                     <td style="text-transform:uppercase" class="text-center">#</td>
@@ -82,7 +78,7 @@
                                 <h4>tidak ada data</h4>
                             {{-- @endforelse --}}
                         </tbody>
-                        <tfoot>
+                        {{-- <tfoot>
                             <tr class="text-center">
                                 <th style="width: 1%">No</th>
                                 <th>Aksi</th>
@@ -92,7 +88,7 @@
                                 <th>Nomor Dan Tanggal Di Laporkan</th>
                                 <th>Keterangan</th>
                             </tr>
-                        </tfoot>
+                        </tfoot> --}}
                     </table>
                 </div>
                 {{-- <div class="card-footer clearfix">

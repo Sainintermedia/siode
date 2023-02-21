@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Aparat Pemerintah Desa')
+@section('title', 'Buku Tanah Kas Desa')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -27,17 +27,40 @@
                     <table id="example1"
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
                         <thead>
-                            <tr class="text-center">
-                                <th style="width: 1%">No</th>
-                                <th style="width: 1%">Aksi</th>
-                                <th>Nama</th>
-                                <th>NIAP</th>
-                                <th>NIP</th>  
-                                <th>Jenis Kelamin</th> 
-                                <th>Tempat Dan Tanggal</th> 
-                                <th>Uraian Singkat</th>
-                                <th>Nomor Dan Tanggal Di Laporkan</th>
-                                <th>Keterangan</th>
+                            <tr>
+                            <td rowspan="3">NO</td>
+                            <td colspan="4" rowspan="3" class="text-center">Asal Tanah Kas Desa<br>&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;</td>
+                            <td rowspan="3"class="text-center">Nomor Sertifikat Buku Letter C/ Persil</td>
+                            <td colspan="3" rowspan="3"class="text-center" >Luas</td>
+                            <td colspan="3" rowspan="3" class="text-center">Kelas</td>
+                            <td colspan="9" class="text-center">Perolehan Tanah Kas Desa</td>
+                            <td colspan="5" class="text-center">Tanah Kas Desa</td>
+                            <td colspan="2" class="text-center">Patok Tanda Batas</td>
+                            <td colspan="2"class="text-center" >Papan <br>Nama</td>
+                            <td colspan="2" rowspan="3" class="text-center">Lokasi</td>
+                            <td colspan="2" rowspan="3" class="text-center" >Peruntukan<br> <br> </td>
+                            <td rowspan="3">Mutasi</td>
+                            <td rowspan="3">Ket</td>
+                            </tr>
+                            <tr>
+                            <td rowspan="2">Asli Milik Desa</td>
+                            <td colspan="3" class="text-center" >Bantuan</td>
+                            <td colspan="2" rowspan="2">Lain Lain</td>
+                            <td colspan="3" rowspan="2">Tgl Perole<br>han</td>
+                            <td rowspan="2">Sa<br>wah</td>
+                            <td rowspan="2">Te<br>gal</td>
+                            <td rowspan="2">Ke<br>bun</td>
+                            <td rowspan="2">Tambak/ Kolam</td>
+                            <td rowspan="2">tanah <br>Kering<br>/Darat</td>
+                            <td rowspan="2">Ada</td>
+                            <td rowspan="2">tdk Ada</td>
+                            <td rowspan="2">Ada</td>
+                            <td rowspan="2">Tidak <br>Ada</td>
+                            </tr>
+                            <tr>
+                            <td>Pemerintah</td>
+                            <td>Prov</td>
+                            <td>Kab / Kota</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,17 +105,6 @@
                                 <h4>tidak ada data</h4>
                             {{-- @endforelse --}}
                         </tbody>
-                        <tfoot>
-                            <tr class="text-center">
-                                <th style="width: 1%">No</th>
-                                <th>Aksi</th>
-                                <th>Nomor Dan Tanggal Keputusan Kepala Desa</th>
-                                <th>Tentang</th>
-                                <th>Uraian Singkat</th>
-                                <th>Nomor Dan Tanggal Di Laporkan</th>
-                                <th>Keterangan</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
                 {{-- <div class="card-footer clearfix">

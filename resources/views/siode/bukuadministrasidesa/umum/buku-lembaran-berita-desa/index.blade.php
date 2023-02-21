@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Aparat Pemerintah Desa')
+@section('title', 'Buku Lembaran Dan Berita Desa')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -27,19 +27,25 @@
                     <table id="example1"
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
                         <thead>
-                            <tr class="text-center">
-                                <th style="width: 1%">No</th>
-                                <th style="width: 1%">Aksi</th>
-                                <th>Nama</th>
-                                <th>NIAP</th>
-                                <th>NIP</th>  
-                                <th>Jenis Kelamin</th> 
-                                <th>Tempat Dan Tanggal</th> 
-                                <th>Uraian Singkat</th>
-                                <th>Nomor Dan Tanggal Di Laporkan</th>
-                                <th>Keterangan</th>
+                            <tr>
+                            <td rowspan="2" class="text-center">NO</td>
+                            <td rowspan="2"  style="text-transform:uppercase" class="text-center">Tanggal Penerimaan / <br>Pengiriman Surat</td>
+                            <td colspan="4"  style="text-transform:uppercase" class="text-center">Surat Masuk</td>
+                            <td colspan="4"  style="text-transform:uppercase" class="text-center">Surat Keluar</td>
+                            <td>Ket</td>
                             </tr>
-                        </thead>
+                            <tr>
+                            <td style="text-transform:uppercase" class="text-center">Nomor</td>
+                            <td  style="text-transform:uppercase" class="text-center">Tanggal</td>
+                            <td  style="text-transform:uppercase" class="text-center">Pengiriman</td>
+                            <td  style="text-transform:uppercase" class="text-center">Isi Singkat</td>
+                            <td  style="text-transform:uppercase" class="text-center">Nomor</td>
+                            <td  style="text-transform:uppercase" class="text-center">Tanggal</td>
+                            <td  style="text-transform:uppercase" class="text-center">Ditunjukan<br>Kepada</td>
+                            <td  style="text-transform:uppercase" class="text-center">Isi Surat</td>
+                            <td></td>
+                            </tr>
+                        </thead>                            
                         <tbody>
                             {{-- @forelse ($sarpras as $value => $fm) --}}
                                 <tr class="text-center">
@@ -73,6 +79,9 @@
                                     </td>
                                     <td>#</td>
                                     <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                     <td style="text-transform:uppercase">#</td>
                                     <td style="text-transform:uppercase" class="text-center">#</td>
                                     <td style="text-transform:uppercase" class="text-center">#</td>
@@ -82,7 +91,7 @@
                                 <h4>tidak ada data</h4>
                             {{-- @endforelse --}}
                         </tbody>
-                        <tfoot>
+                        {{-- <tfoot>
                             <tr class="text-center">
                                 <th style="width: 1%">No</th>
                                 <th>Aksi</th>
@@ -92,7 +101,7 @@
                                 <th>Nomor Dan Tanggal Di Laporkan</th>
                                 <th>Keterangan</th>
                             </tr>
-                        </tfoot>
+                        </tfoot> --}}
                     </table>
                 </div>
                 {{-- <div class="card-footer clearfix">

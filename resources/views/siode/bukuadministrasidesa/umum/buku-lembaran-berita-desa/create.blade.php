@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Inventaris Kekayaan Desa')
+@section('title', 'Buku Lembaran Dan Berita Desa')
 @section('content')
 
     <div class="card card-dark card-outline">
@@ -7,13 +7,13 @@
             @csrf
             <div class="card-header">
                 <div class="card-title">
-                    <strong>INPUT DATA BUKU INVENTARIS DESA</strong>
+                    <strong>INPUT DATA BUKU KEPUTUSAN KEPALA DESA</strong>
                 </div>
             </div>
             <div class="card-body text-sm">
                 <div class="bg-gray mt-2 mb-2 py-2 px-2">
                     <h6 class="mb-0">
-                        <strong>BUKU INVENTARIS DESA :</strong>
+                        <strong>BUKU KEPALA DESA :</strong>
                     </h6>
                 </div>
                 <div class="row">
@@ -58,7 +58,7 @@
             <div class="card-footer">
                 <div class="col-6">
                     <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm" style="text-transform:uppercase"
-                        href="{{route('siode.buku.umum.bukuinventarisdesa.index')}}">
+                        href="#">
                         {{ trans('Cancel') }}
                     </a>
                     <input type="submit" value="Submit" class="btn bg-gradient-primary btn-sm">
