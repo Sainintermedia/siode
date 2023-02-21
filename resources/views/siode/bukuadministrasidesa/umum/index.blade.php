@@ -55,7 +55,7 @@
                             {{--  <i class="ion ion-bag"></i>  --}}
                             <i class="fa-solid fa-chart-simple"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('siode.buku.umum.bukuinventarisdesa.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-md-12 col-12">
@@ -68,7 +68,7 @@
                             {{--  <i class="ion ion-bag"></i>  --}}
                             <i class="fa-solid fa-chart-simple"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('siode.buku.umum.bukuinventarisdesa.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-md-12 col-12">
