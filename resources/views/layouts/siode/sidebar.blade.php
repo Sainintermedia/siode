@@ -138,13 +138,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('siode.kependudukan.kelompok.index') }}" class="nav-link">
+                            <a href="{{ route('siode.kependudukan.kelompok.index') }}"
+                            class="nav-link {!! request()->is(['siode/kependudukan/kelompok']) ||
+                            request()->is(['siode/kependudukan/kelompok/*'])
+                                ? 'active'
+                                : '' !!}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Kelompok</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.kependudukan.data-suplemen.index') }}"
+                            class="nav-link {!! request()->is(['siode/kependudukan/data-suplemen']) ||
+                            request()->is(['siode/kependudukan/data-suplemen/*'])
+                                ? 'active'
+                                : '' !!}">
                                 <i class="far fa-circle nav-icon text-purple"></i>
                                 <p>Data Suplemen</p>
                             </a>
