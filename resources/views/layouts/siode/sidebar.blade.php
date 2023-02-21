@@ -7,11 +7,12 @@
     </a>
 
     <!-- Sidebar -->
+
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel d-flex mt-2 mb-2 pb-2">
             <div class="image">
-                <img src="{{ URL::asset('images/desa.png') }}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{ url(Storage::url($desa->logo)) }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="{{ route('siode.dashboard.index') }}" class="d-block">Desa Cisoka</a>
@@ -72,10 +73,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('siode.infodesa.rw.index') }}" class="nav-link {!! request()->is(['siode/info-desa/wilayah-administratif/']) ||
-                            request()->is(['siode/info-desa/wilayah-administratif/*'])
-                                ? 'active'
-                                : '' !!}">
+                            <a href="{{ route('siode.infodesa.wilayah-administratif.index') }}"
+                                class="nav-link {!! request()->is(['siode/info-desa/wilayah-administratif/']) ||
+                                request()->is(['siode/info-desa/wilayah-administratif/*'])
+                                    ? 'active'
+                                    : '' !!}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Wilayah Administratif</p>
                             </a>
@@ -139,18 +141,15 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('siode.kependudukan.kelompok.index') }}"
-                            class="nav-link {!! request()->is(['siode/kependudukan/kelompok']) ||
-                            request()->is(['siode/kependudukan/kelompok/*'])
-                                ? 'active'
-                                : '' !!}">
+                                class="nav-link {!! request()->is(['siode/kependudukan/kelompok']) || request()->is(['siode/kependudukan/kelompok/*'])
+                                    ? 'active'
+                                    : '' !!}">
                                 <i class="far fa-circle nav-icon text-red"></i>
                                 <p>Kelompok</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('siode.kependudukan.data-suplemen.index') }}"
-                            class="nav-link {!! request()->is(['siode/kependudukan/data-suplemen']) ||
-                            request()->is(['siode/kependudukan/data-suplemen/*'])
+                            <a href="#" class="nav-link {!! request()->is(['siode/kependudukan/data-suplemen']) || request()->is(['siode/kependudukan/data-suplemen/*'])
                                 ? 'active'
                                 : '' !!}">
                                 <i class="far fa-circle nav-icon text-purple"></i>

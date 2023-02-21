@@ -5,6 +5,9 @@
     @include('layouts.siode.styles')
     @stack('styles')
 </head>
+@php
+    $desa = App\Models\Tabel\Desa::findOrFail(1);
+@endphp
 
 <body class="sidebar-mini text-sm">
     <div class="wrapper">

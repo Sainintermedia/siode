@@ -24,11 +24,11 @@ use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
 use App\Http\Controllers\Siode\KelompokController;
-use App\Http\Controllers\Siode\Surat\CetakSuratController;
+use App\Http\Controllers\Siode\Lembaga\LembagaController;
 // use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
+use App\Http\Controllers\Siode\Surat\CetakSuratController;
 use App\Http\Controllers\Siode\Surat\SuratController;
-use App\Http\Controllers\Siode\WilayahAdministratif\RtController;
-use App\Http\Controllers\Siode\WilayahAdministratif\RwController;
+use App\Http\Controllers\Siode\WilayahAdministratif\WilayahAdministratifController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -105,7 +105,19 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     Route::resource('dashboard', DashboardController::class)->except('show', 'edit', 'update', 'create', 'destroy');;
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
-        Route::post('wilayah-administratif/rw-autocomplete', [RwController::class, 'autocomplete'])->name('rw.autocomplete');
+
+        // BAGIAN RT //
+
+        // END BAGIAN RT //
+
+        // BAGIAN RW //
+        Route::get('wilayah-administratif/rw/create', [WilayahAdministratifController::class, 'createRw'])->name('wilayah-administratif.createRw');
+        Route::post('wilayah-administratif/rw/', [WilayahAdministratifController::class, 'storeRw'])->name('wilayah-administratif.storeRw');
+        // END BAGIAN RW //
+
+        // BAGIAN DUSUN //
+        Route::resource('/wilayah-administratif', WilayahAdministratifController::class);
+        // END BAGIAN DUSUN //
 
         Route::get('/identitas-desa', [IdentitasDesaController::class, 'index'])->name('identitas-desa.index');
         Route::patch('/update-desa/{desa}', [IdentitasDesaController::class, 'update'])->name('identitas-desa.update');
@@ -114,8 +126,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::patch('lembaga/jabatan/update/{jabatan}', [LembagaController::class, 'updateJabatan'])->name('lembaga.updateJabatan');
         Route::get('lembaga/jabatan/{id}/edit', [LembagaController::class, 'editJabatan'])->name('lembaga.editJabatan');
         Route::post('lembaga/jabatan', [LembagaController::class, 'storeJabatan'])->name('lembaga.storeJabatan');
-        Route::resource('wilayah-administratif/rw', RwController::class);
-        Route::resource('wilayah-administratif/rt', RtController::class);
         Route::resource('lembaga', LembagaController::class);
         // Route::resource('identitas-desa', IdentitasDesaController::class);
         // Route::resource('wilayah-administratif/kampung', KpController::class);
@@ -129,8 +139,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::resource('kartu-keluarga/anggota-keluarga', KartuKeluargaAnggotaController::class);
         Route::resource('kartu-keluarga/kepala-keluarga', KartuKeluargaController::class);
         Route::get('kelompok', [KelompokController::class, 'index'])->name('kelompok.index');
-        Route::get('data-suplemen', [DatasuplemenController::class, 'index'])->name('data-suplemen.index');
-        Route::get('data-suplemen/create', [DatasuplemenController::class, 'create'])->name('data-suplemen.create');
+        // Route::get('data-suplemen', [DatasuplemenController::class, 'index'])->name('data-suplemen.index');
+        // Route::get('data-suplemen/create', [DatasuplemenController::class, 'create'])->name('data-suplemen.create');
 
     });
     Route::group(['middleware' => ['auth'], 'prefix' => 'layanan-surat', 'as' => 'surat.'], function () {
