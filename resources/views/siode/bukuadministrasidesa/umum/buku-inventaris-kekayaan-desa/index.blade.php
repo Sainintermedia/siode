@@ -24,76 +24,54 @@
                     </div>
                 </div>
                 <div class="card-body table-responsive">
-                    <table id="example1"
-                        class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
+                    <table style="example1" class="table table-bordered">
+                        {{-- <colgroup>
+                        <col style="width: 32.2px">
+                        <col style="width: 100.2px">
+                        <col style="width: 54.2px">
+                        <col style="width: 82.2px">
+                        <col style="width: 61.2px">
+                        <col style="width: 90.2px">
+                        <col style="width: 38.2px">
+                        <col style="width: 50.2px">
+                        <col style="width: 50.2px">
+                        <col style="width: 46.2px">
+                        <col style="width: 104.2px">
+                        <col style="width: 82.2px">
+                        <col style="width: 38.2px">
+                        <col style="width: 50.2px">
+                        <col style="width: 32.2px">
+                        </colgroup> --}}
                         <thead>
-                            <tr class="text-center">
-                                <tr>
-                                    <th rowspan="2">No</th>
-                                    <th rowspan="2">Jenis Barang Bangunan</th>
-                                    <th colspan="3">Asal Barang Bangunan</th>
-                                </tr>
-                                <tr>
-                                    <th>Kimia</th>
-                                    <th>Fisika</th>
-                                    <th>Biologi</th>
-                                </tr>
-                            </tr>
+                          <tr>
+                            <td rowspan="3" class="text-center">NO</td>
+                            <td rowspan="3" class="text-center">Jenis Barang /<br>Bangunan</td>
+                            <td colspan="4" class="text-center" >Asal Barang / Bangunan</td>
+                            <td colspan="2" class="text-center">Keadaan</td>
+                            <td colspan="4" class="text-center" >Penghapusan Barang </td>
+                            <td colspan="2" class="text-center">Keadaan</td>
+                            <td rowspan="2" class="text-center">Ket</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2"class="text-center" >Dbeli<br>Sendiri</td>
+                            <td colspan="3" class="text-center">Bantuan</td>
+                            <td rowspan="2" class="text-center">Baik</td>
+                            <td rowspan="2" class="text-center">Rusak</td>
+                            <td rowspan="2" class="text-center">Rusak</td>
+                            <td rowspan="2" class="text-center">Dijual</td>
+                            <td rowspan="2" class="text-center">Disumbangkan</td>
+                            <td rowspan="2"class="text-center" >Tgl Pengeh<br>hapusan</td>
+                            <td rowspan="2" class="text-center">Baik</td>
+                            <td rowspan="2" class="text-center" >Rusak</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center" >Pemerintah</td>
+                            <td class="text-center">Provinsi</td>
+                            <td class="text-center">Kab / Kota</td>
+                            <td></td>
+                          </tr>
                         </thead>
-                        <tbody>
-                            {{-- @forelse ($sarpras as $value => $fm) --}}
-                                <tr class="text-center">
-                                    <td class="text-center">##</td>
-                                    <td class="text-center">
-                                        <div class="btn-group text-center">
-                                            <button type="button"
-                                                class="btn bg-gradient-success dropdown-toggle dropdown-icon btn-xs"
-                                                data-toggle="dropdown">
-                                                <span class="bg-gradient-success sr-only">Toggle Dropdown</span>
-                                            </button>
-                                            <div class="dropdown-menu" role="menu">
-                                                <form method="POST" action="#" class="text-center">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <a class="dropdown-item bg-gradient-info"
-                                                        href="#"><i
-                                                            class="fa-solid fa-eye"></i>
-                                                        View</a>
-                                                    <a class="dropdown-item bg-gradient-warning"
-                                                        href="#"><i
-                                                            class="fa-solid fa-pen"></i>
-                                                        Edit</a>
-                                                    <a class="dropdown-item bg-gradient-danger show_confirm"
-                                                        data-nama="#" type="submit"><i
-                                                            class="fa-solid fa-trash"></i>
-                                                        Delete</a>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td style="text-transform:uppercase">#</td>
-                                    <td style="text-transform:uppercase" class="text-center">#</td>
-                                    <td style="text-transform:uppercase" class="text-center">#</td>
-                                    <td style="text-transform:uppercase" class="text-center">#</td>
-                                </tr>
-                            {{-- @empty --}}
-                                <h4>tidak ada data</h4>
-                            {{-- @endforelse --}}
-                        </tbody>
-                        <tfoot>
-                            <tr class="text-center">
-                                <th style="width: 1%">No</th>
-                                <th>Aksi</th>
-                                <th>Nomor Dan Tanggal Keputusan Kepala Desa</th>
-                                <th>Tentang</th>
-                                <th>Uraian Singkat</th>
-                                <th>Nomor Dan Tanggal Di Laporkan</th>
-                                <th>Keterangan</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                        </table>
                 </div>
                 {{-- <div class="card-footer clearfix">
 

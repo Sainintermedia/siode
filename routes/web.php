@@ -16,12 +16,8 @@ use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukukeputusankepaladesaController;
-<<<<<<< HEAD
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuinventariskekayaandesaController;
 
-=======
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
->>>>>>> 853b33b64eb3e61b51cb9615b4fcdb2db0adf461
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 //
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
