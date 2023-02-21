@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.infodesa.lembaga.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon text-blue"></i>
                                 <p>Lembaga Desa</p>
                             </a>
@@ -131,7 +131,7 @@
                                 <p>Keluarga</p>
                             </a>
                         </li>
-                        <li class="nav-item">  
+                        <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon text-yellow"></i>
                                 <p>Rumah Tangga</p>

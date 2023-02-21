@@ -22,9 +22,10 @@ use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
 use App\Http\Controllers\Siode\KartuKeluargaController;
 use App\Http\Controllers\Siode\KelompokController;
+use App\Http\Controllers\Siode\Lembaga\LembagaController;
 use App\Http\Controllers\Siode\Surat\CetakSuratController;
-use App\Http\Controllers\Siode\Surat\SuratController;
 // use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
+use App\Http\Controllers\Siode\Surat\SuratController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RtController;
 use App\Http\Controllers\Siode\WilayahAdministratif\RwController;
 use Illuminate\Support\Facades\Route;
@@ -105,10 +106,16 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
         Route::post('wilayah-administratif/rw-autocomplete', [RwController::class, 'autocomplete'])->name('rw.autocomplete');
 
-        Route::resource('wilayah-administratif/rw', RwController::class);
-        Route::resource('wilayah-administratif/rt', RtController::class);
         Route::get('/identitas-desa', [IdentitasDesaController::class, 'index'])->name('identitas-desa.index');
         Route::patch('/update-desa/{desa}', [IdentitasDesaController::class, 'update'])->name('identitas-desa.update');
+
+        Route::get('lembaga/{id}/{slug}/', [LembagaController::class, 'createJabatan'])->name('lembaga.createJabatan');
+        Route::patch('lembaga/jabatan/update/{jabatan}', [LembagaController::class, 'updateJabatan'])->name('lembaga.updateJabatan');
+        Route::get('lembaga/jabatan/{id}/edit', [LembagaController::class, 'editJabatan'])->name('lembaga.editJabatan');
+        Route::post('lembaga/jabatan', [LembagaController::class, 'storeJabatan'])->name('lembaga.storeJabatan');
+        Route::resource('wilayah-administratif/rw', RwController::class);
+        Route::resource('wilayah-administratif/rt', RtController::class);
+        Route::resource('lembaga', LembagaController::class);
         // Route::resource('identitas-desa', IdentitasDesaController::class);
         // Route::resource('wilayah-administratif/kampung', KpController::class);
 

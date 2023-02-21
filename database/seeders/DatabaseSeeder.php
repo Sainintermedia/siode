@@ -2,21 +2,21 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Database\Seeders\UmurSeed;
 use Database\Seeders\AgamaSeed;
-use Illuminate\Database\Seeder;
-use Database\Seeders\GolDarahSeed;
-use Database\Seeders\PekerjaanSeed;
-use Database\Seeders\PendidikanSeed;
-use Database\Seeders\PernikahanSeed;
+use Database\Seeders\CreateAdminUserSeeder;
+use Database\Seeders\DesaSeed;
 use Database\Seeders\DisabilitasSeed;
-use Database\Seeders\SakitKronisSeed;
+use Database\Seeders\GolDarahSeed;
+use Database\Seeders\HubunganKeluargaSeed;
 use Database\Seeders\JenisKelaminSeed;
 use Database\Seeders\KewarganegaraanSeed;
-use Database\Seeders\HubunganKeluargaSeed;
-use Database\Seeders\CreateAdminUserSeeder;
+use Database\Seeders\PekerjaanSeed;
 use Database\Seeders\PendidikanKeluargaSeed;
+use Database\Seeders\PendidikanSeed;
+use Database\Seeders\PernikahanSeed;
+use Database\Seeders\SakitKronisSeed;
+use Database\Seeders\UmurSeed;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
             KewarganegaraanSeed::class,
             PendidikanKeluargaSeed::class,
             CreateAdminUserSeeder::class,
+            DesaSeed::class,
         ]);
     }
 }
