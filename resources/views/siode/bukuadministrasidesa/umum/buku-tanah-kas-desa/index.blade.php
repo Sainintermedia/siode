@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <div class="card-title">
                         {{-- {{ route('siode.buku.kearsipan.sarpras.sarprascreate') }} --}}
-                        <a href="{{ route('siode.buku.umum.keputusankepaladesa.create') }}"
+                        <a href="{{ route('siode.buku.umum.bukulembaranberitadesa.create') }}"
                             class="btn btn-xs bg-gradient-primary"><i class="fa-solid fa-plus"></i>
                             Tambah</a>
                     </div>

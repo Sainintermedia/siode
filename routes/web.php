@@ -21,6 +21,8 @@ use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\Bukuinventariskekayaand
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukukeputusankepaladesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukulembaranController;
+
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
 use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
@@ -173,6 +175,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('umum/bukuagenda/create', [BukuagendaController::class, 'create'])->name('umum.bukuagenda.create');
         Route::get('umum/bukuekspedisi', [BukuekspedisiController::class, 'index'])->name('umum.bukuekspedisi.index');
         Route::get('umum/bukuekspedisi/create', [BukuekspedisiController::class, 'create'])->name('umum.bukuekspedisi.create');
+        Route::get('umum/bukulembaranberitadesa', [BukulembaranController::class, 'index'])->name('umum.bukulembaranberitadesa.index');
+        Route::get('umum/bukulembaranberitadesa/create', [BukulembaranController::class, 'create'])->name('umum.bukulembaranberitadesa.create');
 
         Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
         Route::get('kearsipan', [BukukearsipanController::class, 'index'])->name('kearsipan.index');

@@ -7,13 +7,13 @@
             @csrf
             <div class="card-header">
                 <div class="card-title">
-                    <strong>INPUT DATA BUKU KEPUTUSAN KEPALA DESA</strong>
+                    <strong>INPUT BUKU LEMBARAN DAN BERITA DESA</strong>
                 </div>
             </div>
             <div class="card-body text-sm">
                 <div class="bg-gray mt-2 mb-2 py-2 px-2">
                     <h6 class="mb-0">
-                        <strong>BUKU KEPALA DESA :</strong>
+                        <strong>LEMBARAN DAN BERITA DESA :</strong>
                     </h6>
                 </div>
                 <div class="row">
