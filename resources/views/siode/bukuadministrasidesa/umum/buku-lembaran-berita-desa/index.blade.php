@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <div class="card-title">
                         {{-- {{ route('siode.buku.kearsipan.sarpras.sarprascreate') }} --}}
-                        <a href="{{ route('siode.buku.umum.keputusankepaladesa.create') }}"
+                        <a href="{{ route('siode.buku.umum.bukulembaranberitadesa.create') }}"
                             class="btn btn-xs bg-gradient-primary"><i class="fa-solid fa-plus"></i>
                             Tambah</a>
                     </div>
@@ -28,28 +28,23 @@
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
                         <thead>
                             <tr>
-                            <td rowspan="2" class="text-center">NO</td>
-                            <td rowspan="2"  style="text-transform:uppercase" class="text-center">Tanggal Penerimaan / <br>Pengiriman Surat</td>
-                            <td colspan="4"  style="text-transform:uppercase" class="text-center">Surat Masuk</td>
-                            <td colspan="4"  style="text-transform:uppercase" class="text-center">Surat Keluar</td>
-                            <td>Ket</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">NO</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Aksi</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Jenis Peraturan <br>Di Desa</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Nomor Dan <br>Tanggal Ditetapkan</td>
+                              <td colspan="4" rowspan="2" style="text-transform:uppercase" class="text-center">Tentang</td>
+                              <td colspan="2" style="text-transform:uppercase" class="text-center">Diundangkan</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Ket</td>
                             </tr>
                             <tr>
-                            <td style="text-transform:uppercase" class="text-center">Nomor</td>
-                            <td  style="text-transform:uppercase" class="text-center">Tanggal</td>
-                            <td  style="text-transform:uppercase" class="text-center">Pengiriman</td>
-                            <td  style="text-transform:uppercase" class="text-center">Isi Singkat</td>
-                            <td  style="text-transform:uppercase" class="text-center">Nomor</td>
-                            <td  style="text-transform:uppercase" class="text-center">Tanggal</td>
-                            <td  style="text-transform:uppercase" class="text-center">Ditunjukan<br>Kepada</td>
-                            <td  style="text-transform:uppercase" class="text-center">Isi Surat</td>
-                            <td></td>
+                              <td style="text-transform:uppercase" class="text-center">Tanggal</td>
+                              <td style="text-transform:uppercase" class="text-center">Nomor</td>
                             </tr>
-                        </thead>                            
+                          </thead>                          
                         <tbody>
                             {{-- @forelse ($sarpras as $value => $fm) --}}
                                 <tr class="text-center">
-                                    <td class="text-center">##</td>
+                                    <td class="text-center">#</td>
                                     <td class="text-center">
                                         <div class="btn-group text-center">
                                             <button type="button"
@@ -80,12 +75,9 @@
                                     <td>#</td>
                                     <td>#</td>
                                     <td>#</td>
+                                    <td colspan="4">#</td>
                                     <td>#</td>
                                     <td>#</td>
-                                    <td style="text-transform:uppercase">#</td>
-                                    <td style="text-transform:uppercase" class="text-center">#</td>
-                                    <td style="text-transform:uppercase" class="text-center">#</td>
-                                    <td style="text-transform:uppercase" class="text-center">#</td>
                                 </tr>
                             {{-- @empty --}}
                                 <h4>tidak ada data</h4>

@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Lembaran Dan Berita Desa')
+@section('title', 'Buku Induk Penduduk')
 @section('content')
 
     <div class="card card-dark card-outline">
@@ -7,33 +7,33 @@
             @csrf
             <div class="card-header">
                 <div class="card-title">
-                    <strong>INPUT BUKU LEMBARAN DAN BERITA DESA</strong>
+                    <strong>INPUT DATA BUKU INDUK PENDUDUK DESA</strong>
                 </div>
             </div>
             <div class="card-body text-sm">
                 <div class="bg-gray mt-2 mb-2 py-2 px-2">
                     <h6 class="mb-0">
-                        <strong>LEMBARAN DAN BERITA DESA :</strong>
+                        <strong>BUKU INDUK PENDUDUK :</strong>
                     </h6>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="">Jenis Peraturan Di Desa</label>
+                            <label for="">Nomor Dan Tanggal Keputusan Kepala Desa</label>
                             <input type="text" class="form-control form-control-sm text-sm"
                                 style="text-transform:uppercase" name="kode" id="" required>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="">Nomor Dan Tanggal Di Tetapkan</label>
+                            <label for="">Tentang</label>
                             <input type="text" class="form-control form-control-sm text-sm"
                                 style="text-transform:uppercase" name="sarpras" id="" required>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="">Tentang</label>
+                            <label for="">Uraian Singkat</label>
                             <textarea type="text" class="form-control form-control-sm text-sm"
                                 style="text-transform:uppercase" name="lokasi" id="" required>
                             </textarea>
@@ -41,14 +41,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="">Tanggal</label>
-                            <input type="text" class="form-control form-control-sm text-sm"
-                                style="text-transform:uppercase" name="kondisi" id="" required>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="">Nomor</label>
+                            <label for="">Nomor Dan Tanggal Di Laporkan</label>
                             <input type="text" class="form-control form-control-sm text-sm"
                                 style="text-transform:uppercase" name="kondisi" id="" required>
                         </div>
@@ -65,7 +58,7 @@
             <div class="card-footer">
                 <div class="col-6">
                     <a style="margin-top:0px;" class="btn bg-gradient-secondary btn-sm" style="text-transform:uppercase"
-                        href="{{route('siode.buku.umum.bukulembaranberitadesa.index')}}">
+                        href="#">
                         {{ trans('Cancel') }}
                     </a>
                     <input type="submit" value="Submit" class="btn bg-gradient-primary btn-sm">
