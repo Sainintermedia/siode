@@ -1,5 +1,5 @@
 @extends('layouts.siode.app')
-@section('title', 'Buku Induk Penduduk')
+@section('title', 'Buku Mutasi Penduduk')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -28,29 +28,27 @@
                         class="table-bordered table-hover table-striped rounded-0 table-sm table py-0 text-sm">
                         <thead>
                             <tr>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center" >NO</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center" >Aksi</td>
-                              
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">NO</td>
                               <td rowspan="2" style="text-transform:uppercase" class="text-center">Nama Lengkap <br>Panggilan</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Jenis <br>Kelamin</td>
-                              <td colspan="4" rowspan="2" style="text-transform:uppercase" class="text-center">Status<br> Perkawinan</td>
                               <td colspan="2" style="text-transform:uppercase" class="text-center">Tempat dan Tanggal<br>Lahir</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Agama</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Pendidikan<br>Terakhir</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Jenis<br>Kelamin</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Kewarga<br>Negaraan</td>
                               <td rowspan="2" style="text-transform:uppercase" class="text-center">Pekerjaan</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Dapat <br>Membaca <br>Huruf</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Ke Warganegaraan<br></td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Alamat <br>Lengkap</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Penduduk <br>Dlm<br>Keluarga</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">NIK<br></td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Nomor <br>KK</td>
-                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Keterangan</td>
+                              <td colspan="2" style="text-transform:uppercase" class="text-center">Penambahan</td>
+                              <td colspan="4" style="text-transform:uppercase" class="text-center">Pengurangan</td>
+                              <td rowspan="2" style="text-transform:uppercase" class="text-center">Ket</td>
                             </tr>
                             <tr>
-                              <td>Tempat Lahir</td>
-                              <td>Tanggal</td>
+                              <td style="text-transform:uppercase" class="text-center">Tempat Lahir</td>
+                              <td style="text-transform:uppercase" class="text-center">Tanggal</td>
+                              <td style="text-transform:uppercase" class="text-center">Datang Dari</td>
+                              <td style="text-transform:uppercase" class="text-center">Tanggal</td>
+                              <td style="text-transform:uppercase" class="text-center">Pindah Ke</td>
+                              <td style="text-transform:uppercase" class="text-center">Tanggal</td>
+                              <td style="text-transform:uppercase" class="text-center">Meninggal</td>
+                              <td style="text-transform:uppercase" class="text-center">Tanggal</td>
                             </tr>
-                        </thead>                           
+                          </thead>                           
                         <tbody>
                             {{-- @forelse ($sarpras as $value => $fm) --}}
                                 <tr class="text-center">

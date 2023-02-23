@@ -19,7 +19,7 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU INDUK PENDUDUK
@@ -29,10 +29,10 @@
                             {{--  <i class="ion ion-bag"></i>  --}}
                             <i class="fa-solid fa-chart-simple"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('siode.buku.bukupenduduk.bukuindukpenduduk.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU MUTASI PENDUDUK DESA
@@ -42,10 +42,10 @@
                             {{--  <i class="ion ion-bag"></i>  --}}
                             <i class="fa-solid fa-chart-simple"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('siode.buku.bukupenduduk.bukumutasipenduduk.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU REKAPITULASI JUMLAH PENDUDUK
@@ -58,7 +58,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU PENDUDUK SEMENTARA
@@ -71,7 +71,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-12 col-12">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h4>BUKU KARTU TANDA PENDUDUK DAN BUKU KARTU KELUARGA 

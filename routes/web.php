@@ -22,6 +22,8 @@ use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\Bukukeputusankepaladesa
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
 use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukulembaranController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Penduduk\BukuindukpendudukController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Penduduk\BukumutasipendudukController;
 
 use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
@@ -177,8 +179,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('umum/bukuekspedisi/create', [BukuekspedisiController::class, 'create'])->name('umum.bukuekspedisi.create');
         Route::get('umum/bukulembaranberitadesa', [BukulembaranController::class, 'index'])->name('umum.bukulembaranberitadesa.index');
         Route::get('umum/bukulembaranberitadesa/create', [BukulembaranController::class, 'create'])->name('umum.bukulembaranberitadesa.create');
-
+       
         Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
+        Route::get('bukupenduduk/bukuindukpenduduk', [BukuindukpendudukController::class, 'index'])->name('bukupenduduk.bukuindukpenduduk.index');
+        Route::get('bukupenduduk/bukuindukpenduduk/create', [BukuindukpendudukController::class, 'create'])->name('bukupenduduk.bukuindukpenduduk.create');
+        Route::get('bukupenduduk/bukumutasipenduduk', [BukumutasipendudukController::class, 'index'])->name('bukupenduduk.bukumutasipenduduk.index');
+        Route::get('bukupenduduk/bukumutasipenduduk/create', [BukumutasipendudukController::class, 'create'])->name('bukupenduduk.bukumutasipenduduk.create');
+
         Route::get('kearsipan', [BukukearsipanController::class, 'index'])->name('kearsipan.index');
         Route::get('kearsipan/sarpras', [BukukearsipanController::class, 'sarpras'])->name('kearsipan.sarpras.sarpras');
         Route::get('kearsipan/sarprascreate', [BukukearsipanController::class, 'sarprascreate'])->name('kearsipan.sarpras.sarprascreate');
