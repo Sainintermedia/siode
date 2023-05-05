@@ -30,6 +30,7 @@
                 {{ auth()->user()->name }}&nbsp;
                 <div class="text-end">
                     <a href="{{ route('logout.perform') }}" class="btn btn-outline-light me-2">Logout</a>
+                    <a href="{{ route('siode.dashboard.index') }}" class="btn btn-outline-light me-2">Dashboard</a>
                 </div>
             @endauth
 
