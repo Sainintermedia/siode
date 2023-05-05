@@ -8,9 +8,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
 
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
 
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css?v=3.2.0">
+    <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/fontawesome-free/css/all.min.css') }}">
+
+    <link rel="stylesheet" href="{{ URL::asset('assets/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.css') }}">
     <script defer="" referrerpolicy="origin"
         src="/cdn-cgi/zaraz/s.js?z=JTdCJTIyZXhlY3V0ZWQlMjIlM0ElNUIlNUQlMkMlMjJ0JTIyJTNBJTIyQWRtaW5MVEUlMjAzJTIwJTdDJTIwVG9wJTIwTmF2aWdhdGlvbiUyMiUyQyUyMnglMjIlM0EwLjY2MDkyNDQxNjI1NzQ5NjglMkMlMjJ3JTIyJTNBMTkyMCUyQyUyMmglMjIlM0ExMDgwJTJDJTIyaiUyMiUzQTk2OSUyQyUyMmUlMjIlM0ExOTIwJTJDJTIybCUyMiUzQSUyMmh0dHBzJTNBJTJGJTJGYWRtaW5sdGUuaW8lMkZ0aGVtZXMlMkZ2MyUyRnBhZ2VzJTJGbGF5b3V0JTJGdG9wLW5hdi5odG1sJTIyJTJDJTIyciUyMiUzQSUyMmh0dHBzJTNBJTJGJTJGYWRtaW5sdGUuaW8lMkZ0aGVtZXMlMkZ2MyUyRnBhZ2VzJTJGbGF5b3V0JTJGY29sbGFwc2VkLXNpZGViYXIuaHRtbCUyMiUyQyUyMmslMjIlM0EyNCUyQyUyMm4lMjIlM0ElMjJVVEYtOCUyMiUyQyUyMm8lMjIlM0EtNDIwJTJDJTIycSUyMiUzQSU1QiU1RCU3RA==">
     </script>
@@ -96,7 +98,7 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+                <div class="navbar-collapse collapse order-3" id="navbarCollapse">
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -466,14 +468,10 @@
     </div>
 
 
-
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="../../dist/js/adminlte.min.js?v=3.2.0"></script>
-
-    <script src="../../dist/js/demo.js"></script>
+    <script src="{{ URL::asset('assets/dist/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/dist/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/dist/plugins/toastr/toastr.min.js') }}"></script>
 
 
 </body>

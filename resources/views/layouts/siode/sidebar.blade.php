@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('siode.beranda.beranda.index') }}" class="nav-link {!! request()->is(['siode/beranda']) || request()->is(['siode/beranda/*']) ? 'active' : '' !!}">
+                    <a href="{{ route('home.index') }}" class="nav-link {!! request()->is(['siode/beranda']) || request()->is(['siode/beranda/*']) ? 'active' : '' !!}">
                         <i class="nav-icon fas fa-house-user"></i>
                         <p>
                             Beranda
