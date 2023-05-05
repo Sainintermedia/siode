@@ -107,7 +107,8 @@ Route::group(['middleware' => ['auth', 'permission']], function () {
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], function () {
-    Route::resource('dashboard', DashboardController::class)->except('show', 'edit', 'update', 'create', 'destroy');;
+    Route::resource('dashboard', DashboardController::class)->except('show', 'edit', 'update', 'create', 'destroy');
+    ;
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'info-desa', 'as' => 'infodesa.'], function () {
 
@@ -179,7 +180,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         Route::get('umum/bukuekspedisi/create', [BukuekspedisiController::class, 'create'])->name('umum.bukuekspedisi.create');
         Route::get('umum/bukulembaranberitadesa', [BukulembaranController::class, 'index'])->name('umum.bukulembaranberitadesa.index');
         Route::get('umum/bukulembaranberitadesa/create', [BukulembaranController::class, 'create'])->name('umum.bukulembaranberitadesa.create');
-       
+
         Route::get('bukupenduduk', [BukupendudukController::class, 'index'])->name('bukupenduduk.index');
         Route::get('bukupenduduk/bukuindukpenduduk', [BukuindukpendudukController::class, 'index'])->name('bukupenduduk.bukuindukpenduduk.index');
         Route::get('bukupenduduk/bukuindukpenduduk/create', [BukuindukpendudukController::class, 'create'])->name('bukupenduduk.bukuindukpenduduk.create');
@@ -194,10 +195,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'arsipdesa', 'as' => 'arsip-desa.'], function () {
         Route::get('kearsipan/peta', [BukukearsipanController::class, 'petalokasi'])->name('kearsipan.peta.petalokasi');
-    });
-
-    Route::group(['middleware' => ['auth'], 'prefix' => 'beranda', 'as' => 'beranda.'], function () {
-        Route::get('beranda', [BerandaController::class, 'index'])->name('beranda.index');
     });
 
 });
