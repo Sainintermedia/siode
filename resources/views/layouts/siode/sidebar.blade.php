@@ -280,7 +280,10 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('siode.statistik.statistik.index') }}"
+                            class="nav-link {!! request()->is(['siode/statistik/statistik']) || request()->is(['siode/statistik/statistik/*'])
+                                ? 'active'
+                                : '' !!}">
                                 <i class="far fa-circle nav-icon text-blue"></i>
                                 <p>Statistik Kependudukan</p>
                             </a>

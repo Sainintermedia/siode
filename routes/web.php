@@ -34,6 +34,7 @@ use App\Http\Controllers\Siode\Lembaga\LembagaController;
 use App\Http\Controllers\Siode\Surat\CetakSuratController;
 use App\Http\Controllers\Siode\Surat\SuratController;
 use App\Http\Controllers\Siode\WilayahAdministratif\WilayahAdministratifController;
+use App\Http\Controllers\Siode\Statistik\StatistikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -195,6 +196,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'arsipdesa', 'as' => 'arsip-desa.'], function () {
         Route::get('kearsipan/peta', [BukukearsipanController::class, 'petalokasi'])->name('kearsipan.peta.petalokasi');
+    });
+    Route::group(['middleware' => ['auth'], 'prefix' => 'statistik', 'as' => 'statistik.'], function () {
+        Route::get('statistik', [StatistikController::class, 'index'])->name('statistik.index');
     });
 
 });

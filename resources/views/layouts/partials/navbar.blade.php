@@ -8,7 +8,41 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0 mb-2">
-                <li><a href="{{ route('home.index') }}" class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="{{ route('home.index') }}" class="nav-link px-2 text-white">Beranda</a></li>
+                <li><a href="{{ route('home.index') }}" class="nav-link px-2 text-white">Profil</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Profil Desa</a></li>
+                        <li><a class="dropdown-item" href="#">Visi Misi</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-2 text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pemerintahan Desa
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Pemerintah Desa</a></li>
+                      <li><a class="dropdown-item" href="#">Badan Permusyawaratan Desa</a></li>
+                      <li><a class="dropdown-item" href="#">Lembaga Pemberdayaan Masyarakat</a></li>
+                      <li><a class="dropdown-item" href="#">Karang Taruna</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">RT & RW</a></li>
+                    </ul>
+                  </li>
+                <li><a href="{{ route('home.index') }}" class="nav-link px-2 text-white">Peta Desa</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-2 text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Data Desa
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Wilayah Administrasi</a></li>
+                      <li><a class="dropdown-item" href="#">Data Pekerjaan</a></li>
+                      <li><a class="dropdown-item" href="#">Data Perkawinan</a></li>
+                      <li><a class="dropdown-item" href="#">Data Agama</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">RT & RW</a></li>
+                    </ul>
+                  </li>
+                <li><a href="{{ route('home.index') }}" class="nav-link px-2 text-white">APBDes Desa</a></li> 
                 @auth
                     @role('admin')
                         @can('users.index')
