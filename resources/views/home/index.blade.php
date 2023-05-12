@@ -12,7 +12,7 @@
                     alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://i.ytimg.com/vi/kZb_5LS-GMQ/maxresdefault.jpg" class="d-block w-100" alt="...">
+                <img src="https://i.ytimg.com/vi/WaxYo70moBw/maxresdefault.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
