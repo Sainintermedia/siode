@@ -21,6 +21,9 @@ class CreateDesasTable extends Migration
             $table->string('nama_kabupaten', 100)->nullable();
             $table->string('nama_provinsi', 100)->nullable();
             $table->string('alamat_desa', 150)->nullable();
+            $table->string('dusun', 150)->nullable();
+            $table->string('rt', 10)->nullable();
+            $table->string('rw', 10)->nullable();
             $table->string('kodepos', 20)->nullable();
             $table->string('alamat_kecamatan', 150)->nullable();
             $table->string('nama_kepala_desa', 100)->nullable();
