@@ -35,13 +35,15 @@
 
         <!-- Custom styles for this template -->
         <link href="{!! url('assets/css/app.css') !!}" rel="stylesheet">
+        @include('layouts.siode.styles')
+        @stack('styles')
     </head>
 
     <body>
 
         @include('layouts.partials.navbar')
 
-        <main class="container mt-5">
+        <main class="container mt-4">
             @yield('content')
         </main>
 
