@@ -128,6 +128,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
 
         // IDENTIS DESA //
         Route::get('/identitas-desa', [IdentitasDesaController::class, 'index'])->name('identitas-desa.index');
+        Route::patch('/update-logo/{desa}', [IdentitasDesaController::class, 'updateLogo'])->name('identitas-logo.update');
+        Route::patch('/update-gambar/{desa}', [IdentitasDesaController::class, 'updateGambar'])->name('identitas-gambar.update');
         Route::patch('/update-desa/{desa}', [IdentitasDesaController::class, 'update'])->name('identitas-desa.update');
         // END ISENTITAS DESA //
 

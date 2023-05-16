@@ -16,6 +16,9 @@ class Desa extends Model
         'nama_kabupaten',
         'nama_provinsi',
         'alamat_desa',
+        'dusun',
+        'rt',
+        'rw',
         'kodepos',
         'alamat_kecamatan',
         'nama_kepala_desa',
@@ -26,4 +29,6 @@ class Desa extends Model
         'logo',
         'foto_desa',
     ];
+
+
 }
