@@ -25,7 +25,77 @@
         </button>
     </div>
 
-    <div class="bg-light rounded p-5">
+    
+    {{-- <div class="card body"> --}}
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ $kk }}</h3>
+                        <p>Jumlah Kartu Keluarga</p>
+                    </div>
+                    <div class="icon">
+                        {{--  <i class="ion ion-bag"></i>  --}}
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ $pen }}</h3>
+                        <p>Jumlah Penduduk</p>
+                    </div>
+                    <div class="icon">
+                        {{--  <i class="ion ion-bag"></i>  --}}
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ $kkanggotalaki }}</h3>
+                        <p>Penduduk Laki-laki</p>
+                    </div>
+                    <div class="icon">
+                        {{--  <i class="ion ion-bag"></i>  --}}
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ $kkanggotaperempuan }}</h3>
+                        <p>Penduduk Perempuan</p>
+                    </div>
+                    <div class="icon">
+                        {{--  <i class="ion ion-bag"></i>  --}}
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ $jmlrw }}</h3>
+                        <p>Kejaroan</p>
+                    </div>
+                    <div class="icon">
+                        {{--  <i class="ion ion-bag"></i>  --}}
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    {{-- </div> --}}
+    <div class="bg-info rounded p-4">
         @auth
             <h1>Dashboard</h1>
             <p class="lead">Only authenticated users can access this section.</p>
@@ -35,5 +105,7 @@
             <h1>Homepage</h1>
             <p class="lead">Your viewing the home page. Please login to view the restricted data.</p>
         @endguest
+
+
     </div>
 @endsection

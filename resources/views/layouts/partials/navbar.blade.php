@@ -1,4 +1,4 @@
-<header class="bg-dark p-3 text-white">
+<header class="bg-secondary p-3 text-white">
     <div class="container">
         <div class="d-flex align-items-center justify-content-center justify-content-lg-start flex-wrap">
             <a href="/" class="d-flex align-items-center mb-lg-0 text-decoration-none mb-2 text-white">
@@ -38,6 +38,11 @@
                       <li><a class="dropdown-item" href="#">Data Pekerjaan</a></li>
                       <li><a class="dropdown-item" href="#">Data Perkawinan</a></li>
                       <li><a class="dropdown-item" href="#">Data Agama</a></li>
+                      <li><a class="dropdown-item" href="#">Data Jenis Kelamin</a></li>
+                      <li><a class="dropdown-item" href="#">Data Kewarganegaraan</a></li>
+                      <li><a class="dropdown-item" href="#">Data Status Kependudukan</a></li>
+                      <li><a class="dropdown-item" href="#">Data Golongan Darah</a></li>
+                      <li><a class="dropdown-item" href="#">Data Riwayat Penyakit</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">RT & RW</a></li>
                     </ul>
