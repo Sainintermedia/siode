@@ -30,6 +30,24 @@
             .float-right {
                 float: right;
             }
+
+
+            @media (max-width: 767px) {
+                .container {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+
+            .footer-logo {
+                text-align: left;
+                margin-right: 20px;
+                /* Atur jarak antara logo dan teks */
+            }
+
+            .footer-tittle {
+                text-align: left;
+            }
         </style>
 
 
@@ -39,20 +57,22 @@
         @stack('styles')
     </head>
 
-    <body>
+    <body class="hold-transition layout-top-nav">
 
-        @include('layouts.partials.navbar')
+        <div class="wrapper">
+            @include('layouts.partials.navbar')
+        </div>
 
         <main class="container mt-4">
             @yield('content')
         </main>
 
+        @include('layouts.siode-front.footer')
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="{!! url('assets/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
+        @stack('script')
 
-        @section('scripts')
-
-        @show
     </body>
+
 
     </html>
