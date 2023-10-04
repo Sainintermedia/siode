@@ -119,9 +119,9 @@ class KartuKeluargaController extends Controller
         $agama = Agama::orderBy('id', 'ASC')->pluck('nama', 'id');
         $kewarganegaraan = Kewarganegaraan::orderBy('id', 'ASC')->pluck('nama', 'id');
         $jeniskelamin = JenisKelamin::orderBy('id', 'ASC')->pluck('nama', 'id');
-        $rtrw = RtRw::get();
+        // $rtrw = RtRw::get();
 
-        return view('siode.kependudukan.keluarga.edit', compact('kartukeluargaanggota', 'provinces', 'pekerjaan', 'pernikahan', 'hubungankeluarga', 'goldarah', 'pendidikankeluarga', 'agama', 'kewarganegaraan', 'jeniskelamin', 'rtrw'));
+        return view('siode.kependudukan.keluarga.edit', compact('kartukeluargaanggota', 'provinces', 'pekerjaan', 'pernikahan', 'hubungankeluarga', 'goldarah', 'pendidikankeluarga', 'agama', 'kewarganegaraan', 'jeniskelamin'));
     }
 
     public function update(UpdateKartuKeluargaRequest $request, $kartu_keluarga)

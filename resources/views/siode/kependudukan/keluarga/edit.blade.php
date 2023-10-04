@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray mt-2 mb-2 py-2 px-2">
+                <div class="bg-gray mb-2 mt-2 px-2 py-2">
                     <h6 class="mb-0">
                         <strong>ALAMAT KARTU KELUARGA :</strong>
                     </h6>
@@ -88,11 +88,27 @@
                                     <label for="">Rt</label>
                                     <select name="rt" class="form-select form-control form-control-sm rounded-0"
                                         style="text-transform:uppercase" name="rt" required>
-                                        @foreach ($rtrw->whereNotNull('rt')->pluck('rt') as $id => $nama)
+                                        {{--  @foreach ($rtrw->whereNotNull('rt')->pluck('rt') as $id => $nama)
                                             <option value="{!! $nama !!}" {!! $nama == $kartukeluargaanggota->kartukeluarga->rt ? 'selected' : '' !!}>
                                                 {!! $nama !!}
                                             </option>
-                                        @endforeach
+                                        @endforeach  --}}
+                                        <option value="" hidden>Pilih RT</option>
+                                        {{--  @foreach ($rtrw->whereNotNull('rt')->pluck('rt') as $id => $nama)
+                                            <option value="{!! $nama !!}">{!! $nama !!}
+                                            </option>
+                                        @endforeach  --}}
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </div>
                             </div>
@@ -101,11 +117,17 @@
                                     <label for="">Rw</label>
                                     <select name="rw" class="form-select form-control form-control-sm rounded-0"
                                         style="text-transform:uppercase" name="rw" required>
-                                        @foreach ($rtrw->whereNotNull('rw')->pluck('rw') as $id => $nama)
+                                        {{--  @foreach ($rtrw->whereNotNull('rw')->pluck('rw') as $id => $nama)
                                             <option value="{!! $nama !!}" {!! $nama == $kartukeluargaanggota->kartukeluarga->rw ? 'selected' : '' !!}>
                                                 {!! $nama !!}
                                             </option>
-                                        @endforeach
+                                        @endforeach  --}}
+                                        <option value="" hidden>Pilih RW</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                             </div>
@@ -121,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray mt-2 mb-2 py-2 px-2">
+                <div class="bg-gray mb-2 mt-2 px-2 py-2">
                     <h6 class="mb-0">
                         <strong>IDENTITAS KEPALA KELUARGA :</strong>
                     </h6>
@@ -236,7 +258,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray mt-2 mb-2 py-2 px-2">
+                <div class="bg-gray mb-2 mt-2 px-2 py-2">
                     <h6 class="mb-0">
                         <strong>STATUS PERKAWINAN :</strong>
                     </h6>
@@ -274,7 +296,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray mt-2 mb-2 py-2 px-2">
+                <div class="bg-gray mb-2 mt-2 px-2 py-2">
                     <h6 class="mb-0">
                         <strong>KEWARGANEGARAAN :</strong>
                     </h6>
@@ -311,7 +333,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray mt-2 mb-2 py-2 px-2">
+                <div class="bg-gray mb-2 mt-2 px-2 py-2">
                     <h6 class="mb-0">
                         <strong>ORANG TUA :</strong>
                     </h6>
