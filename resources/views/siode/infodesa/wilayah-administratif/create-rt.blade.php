@@ -1,33 +1,57 @@
 @extends('layouts.siode.app')
-@section('title', 'Rw')
+@section('title', 'Rt')
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
-                        <h6>Tambah data RW</h6>
+                        <h6>Tambah data RT</h6>
                     </div>
                 </div>
-                <form action="{{ route('siode.infodesa.wilayah-administratif.store.rw') }}" method="post" autocomplete="off">
+                <form action="{{ route('siode.infodesa.wilayah-administratif.store.rt') }}" method="post" autocomplete="off">
                     @csrf
                     @method('POST')
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md">
                                 <div class="form-group">
-                                    <label for="">NO RW</label>
-                                    <input type="text" class="form-control form-control-sm" name="no_rw" required>
+                                    <label for="">NO RT</label>
+                                    <input type="text" class="form-control form-control-sm" name="no_rt" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md">
                                 <div class="form-group">
-                                    <label for="">NIK KETUA RW</label>
+                                    <label for="">DUSUN</label>
+                                    <select name="dusun_id" id="" class="form-control form-control-sm" required>
+                                        <option value="">Pilih</option>
+                                        @foreach ($dusun as $dsn)
+                                            <option value="{{ $dsn->id }}">{{ $dsn->nama_dusun }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="">NO RW</label>
+                                    <select name="rw_id" id="" class="form-control form-control-sm" required>
+                                        <option value="">Pilih</option>
+                                        @foreach ($rw as $rws)
+                                            <option value="{{ $rws->id }}">{{ $rws->no_rw }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="">NIK KETUA RT</label>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" name="nik_ketua_rw" id="no_nik"
-                                            value="{{ old('nik_ketua_rw') }}" class="form-control form-control-sm text-sm"
+                                        <input type="text" name="nik_ketua_rt" id="no_nik"
+                                            value="{{ old('nik_ketua_rt') }}" class="form-control form-control-sm text-sm"
                                             style="text-transform:uppercase" aria-describedby="button-addon2" readonly
                                             required>
                                         <button class="btn btn-outline-secondary btn-sm" style="text-transform:uppercase"
@@ -38,8 +62,8 @@
                             </div>
                             <div class="col-md">
                                 <div class="form-group">
-                                    <label for="">KETUA RW</label>
-                                    <input type="text" id="nama" name="ketua_rw" value="{{ old('ketua_rw') }}"
+                                    <label for="">KETUA RT</label>
+                                    <input type="text" id="nama" name="ketua_rt" value="{{ old('ketua_rt') }}"
                                         class="form-control form-control-sm" required readonly>
                                 </div>
                             </div>
@@ -104,7 +128,8 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="{{ URL::asset('assets/dist/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ URL::asset('assets/dist/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet"
         href="{{ URL::asset('assets/dist/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 @endpush
@@ -127,7 +152,7 @@
                 paging: true,
                 searching: true,
                 info: true,
-                ajax: "{{ route('siode.infodesa.wilayah-administratif.create.rw') }}",
+                ajax: "{{ route('siode.infodesa.wilayah-administratif.create.rt') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex',

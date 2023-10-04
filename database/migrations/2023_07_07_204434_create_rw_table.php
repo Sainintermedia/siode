@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRtRwsTable extends Migration
+class CreateRwTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateRtRwsTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_rt_rw', function (Blueprint $table) {
+        Schema::create('rw', function (Blueprint $table) {
             $table->id();
-            $table->integer('rt')->nullable();
-            $table->integer('rw')->nullable();
-            $table->string('ket')->nullable();
+            $table->string('no_rw');
+            $table->string('ketua_rw');
+            $table->string('nik_ketua_rw');
+            $table->year('periode_1');
+            $table->year('periode_2');
+            $table->string('user_id');
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +33,6 @@ class CreateRtRwsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rt_rws');
+        Schema::dropIfExists('rw');
     }
 }

@@ -99,7 +99,8 @@
                                             <div class="form-group">
                                                 <label for="">Desa</label>
                                                 <select class="form-control form-control-sm select2"
-                                                    style="text-transform:uppercase" name="desa" id="village" required>
+                                                    style="text-transform:uppercase" name="nama_desa" id="village"
+                                                    required>
                                                     <option value="" hidden>Pilih Kab/Kota</option>
                                                 </select>
                                             </div>
@@ -110,7 +111,7 @@
                                             <div class="form-group">
                                                 <label for="">Dusun / Kampung</label>
                                                 <input type="text" class="form-control form-control-sm text-sm"
-                                                    style="text-transform:uppercase" name="kp" id=""
+                                                    style="text-transform:uppercase" name="dusun" id=""
                                                     required>
                                             </div>
                                         </div>

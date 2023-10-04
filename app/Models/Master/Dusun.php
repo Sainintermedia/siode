@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Models\Tabel\InfoDesa;
+namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WilayahRw extends Model
+class Dusun extends Model
 {
     use HasFactory;
-    protected $table = 'wilayah_rws';
+    protected $table = 'dusun';
     protected $fillable = [
-        'no_rw',
-        'ketua_rw',
-        'nik_rw',
+        'nama_dusun','user_id'
     ];
 }

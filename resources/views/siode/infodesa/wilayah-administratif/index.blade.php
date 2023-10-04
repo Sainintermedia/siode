@@ -2,14 +2,6 @@
 @section('title', 'Wilayah Administratif')
 @section('content')
     <div class="row">
-        <div class="col-md">
-            @include('siode.infodesa.wilayah-administratif.partials.add-rw')
-        </div>
-        <div class="col-md-9">
-
-        </div>
-    </div>
-    <div class="row">
 
         <div class="col-md">
             @include('siode.infodesa.wilayah-administratif.partials.side')
@@ -19,6 +11,30 @@
 
         </div>
 
+    </div>
+    <div class="row">
+        <div class="col-md">
+            @include('siode.infodesa.wilayah-administratif.partials.add-rw')
+        </div>
+        <div class="col-md-9">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            @include('siode.infodesa.wilayah-administratif.partials.add-rt')
+        </div>
+        <div class="col-md-9">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            @include('siode.infodesa.wilayah-administratif.partials.add-lkd')
+        </div>
+        <div class="col-md-9">
+
+        </div>
     </div>
 
 

@@ -1,41 +1,40 @@
 <?php
 
-use App\Http\Controllers\Admin\PermissionsController;
-use App\Http\Controllers\Admin\RolesController;
-use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Auth\ChangePasswordController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Dropdown\DependentDropdownController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
-use App\Http\Controllers\Siode\Beranda\BerandaController;
-use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuagendaController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuaparatpemerintahdesaController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuekspedisiController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuinventariskekayaandesaController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukukeputusankepaladesaController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukulembaranController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Penduduk\BukuindukpendudukController;
-use App\Http\Controllers\Siode\bukuadministrasidesa\Penduduk\BukumutasipendudukController;
-
-use App\Http\Controllers\Siode\Dashboard\DashboardController;
-use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
-use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
-use App\Http\Controllers\Siode\KartuKeluargaController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Siode\KelompokController;
+use App\Http\Controllers\Admin\PermissionsController;
+use App\Http\Controllers\Siode\Surat\SuratController;
+use App\Http\Controllers\Auth\ChangePasswordController;
+use App\Http\Controllers\Siode\KartuKeluargaController;
+use App\Http\Controllers\Siode\Beranda\BerandaController;
 use App\Http\Controllers\Siode\Lembaga\LembagaController;
 use App\Http\Controllers\Siode\Surat\CetakSuratController;
-use App\Http\Controllers\Siode\Surat\SuratController;
-use App\Http\Controllers\Siode\WilayahAdministratif\WilayahAdministratifController;
+use App\Http\Controllers\Siode\Dashboard\DashboardController;
 use App\Http\Controllers\Siode\Statistik\StatistikController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dropdown\DependentDropdownController;
+use App\Http\Controllers\Siode\KartuKeluargaAnggotaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\UmumController;
+use App\Http\Controllers\Siode\IdentitasDesa\IdentitasDesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\BukupendudukController;
+use App\Http\Controllers\Siode\Bukuadministrasidesa\BukukearsipanController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuagendaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukulembaranController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuekspedisiController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\PeraturandesaController;
+use App\Http\Controllers\Siode\WilayahAdministratif\WilayahAdministratifController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukutanahkasdesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Penduduk\BukuindukpendudukController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Penduduk\BukumutasipendudukController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukukeputusankepaladesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuaparatpemerintahdesaController;
+use App\Http\Controllers\Siode\bukuadministrasidesa\Umum\BukuinventariskekayaandesaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,7 +117,21 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'siode', 'as' => 'siode.'], 
         // END BAGIAN RT //
 
         // BAGIAN RW //
-        Route::get('wilayah-administratif/rw/create', [WilayahAdministratifController::class, 'createRw'])->name('wilayah-administratif.createRw');
+        Route::group(['middleware' => ['auth'], 'prefix' => 'wilayah-administratif', 'as' => 'wilayah-administratif.'], function () {
+            Route::get('create-dusun', [WilayahAdministratifController::class, 'createDusun'])->name('create.dusun');
+            Route::post('store-dusun', [WilayahAdministratifController::class, 'storeDusun'])->name('store.dusun');
+
+            Route::get('create-rw', [WilayahAdministratifController::class, 'createRw'])->name('create.rw');
+            Route::post('store-rw', [WilayahAdministratifController::class, 'storeRw'])->name('store.rw');
+
+            Route::get('create-rt', [WilayahAdministratifController::class, 'createRt'])->name('create.rt');
+            Route::post('store-rt', [WilayahAdministratifController::class, 'storeRt'])->name('store.rt');
+
+            Route::get('create-lkd', [WilayahAdministratifController::class, 'createLkd'])->name('create.lkd');
+            Route::post('store-lkd', [WilayahAdministratifController::class, 'storeLkd'])->name('store.lkd');
+
+            // Route::get('data-penduduk', [WilayahAdministratifController::class, 'dataPenduduk'])->name('data.penduduk');
+        });
         Route::post('wilayah-administratif/rw/', [WilayahAdministratifController::class, 'storeRw'])->name('wilayah-administratif.storeRw');
         // END BAGIAN RW //
 
