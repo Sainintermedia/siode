@@ -93,8 +93,8 @@ class KartuKeluargaAnggotaController extends Controller
         $agama = Agama::orderBy('id', 'ASC')->pluck('nama', 'id');
         $kewarganegaraan = Kewarganegaraan::orderBy('id', 'ASC')->pluck('nama', 'id');
         $jeniskelamin = JenisKelamin::orderBy('id', 'ASC')->pluck('nama', 'id');
-        $rtrw = RtRw::get();
-        return view('siode.kependudukan.penduduk.create', compact('kartukeluargaanggota', 'pekerjaan', 'pernikahan', 'hubungankeluarga', 'goldarah', 'pendidikankeluarga', 'agama', 'kewarganegaraan', 'jeniskelamin', 'rtrw'));
+        // $rtrw = RtRw::get();
+        return view('siode.kependudukan.penduduk.create', compact('kartukeluargaanggota', 'pekerjaan', 'pernikahan', 'hubungankeluarga', 'goldarah', 'pendidikankeluarga', 'agama', 'kewarganegaraan', 'jeniskelamin'));
     }
 
     public function store(StoreKartuKeluargaAnggotaRequest $request)
@@ -142,7 +142,7 @@ class KartuKeluargaAnggotaController extends Controller
 
     public function edit($anggota_keluarga)
     {
-        $kartukeluargaanggota = KartuKeluargaAnggota::whereSts_hub_kel(1)   
+        $kartukeluargaanggota = KartuKeluargaAnggota::whereSts_hub_kel(1)
             ->with([
                 'kartukeluarga' => function ($q) {
                     $q->with(['provinces', 'cities', 'districts', 'villages']);
@@ -158,8 +158,8 @@ class KartuKeluargaAnggotaController extends Controller
         $agama = Agama::orderBy('id', 'ASC')->pluck('nama', 'id');
         $kewarganegaraan = Kewarganegaraan::orderBy('id', 'ASC')->pluck('nama', 'id');
         $jeniskelamin = JenisKelamin::orderBy('id', 'ASC')->pluck('nama', 'id');
-        $rtrw = RtRw::get();
-        return view('siode.kependudukan.penduduk.edit', compact('anggota', 'kartukeluargaanggota', 'pekerjaan', 'pernikahan', 'hubungankeluarga', 'goldarah', 'pendidikankeluarga', 'agama', 'kewarganegaraan', 'jeniskelamin', 'rtrw'));
+        // $rtrw = RtRw::get();
+        return view('siode.kependudukan.penduduk.edit', compact('anggota', 'kartukeluargaanggota', 'pekerjaan', 'pernikahan', 'hubungankeluarga', 'goldarah', 'pendidikankeluarga', 'agama', 'kewarganegaraan', 'jeniskelamin'));
     }
 
     public function update(UpdateKartuKeluargaAnggotaRequest $request, $anggota_keluarga)
@@ -192,11 +192,7 @@ class KartuKeluargaAnggotaController extends Controller
             ->with('success', 'Data berhasil diupdate !');
     }
 
-    public function show()
-    {
-    }
+    public function show() {}
 
-    public function destroy()
-    {
-    }
+    public function destroy() {}
 }
